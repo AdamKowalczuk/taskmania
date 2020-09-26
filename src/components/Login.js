@@ -17,15 +17,18 @@ export default class Login extends Component {
                 Rejestracja
               </div>
             </div>
-            <input type="text" placeholder="E-mail" />
-            <input type="password" placeholder="Hasło" />
-            <button
-              onClick={() => {
-                this.props.data.changePage(2);
-              }}
-            >
-              Zaloguj się
-            </button>
+            <form>
+              <input type="text" placeholder="E-mail" />
+              <input type="password" placeholder="Hasło" />
+
+              <button
+                onClick={() => {
+                  this.props.data.changePage(2);
+                }}
+              >
+                Zaloguj się
+              </button>
+            </form>
           </div>
         </div>
       </>

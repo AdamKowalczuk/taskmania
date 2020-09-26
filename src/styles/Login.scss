@@ -18,8 +18,6 @@ $light-brown: #d09683;
   justify-content: center;
   align-items: center;
   background: $brown;
-  border-bottom-left-radius: 30%;
-  border-bottom-right-radius: 30%;
 }
 .login-registration-container {
   display: flex;
@@ -57,4 +55,10 @@ $light-brown: #d09683;
 }
 .login-container button:hover {
   color: $light-brown;
+}
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

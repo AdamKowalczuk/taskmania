@@ -14,8 +14,6 @@
   justify-content: center;
   align-items: center;
   background: #73605b;
-  border-bottom-left-radius: 30%;
-  border-bottom-right-radius: 30%;
 }
 
 .login-registration-container {
@@ -61,4 +59,11 @@
 
 .login-container button:hover {
   color: #d09683;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

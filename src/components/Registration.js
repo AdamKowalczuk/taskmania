@@ -17,11 +17,12 @@ export default class Login extends Component {
               </div>
               <div className="registration-choice">Rejestracja</div>
             </div>
-
-            <input type="text" placeholder="Nazwa bohatera" />
-            <input type="text" placeholder="E-mail" />
-            <input type="password" placeholder="Hasło" />
-            <button>Zarejestruj się</button>
+            <form>
+              <input type="text" placeholder="Nazwa bohatera" />
+              <input type="text" placeholder="E-mail" />
+              <input type="password" placeholder="Hasło" />
+              <button>Zarejestruj się</button>
+            </form>
           </div>
         </div>
       </>

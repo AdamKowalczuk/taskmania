@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import Mission from "./components/Mission";
@@ -34,7 +34,7 @@ export default class App extends Component {
     }
   }
   render() {
-    const { pages, prevPage } = this.state;
+    const { pages } = this.state;
     return (
       <>
         <div className="App">
