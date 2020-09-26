@@ -1,0 +1,86 @@
+$dark: #363237;
+$blue: #2d4362;
+$brown: #73605b;
+$light-brown: #d09683;
+
+.hero-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark;
+}
+.hero-container h2 {
+  color: $light-brown;
+}
+.hero-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  background-color: $brown;
+  border: 4px solid $light-brown;
+}
+.left-items,
+.right-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 5vw;
+}
+.left-items img,
+.right-items img {
+  margin-top: 1vh;
+  height: 10vh;
+}
+.hero-image img {
+  height: 50vh;
+}
+.hero-stats {
+  margin-top: 3vh;
+  padding: 0px 40px;
+  background-color: $brown;
+  border: 4px solid $light-brown;
+}
+.hero-stats img {
+  height: 10vh;
+  z-index: 2;
+}
+
+.hero-strength,
+.hero-hp,
+.hero-defense {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero-strength p {
+  margin-left: -3px;
+  border-top: 2px solid #e84d59;
+  border-bottom: 2px solid #e84d59;
+  border-right: 2px solid #e84d59;
+  background-color: #e84d59;
+  width: 150px;
+}
+.hero-hp p {
+  margin-left: -3px;
+  border-top: 2px solid #6ec17d;
+  border-bottom: 2px solid #6ec17d;
+  border-right: 2px solid #6ec17d;
+  background-color: #6ec17d;
+  width: 150px;
+}
+.hero-defense p {
+  margin-left: -3px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  background-color: black;
+  color: #ffbb16;
+  width: 150px;
+}
