@@ -22,10 +22,7 @@ export default class Hero extends Component {
               <img src={require("../items/17-axe.svg")} alt="hero item" />
             </div>
             <div className="hero-image">
-              <img
-                src={require("../characters/020-thor.svg")}
-                alt="hero item"
-              />
+              <img src={require("../enemies/020-thor.svg")} alt="hero item" />
             </div>
             <div className="right-items">
               <img src={require("../items/13-helmet.svg")} alt="hero item" />

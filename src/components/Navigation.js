@@ -27,7 +27,7 @@ export default class Navigation extends Component {
             this.props.data.changePage(2);
           }}
         >
-          <img src={require("../characters/2-odin.svg")} alt="hero item" />
+          <img src={require("../enemies/2-odin.svg")} alt="hero item" />
           <p>Bohater</p>
         </div>
       </>

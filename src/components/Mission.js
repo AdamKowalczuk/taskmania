@@ -18,7 +18,7 @@ export default class Mission extends Component {
             <div className="mission-box2">
               <h3>Nazwa misji</h3>
               <div className="block"></div>
-              <img src={require("../characters/001-wolf.svg")} alt="mission" />
+              <img src={require("../enemies/001-wolf.svg")} alt="mission" />
               <div className="mission-box3">
                 <div className="mission-conditions">
                   <h4>Wymagania</h4>
@@ -37,10 +37,7 @@ export default class Mission extends Component {
             <div className="mission-box2">
               <h3>Nazwa misji</h3>
               <div className="block"></div>
-              <img
-                src={require("../characters/020-goblin.svg")}
-                alt="mission"
-              />
+              <img src={require("../enemies/020-goblin.svg")} alt="mission" />
               <div className="mission-box3">
                 <div className="mission-conditions">
                   <h4>Wymagania</h4>
@@ -59,7 +56,7 @@ export default class Mission extends Component {
             <div className="mission-box2">
               <h3>Nazwa misji</h3>
               <div className="block"></div>
-              <img src={require("../characters/025-beast.svg")} alt="mission" />
+              <img src={require("../enemies/025-beast.svg")} alt="mission" />
               <div className="mission-box3">
                 <div className="mission-conditions">
                   <h4>Wymagania</h4>
