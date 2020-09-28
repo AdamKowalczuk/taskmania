@@ -3,64 +3,85 @@ $blue: #2d4362;
 $brown: #73605b;
 $light-brown: #d09683;
 
-.mission-container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $dark;
-  color: $light-brown;
-}
-.mission-container h2 {
-  margin-bottom: 10vh;
-}
-.mission-container h3 {
-  border: 4px solid $light-brown;
-  display: inline-block;
-  padding: 10px;
-  margin-top: -20px;
-  background-color: $blue;
-  color: $light-brown;
-}
-.mission-box1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.mission-box2 {
-  background-color: $brown;
-  border-radius: 5%;
-  width: 25vw;
-  margin-left: 2vw;
-  margin-right: 2vw;
-}
+// .mission-container {
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: $dark;
+//   color: $light-brown;
+// }
+// .mission-container h2 {
+//   margin-bottom: 10vh;
+// }
+// .mission-container h3 {
+//   border: 4px solid $light-brown;
+//   display: inline-block;
+//   padding: 10px;
+//   margin-top: -20px;
+//   background-color: $blue;
+//   color: $light-brown;
+// }
+// .mission-box1 {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .mission-box2 {
+//   background-color: $brown;
+//   border-radius: 5%;
+//   width: 25vw;
+//   margin-left: 2vw;
+//   margin-right: 2vw;
+// }
 .mission-box3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.mission-container img {
-  width: 70%;
-}
-.block {
-  width: 100%;
-}
-.mission-conditions,
-.mission-reward {
-  width: 45%;
+
+.mission-description {
+  width: auto;
+  min-width: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2vh;
   background-color: $light-brown;
   color: $blue;
-  border-radius: 30%;
-  margin-left: 1%;
-  margin-right: 1%;
+  border-radius: 10px;
 }
 .mission-button {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 20px;
   background-color: $blue;
   color: $light-brown;
+}
+@media screen and (max-width: 759px) {
+  .mission-box3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mission-description {
+    width: auto;
+    min-width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1vh;
+    background-color: $light-brown;
+    color: $blue;
+    border-radius: 10px;
+  }
+
+  .mission-button {
+    margin-top: 5px;
+    background-color: $blue;
+    color: $light-brown;
+  }
 }

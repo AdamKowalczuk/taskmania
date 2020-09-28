@@ -4,7 +4,7 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
 .hero-exp {
   position: absolute;
   top: 8px;
-  left: 16px;
+  left: 8px;
   display: flex;
   flex-direction: row;
   justify-content: right;
@@ -13,33 +13,39 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
 
 .hero-exp p {
   margin-left: -6px;
+  margin-bottom: 0px;
   background-color: #c9394a;
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 .hero-attack p {
   margin-right: -6px;
   background-color: $brown;
-  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
 }
 .hero-magic p {
   margin-right: -6px;
   background-color: $yellow;
-  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
 }
 .hero-life p {
   margin-right: -6px;
   background-color: $brown;
-  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
 }
 .hero-lucky p {
   margin-right: -6px;
   background-color: $yellow;
-  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
 }
 .hero-gold p {
   margin-right: -6px;
   background-color: $brown;
-  padding: 5px 20px;
+  margin-bottom: 0px;
+  padding: 5px 10px;
 }
 .hero-gold,
 .hero-attack,
@@ -48,7 +54,7 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
 .hero-lucky {
   position: absolute;
   top: 8px;
-  right: 16px;
+  right: 8px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: right;
@@ -83,45 +89,135 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
 
 .mission {
   position: absolute;
-  top: 208px;
-  left: 16px;
+  top: 118px;
+  left: 8px;
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-items: center;
 }
 .mission p {
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 .mission p {
   margin-left: -6px;
+  margin-bottom: 0px;
   background-color: #d9723e;
 }
 .hero {
   position: absolute;
-  top: 318px;
-  left: 16px;
+  top: 228px;
+  left: 8px;
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-items: center;
 }
 .hero p {
-  padding: 5px 20px;
+  padding: 5px 10px;
   margin-left: -6px;
+  margin-bottom: 0px;
   background-color: #80b4fb;
 }
 .boss {
   position: absolute;
-  top: 428px;
-  left: 16px;
+  top: 338px;
+  left: 8px;
   display: flex;
   flex-direction: row;
   justify-content: right;
   align-items: center;
 }
 .boss p {
-  padding: 5px 20px;
+  padding: 5px 10px;
+  margin-bottom: 0px;
   margin-left: -6px;
   background-color: #6cdc2d;
+}
+
+@media screen and (max-width: 759px) {
+  .hero-exp p {
+    padding: 0px 2px 0px 8px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+  .hero-attack p {
+    padding: 0px 8px 0px 2px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+  .hero-magic p {
+    padding: 0px 8px 0px 2px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+  .hero-life p {
+    padding: 0px 8px 0px 2px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+  .hero-lucky p {
+    padding: 0px 8px 0px 2px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+  .hero-gold p {
+    padding: 0px 8px 0px 2px;
+    margin-bottom: 0px;
+    font-size: 0.7rem;
+  }
+
+  .hero-magic {
+    top: 28px;
+  }
+  .hero-life {
+    top: 48px;
+  }
+  .hero-lucky {
+    top: 68px;
+  }
+  .hero-gold {
+    top: 88px;
+  }
+
+  .hero-exp img,
+  .hero-gold img,
+  .mission img,
+  .hero img,
+  .hero-attack img,
+  .hero-magic img,
+  .hero-life img,
+  .hero-lucky img,
+  .boss img {
+    z-index: 2;
+    width: 20px;
+  }
+
+  .mission {
+    top: 48px;
+  }
+  .hero {
+    top: 68px;
+  }
+  .boss {
+    top: 88px;
+  }
+  .mission p {
+    padding: 0px 2px 0px 8px;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    border-bottom-right-radius: 40%;
+  }
+  .hero p {
+    padding: 0px 2px 0px 8px;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    border-bottom-right-radius: 40%;
+  }
+  .boss p {
+    padding: 0px 2px 0px 8px;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    border-bottom-right-radius: 40%;
+  }
 }

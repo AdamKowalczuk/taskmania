@@ -4,6 +4,7 @@ import Characters from "./Characters";
 import Mission from "./Mission";
 import Hero from "./Hero";
 import Boss from "./Boss";
+import Location from "./Location";
 // import Login from "./components/Login";
 // import Registration from "./components/Registration";
 
@@ -95,7 +96,7 @@ export default class Menu extends Component {
             );
           } else if (pages[2].isOpen === true) {
             return (
-              <Mission
+              <Location
                 data={{
                   pages: pages,
                   changePage: this.changePage.bind(this),
@@ -117,7 +118,7 @@ export default class Menu extends Component {
             );
           } else if (pages[4].isOpen === true) {
             return (
-              <Boss
+              <Mission
                 data={{
                   pages: pages,
                   changePage: this.changePage.bind(this),
