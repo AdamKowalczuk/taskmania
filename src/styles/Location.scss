@@ -49,6 +49,9 @@ $light-brown: #d09683;
 }
 
 .location-container img {
+  width: 60%;
+}
+.mission-container img {
   width: 70%;
 }
 .block {
@@ -63,7 +66,7 @@ $light-brown: #d09683;
 }
 .mission-description {
   padding: 5px;
-  height: 25vh;
+  height: 20vh;
 }
 .location-container li:nth-child(odd) {
   color: #c9394a;
@@ -109,5 +112,8 @@ $light-brown: #d09683;
   .location-container p {
     font-size: 0.8rem;
     margin-bottom: 5px;
+  }
+  .mission-description {
+    height: 25vh;
   }
 }
