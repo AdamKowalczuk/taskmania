@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import PlayersList from "./PlayersList";
 import Characters from "./Characters";
+import Mission from "./Mission";
+import Hero from "./Hero";
+import Boss from "./Boss";
 // import Login from "./components/Login";
 // import Registration from "./components/Registration";
-// import Mission from "./components/Mission";
-// import Hero from "./components/Hero";
+
 import "../styles/App.scss";
 export default class Menu extends Component {
   state = {
@@ -83,6 +85,39 @@ export default class Menu extends Component {
           } else if (pages[1].isOpen === true) {
             return (
               <Characters
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                }}
+              />
+            );
+          } else if (pages[2].isOpen === true) {
+            return (
+              <Mission
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                }}
+              />
+            );
+          } else if (pages[3].isOpen === true) {
+            return (
+              <Hero
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                }}
+              />
+            );
+          } else if (pages[4].isOpen === true) {
+            return (
+              <Boss
                 data={{
                   pages: pages,
                   changePage: this.changePage.bind(this),

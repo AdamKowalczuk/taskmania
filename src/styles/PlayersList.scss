@@ -2,7 +2,6 @@ $dark: #363237;
 $blue: #2d4362;
 $brown: #73605b;
 $light-brown: #d09683;
-
 .players-container {
   height: 100vh;
   width: 100vw;
@@ -11,6 +10,21 @@ $light-brown: #d09683;
   justify-content: center;
   align-items: center;
   background-color: $dark;
+  color: $light-brown;
+}
+.players-container h1 {
+  border: 7px solid $light-brown;
+  display: inline-block;
+  margin-top: 0px;
+  padding: 5px;
+
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+}
+.players-container2 {
+  background-color: $brown;
+  border-radius: 30%;
+  padding: 0px 20px 0px 20px;
 }
 .player-box {
   display: flex;
@@ -21,17 +35,54 @@ $light-brown: #d09683;
 
 .player-box input {
   width: 20vw;
-  margin-right: 10vw;
+  margin-right: 5vw;
+}
+.player-box label {
+  text-align: left;
 }
 .player-box img {
   height: 15vh;
+  margin-bottom: 1vh;
 }
 
 .player-box h3 {
-  margin-left: 10vw;
+  margin-left: 5vw;
   width: 20vw;
+  color: $light-brown;
 }
 
 .players-container button {
   background-color: $blue;
+  color: $light-brown;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+@media screen and (max-width: 759px) {
+  .players-container h1 {
+    font-size: 1rem;
+    border-width: 4px;
+  }
+  .player-box input {
+    width: 30vw;
+  }
+  .player-box img {
+    height: 15vh;
+    margin-bottom: 1vh;
+  }
+
+  .player-box h3 {
+    font-size: 1rem;
+  }
+  .players-container label {
+    font-size: 0.8rem;
+  }
+  .players-container button {
+    font-size: 0.8rem;
+    padding: 5px;
+    background-color: $blue;
+    color: $light-brown;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
 }

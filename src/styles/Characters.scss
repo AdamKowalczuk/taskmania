@@ -4,18 +4,43 @@ $brown: #73605b;
 $light-brown: #d09683;
 
 .characters-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-flow: row wrap;
   background-color: $dark;
   color: $light-brown;
 }
 .character-details-box {
+  top: 0;
   height: 50vh;
   width: 100vw;
+  position: fixed;
+  background-color: $dark;
 }
+.character-details-box p {
+  padding: 0px 50px;
+}
+.character-details .stats-image {
+  width: 5vw;
+  height: auto;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+.stats-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.heroes-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-top: 50vh;
+}
+
 .character_box {
 }
 .character-details-box h2 {
@@ -52,4 +77,13 @@ $light-brown: #d09683;
   position: absolute;
   margin-left: 5vw;
   background-color: $blue;
+}
+@media screen and (max-width: 759px) {
+  .character-details .stats-image {
+    width: 10vw;
+    height: auto;
+  }
+  .character-details-box p {
+    padding: 0px 10px;
+  }
 }

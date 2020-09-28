@@ -137,28 +137,65 @@ export default class Characters extends Component {
             <div className="character-details">
               <p>{currentCharacter.description}</p>
               <div className="stats-container">
-                <p>Siła:{currentCharacter.strength}</p>
-                <p>Magia:{currentCharacter.magic}</p>
-                <p>Życie:{currentCharacter.hp}</p>
-                <p>Szczęście:{currentCharacter.fate}</p>
-                <p>Złoto:{currentCharacter.gold}</p>
+                <div className="stats-info">
+                  <img
+                    className="stats-image"
+                    src={require("../stats/020-thor.svg")}
+                    alt="siła"
+                  />
+                  <p>{currentCharacter.strength}</p>
+                </div>
+                <div className="stats-info">
+                  <img
+                    className="stats-image"
+                    src={require("../stats/050-scroll.svg")}
+                    alt="magia"
+                  />
+
+                  <p>{currentCharacter.magic}</p>
+                </div>
+                <div className="stats-info">
+                  <img
+                    className="stats-image"
+                    src={require("../stats/002-shield.svg")}
+                    alt="życie"
+                  />
+                  <p>{currentCharacter.hp}</p>
+                </div>
+                <div className="stats-info">
+                  <img
+                    className="stats-image"
+                    src={require("../stats/011-key.svg")}
+                    alt="szczęście"
+                  />
+                  <p>{currentCharacter.fate}</p>
+                </div>
+                <div className="stats-info">
+                  <img
+                    className="stats-image"
+                    src={require("../stats/045-money-bag.svg")}
+                    alt="złoto"
+                  />
+                  <p>{currentCharacter.gold}</p>
+                </div>
               </div>
             </div>
           </div>
-
-          {characters.map((character, id) => {
-            return (
-              <div className="character_box" key={id}>
-                <img
-                  src={characters[id].image}
-                  alt="character"
-                  onClick={() => {
-                    this.getDetails(id);
-                  }}
-                />
-              </div>
-            );
-          })}
+          <div className="heroes-image">
+            {characters.map((character, id) => {
+              return (
+                <div className="character_box" key={id}>
+                  <img
+                    src={characters[id].image}
+                    alt="character"
+                    onClick={() => {
+                      this.getDetails(id);
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </>
     );
