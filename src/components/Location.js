@@ -71,7 +71,7 @@ export default class Location extends Component {
     });
   }
   render() {
-    const { location, locationActive } = this.state;
+    const { locationActive } = this.state;
     return (
       <>
         <Navigation

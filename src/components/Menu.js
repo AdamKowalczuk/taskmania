@@ -3,7 +3,7 @@ import PlayersList from "./PlayersList";
 import Characters from "./Characters";
 import Mission from "./Mission";
 import Hero from "./Hero";
-import Boss from "./Boss";
+// import Boss from "./Boss";
 import Location from "./Location";
 // import Login from "./components/Login";
 // import Registration from "./components/Registration";
