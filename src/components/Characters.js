@@ -56,7 +56,7 @@ export default class Characters extends Component {
         fate: 1,
         gold: 1,
         description:
-          "fikcyjna postać filmowa, bohater horrorów z serii Piątek, trzynastego. Wystąpił w dwunastu filmach pełnometrażowych, licznych dokumentach i stał się ikoną popkultury (mimo tego, że w zamyśle twórców pierwszej części swojej sagi miał w ogóle nie istnieć jako odrębna postać filmowa) – jego osoba była niejednokrotnie parodiowana",
+          "fikcyjna postać filmowa, bohater horrorów z serii Piątek, trzynastego. Wystąpił w dwunastu filmach pełnometrażowych, licznych dokumentach i stał się ikoną popkultury – jego osoba była niejednokrotnie parodiowana",
       },
       {
         name: "Janusz",
