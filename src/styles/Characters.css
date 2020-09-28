@@ -1,38 +1,34 @@
-$dark: #363237;
-$blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
-
 .characters-container {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // flex-flow: row wrap;
-  background-color: $dark;
-  color: $light-brown;
+  background-color: #363237;
+  color: #d09683;
 }
+
 .character-details-box {
   top: 0;
   height: 50vh;
   width: 100vw;
   position: fixed;
-  background-color: $dark;
+  background-color: #363237;
 }
+
 .character-details-box p {
   padding: 0px 50px;
 }
+
 .character-details .stats-image {
   width: 5vw;
   height: auto;
   margin-right: 1vw;
   margin-left: 1vw;
 }
+
 .stats-info {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 .heroes-image {
   display: flex;
   justify-content: center;
@@ -41,17 +37,17 @@ $light-brown: #d09683;
   margin-top: 50vh;
 }
 
-.character_box {
-}
 .character-details-box h2 {
   height: 5vh;
   margin: 0;
 }
+
 .character-details-box img {
   height: 45vh;
   width: 40vw;
   float: left;
 }
+
 .character-details {
   height: 40vh;
   width: 60vw;
@@ -61,23 +57,28 @@ $light-brown: #d09683;
   align-items: center;
   flex-direction: column;
 }
+
 .stats-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
+
 .stats-container p {
   margin: 0px 10px;
 }
+
 .characters-container .character_box img {
   height: 25vh;
 }
+
 .characters-container button {
   position: absolute;
   margin-left: 5vw;
-  background-color: $blue;
+  background-color: #2d4362;
 }
+
 @media screen and (max-width: 759px) {
   .character-details .stats-image {
     width: 9vw;
