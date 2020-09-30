@@ -3,6 +3,8 @@ import PlayersList from "./PlayersList";
 import Characters from "./Characters";
 import Mission from "./Mission";
 import Hero from "./Hero";
+import Fight from "./Fight";
+import Pets from "./Pets";
 // import Boss from "./Boss";
 import Location from "./Location";
 // import Login from "./components/Login";
@@ -17,12 +19,133 @@ export default class Menu extends Component {
       { isOpen: false },
       { isOpen: false },
       { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
     ],
     prevPage: 0,
-    players: [{ nick: "", character: {} }],
+    // players: [{ nick: "", character: {} }],
+    players: [
+      {
+        nick: "Adam",
+        character: {
+          name: "Janusz",
+          image: require("../heroes/janusz.svg"),
+          hp: 1,
+          strength: 1,
+          magic: 1,
+          fate: 1,
+          gold: 1,
+          exp: 0,
+          description: "Typowy polaczek w sandałach",
+          items: [],
+          pets: [],
+          bossKilled: 0,
+        },
+      },
+      {
+        nick: "Noob",
+        character: {
+          name: "Wrestler",
+          image: require("../heroes/wrestler.svg"),
+          hp: 2,
+          strength: 10,
+          magic: 1,
+          fate: 1,
+          gold: 1,
+          exp: 0,
+          description: "Kozaczek",
+          items: [
+            {
+              name: "Hełm wikinga",
+              description:
+                "Na sam jego widok ludzie uciekają w popłochu. Dodaje +1 do zdrowia.",
+              strength: 0,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 1,
+              image: require("../items/13-helmet.svg"),
+              type: "items",
+            },
+            {
+              name: "Dwa miecze",
+              description:
+                "Świetnie wywarzone miecze od najlepszych krasnoludzkich rzemieślników. Dodaje +2 do ataku.",
+              strength: 2,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 1,
+              image: require("../items/014-swords.svg"),
+              type: "items",
+            },
+            {
+              name: "Topór kata",
+              description: "Piękne i krawawe ostrze. Dodaje +1 do ataku.",
+              strength: 0,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 1,
+              image: require("../items/016-axe.svg"),
+              type: "items",
+            },
+            {
+              name: "Słaby łuk",
+              description:
+                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
+              strength: 0.5,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 1,
+              image: require("../items/034-bow.svg"),
+              type: "items",
+            },
+          ],
+          pets: [
+            {
+              name: "Kura",
+              description: "Durna, ale przydatna. Dodaje +1 do siły.",
+              strength: 1,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/048-rooster.svg"),
+            },
+            {
+              name: "Małpa",
+              description:
+                "Posiada 50 IQ. Można wykorzystać jako mięso armatnie. Dodaje +1 do życia.",
+              strength: 0,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/027-monkey.svg"),
+            },
+            {
+              name: "Kura",
+              description: "Durna, ale przydatna. Dodaje +1 do siły.",
+              strength: 1,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/048-rooster.svg"),
+            },
+          ],
+          bossKilled: 0,
+        },
+      },
+    ],
     activePlayer: 1,
     playersNumber: 1,
+    selectedLocation: "nic",
+    selectedEnemy: {},
   };
+
   changePage(number) {
     if (number === this.state.prevPage) {
     } else {
@@ -63,8 +186,26 @@ export default class Menu extends Component {
       players: players,
     });
   }
+  selectLocation(name) {
+    this.setState({
+      selectedLocation: name,
+    });
+  }
+  selectEnemy(enemy) {
+    this.setState({
+      selectedEnemy: enemy,
+    });
+  }
+
   render() {
-    const { pages, players, activePlayer, playersNumber } = this.state;
+    const {
+      pages,
+      players,
+      activePlayer,
+      playersNumber,
+      selectedLocation,
+      selectedEnemy,
+    } = this.state;
     return (
       <>
         {(() => {
@@ -102,6 +243,10 @@ export default class Menu extends Component {
                   changePage: this.changePage.bind(this),
                   players: players,
                   activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
                 }}
               />
             );
@@ -124,6 +269,38 @@ export default class Menu extends Component {
                   changePage: this.changePage.bind(this),
                   players: players,
                   activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                }}
+              />
+            );
+          } else if (pages[5].isOpen === true) {
+            return (
+              <Fight
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                }}
+              />
+            );
+          } else if (pages[6].isOpen === true) {
+            return (
+              <Pets
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
                 }}
               />
             );

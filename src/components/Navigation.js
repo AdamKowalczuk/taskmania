@@ -2,31 +2,33 @@ import React, { Component } from "react";
 import "../styles/Navigation.scss";
 export default class Navigation extends Component {
   render() {
+    const { activePlayer } = this.props.data;
+    const players = this.props.data.players[activePlayer].character;
     return (
       <>
         <div className="hero-exp">
           <img src={require("../items/46-bible.svg")} alt="hero item" />
-          <p>Doświadczenie</p>
+          <p>Doświadczenie : {players.exp}</p>
         </div>
         <div className="hero-attack">
           <img src={require("../stats/020-thor.svg")} alt="hero item" />
-          <p>Atak</p>
+          <p>Siła : {players.strength}</p>
         </div>
         <div className="hero-magic">
           <img src={require("../stats/050-scroll.svg")} alt="hero item" />
-          <p>Magia</p>
+          <p>Magia : {players.magic}</p>
         </div>
         <div className="hero-life">
           <img src={require("../stats/002-shield.svg")} alt="hero item" />
-          <p>Życie</p>
+          <p>Życie : {players.hp}</p>
         </div>
         <div className="hero-lucky">
           <img src={require("../stats/011-key.svg")} alt="hero item" />
-          <p>Szczęście</p>
+          <p>Szczęście : {players.fate}</p>
         </div>
         <div className="hero-gold">
           <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
-          <p>Złoto</p>
+          <p>Złoto : {players.gold}</p>
         </div>
         <div
           className="mission"
@@ -49,11 +51,11 @@ export default class Navigation extends Component {
         <div
           className="boss"
           onClick={() => {
-            this.props.data.changePage(4);
+            this.props.data.changePage(6);
           }}
         >
-          <img src={require("../enemies/004-dragon.svg")} alt="boss" />
-          <p>Boss</p>
+          <img src={require("../pets/001-panda.svg")} alt="pets" />
+          <p>Pupile</p>
         </div>
       </>
     );

@@ -65,6 +65,10 @@ $light-brown: #d09683;
 .mission-description {
   padding: 5px;
   height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .location-container li:nth-child(odd) {
   color: #c9394a;

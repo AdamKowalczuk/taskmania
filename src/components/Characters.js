@@ -12,7 +12,11 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description: "Ble ble ble",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Łowca",
@@ -22,8 +26,12 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description:
           "bohater średniowiecznych angielskich legend ludowych, którego faktyczne istnienie nie zostało potwierdzone przez źródła historyczne",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Batman",
@@ -33,8 +41,12 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description:
           "fikcyjna postać znana z licznych serii komiksowych, wydawanych przez DC Comics, oraz z różnych adaptacji związanych z tą postacią. Po raz pierwszy postać Batmana pojawiła się w czasopiśmie komiksowym Detective Comics vol. 1 #27 w maju 1939 roku",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Heisenberg",
@@ -44,8 +56,12 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description:
           "Walter „Walt” Hartwell White, znany także jako Heisenberg – postać fikcyjna, główny bohater amerykańskiego serialu Breaking Bad. Postać została stworzona przez Vince’a Gilligana i grana była przez Bryana Cranstona",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Jason",
@@ -55,8 +71,12 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description:
           "fikcyjna postać filmowa, bohater horrorów z serii Piątek, trzynastego. Wystąpił w dwunastu filmach pełnometrażowych, licznych dokumentach i stał się ikoną popkultury – jego osoba była niejednokrotnie parodiowana",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Janusz",
@@ -66,7 +86,11 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description: "Typowy polaczek w sandałach",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
       {
         name: "Wrestler",
@@ -76,7 +100,11 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description: "Kozaczek",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
 
       {
@@ -87,8 +115,12 @@ export default class Characters extends Component {
         magic: 1,
         fate: 1,
         gold: 1,
+        exp: 0,
         description:
           "fizyk teoretyczny i laureat Nagrody Nobla w dziedzinie fizyki w 1921 roku za „wkład do fizyki teoretycznej, zwłaszcza opis prawa efektu fotoelektrycznego”",
+        items: [],
+        pets: [],
+        bossKilled: 0,
       },
     ],
     currentCharacter: {
@@ -99,7 +131,11 @@ export default class Characters extends Component {
       magic: 1,
       fate: 1,
       gold: 1,
+      exp: 0,
       description: "Blebleble",
+      items: ["nic", "nic", "kupa"],
+      pets: ["Zygmunt", "Stanisław"],
+      bossKilled: 0,
     },
   };
 

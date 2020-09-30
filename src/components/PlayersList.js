@@ -9,7 +9,22 @@ export default class PlayersList extends Component {
     players[id].nick = e.target.value;
     this.props.data.players = players;
   }
-
+  setItemsValue() {
+    const players = this.props.data.players[this.props.data.activePlayer]
+      .character;
+    for (let i = 0; i < players.items.length; i++) {
+      players.strength = players.strength + players.items[i].strength;
+      players.magic = players.magic + players.items[i].magic;
+      players.hp = players.hp + players.items[i].hp;
+      players.fate = players.fate + players.items[i].fate;
+    }
+    for (let i = 0; i < players.pets.length; i++) {
+      players.strength = players.strength + players.pets[i].strength;
+      players.magic = players.magic + players.pets[i].magic;
+      players.hp = players.hp + players.pets[i].hp;
+      players.fate = players.fate + players.pets[i].fate;
+    }
+  }
   render() {
     const { players } = this.props.data;
     return (
@@ -18,7 +33,12 @@ export default class PlayersList extends Component {
           <div className="players-container2">
             <h1>Wybór bohaterów</h1>
             <div></div>
-            <button onClick={() => this.props.data.changePage(2)}>
+            <button
+              onClick={() => {
+                this.setItemsValue();
+                this.props.data.changePage(2);
+              }}
+            >
               Rozpocznij grę
             </button>
             {players.map((player, id) => {
