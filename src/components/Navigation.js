@@ -6,8 +6,13 @@ export default class Navigation extends Component {
     const players = this.props.data.players[activePlayer].character;
     return (
       <>
-        <div className="hero-exp">
-          <img src={require("../items/46-bible.svg")} alt="hero item" />
+        <div
+          className="hero-exp"
+          onClick={() => {
+            this.props.data.changePage(7);
+          }}
+        >
+          <img src={players.image} alt="hero item" />
           <p>Doświadczenie : {players.exp}</p>
         </div>
         <div className="hero-attack">

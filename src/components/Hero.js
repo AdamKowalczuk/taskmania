@@ -56,6 +56,7 @@ export default class Hero extends Component {
                 src={players[activePlayer].character.image}
                 alt="hero item"
               />
+              <h4>{players[activePlayer].character.name}</h4>
               <h5>
                 Liczba pokonanych bossów :{" "}
                 {players[activePlayer].character.bossKilled}/3

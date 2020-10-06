@@ -5,6 +5,7 @@ import Mission from "./Mission";
 import Hero from "./Hero";
 import Fight from "./Fight";
 import Pets from "./Pets";
+import Exp from "./Exp";
 // import Boss from "./Boss";
 import Location from "./Location";
 // import Login from "./components/Login";
@@ -21,126 +22,108 @@ export default class Menu extends Component {
       { isOpen: false },
       { isOpen: false },
       { isOpen: false },
+      { isOpen: false },
     ],
     prevPage: 0,
     // players: [{ nick: "", character: {} }],
     players: [
       {
-        nick: "Adam",
+        nick: "Adam1",
         character: {
-          name: "Janusz",
-          image: require("../heroes/janusz.svg"),
-          hp: 1,
-          strength: 1,
+          name: "Wiking",
+          image: require("../heroes/003-viking.svg"),
+          hp: 3,
+          strength: 4,
           magic: 1,
           fate: 1,
+          gold: 3,
+          exp: 12,
+          description: "Po każdej wygranej walce otrzymuje 2 sztukę złota.",
+          items: [
+            {
+              name: "Hełm wikinga",
+              description: "Dodaje +2 do życia",
+              strength: 0,
+              magic: 0,
+              hp: 2,
+              fate: 0,
+              gold: 2,
+              image: require("../items/039-viking.svg"),
+              type: "items",
+            },
+          ],
+          pets: [],
+          bossKilled: 0,
+        },
+      },
+      {
+        nick: "Adam2",
+        character: {
+          name: "Żniwiarz",
+          image: require("../heroes/006-reaper.svg"),
+          hp: 3,
+          strength: 4,
+          magic: 3,
+          fate: 2,
           gold: 1,
           exp: 0,
-          description: "Typowy polaczek w sandałach",
+          description:
+            "Za każdym razem, gdy pokonasz przeciwnika na cmentarzu dostajesz +1 do siły.",
+          items: [
+            {
+              name: "Kosa",
+              description:
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+              strength: 1,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 1,
+              image: require("../items/scythe.svg"),
+              type: "items",
+            },
+          ],
+          pets: [],
+          bossKilled: 0,
+        },
+      },
+      {
+        nick: "Adam3",
+        character: {
+          name: "Czarodziej",
+          image: require("../heroes/004-wizard.svg"),
+          hp: 3,
+          strength: 2,
+          magic: 5,
+          fate: 2,
+          gold: 1,
+          exp: 0,
+          description:
+            "Podczas walki fizycznej twoje punkty magii są dodawane do twojej siły.",
           items: [],
           pets: [],
           bossKilled: 0,
         },
       },
       {
-        nick: "Noob",
+        nick: "Adam4",
         character: {
-          name: "Wrestler",
-          image: require("../heroes/wrestler.svg"),
-          hp: 2,
-          strength: 10,
-          magic: 1,
+          name: "Hoplita",
+          image: require("../heroes/002-hoplite.svg"),
+          hp: 4,
+          strength: 4,
+          magic: 2,
           fate: 1,
-          gold: 1,
+          gold: 2,
           exp: 0,
-          description: "Kozaczek",
-          items: [
-            {
-              name: "Hełm wikinga",
-              description:
-                "Na sam jego widok ludzie uciekają w popłochu. Dodaje +1 do zdrowia.",
-              strength: 0,
-              magic: 0,
-              hp: 1,
-              fate: 0,
-              gold: 1,
-              image: require("../items/13-helmet.svg"),
-              type: "items",
-            },
-            {
-              name: "Dwa miecze",
-              description:
-                "Świetnie wywarzone miecze od najlepszych krasnoludzkich rzemieślników. Dodaje +2 do ataku.",
-              strength: 2,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 1,
-              image: require("../items/014-swords.svg"),
-              type: "items",
-            },
-            {
-              name: "Topór kata",
-              description: "Piękne i krawawe ostrze. Dodaje +1 do ataku.",
-              strength: 0,
-              magic: 0,
-              hp: 1,
-              fate: 0,
-              gold: 1,
-              image: require("../items/016-axe.svg"),
-              type: "items",
-            },
-            {
-              name: "Słaby łuk",
-              description:
-                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
-              strength: 0.5,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 1,
-              image: require("../items/034-bow.svg"),
-              type: "items",
-            },
-          ],
-          pets: [
-            {
-              name: "Kura",
-              description: "Durna, ale przydatna. Dodaje +1 do siły.",
-              strength: 1,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 0,
-              image: require("../pets/048-rooster.svg"),
-            },
-            {
-              name: "Małpa",
-              description:
-                "Posiada 50 IQ. Można wykorzystać jako mięso armatnie. Dodaje +1 do życia.",
-              strength: 0,
-              magic: 0,
-              hp: 1,
-              fate: 0,
-              gold: 0,
-              image: require("../pets/027-monkey.svg"),
-            },
-            {
-              name: "Kura",
-              description: "Durna, ale przydatna. Dodaje +1 do siły.",
-              strength: 1,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 0,
-              image: require("../pets/048-rooster.svg"),
-            },
-          ],
+          description: "Może za darmo rzucić kostką jeszcze raz.",
+          items: [],
+          pets: [],
           bossKilled: 0,
         },
       },
     ],
-    activePlayer: 1,
+    activePlayer: 0,
     playersNumber: 1,
     selectedLocation: "nic",
     selectedEnemy: {},
@@ -163,9 +146,15 @@ export default class Menu extends Component {
     }
   }
   changePlayer(id) {
-    this.setState({
-      activePlayer: id + 1,
-    });
+    if (id === this.state.players.length) {
+      this.setState({
+        activePlayer: 0,
+      });
+    } else {
+      this.setState({
+        activePlayer: id,
+      });
+    }
   }
   addPlayer() {
     let players = [...this.state.players];
@@ -195,6 +184,26 @@ export default class Menu extends Component {
     this.setState({
       selectedEnemy: enemy,
     });
+  }
+  convertToStats(message) {
+    const { activePlayer } = this.state;
+    const players = this.state.players[activePlayer].character;
+
+    if (message === "siła" && players.exp >= 10) {
+      console.log("cos");
+      players.exp = players.exp - 10;
+      players.strength = players.strength + 1;
+    } else if (message === "magia" && players.exp >= 10) {
+      players.exp = players.exp - 10;
+      players.magic = players.magic + 1;
+    } else if (message === "życie" && players.exp >= 10) {
+      players.exp = players.exp - 10;
+      players.hp = players.hp + 1;
+    } else {
+      console.log(
+        "Masz za mało punktów doświadczenia. Potrzebujesz 10 punktów, żeby wymienić na statystykę."
+      );
+    }
   }
 
   render() {
@@ -272,6 +281,7 @@ export default class Menu extends Component {
                   selectedLocation: selectedLocation,
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
+                  changePlayer: this.changePlayer.bind(this),
                 }}
               />
             );
@@ -286,6 +296,7 @@ export default class Menu extends Component {
                   selectedLocation: selectedLocation,
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
+                  changePlayer: this.changePlayer.bind(this),
                 }}
               />
             );
@@ -301,6 +312,22 @@ export default class Menu extends Component {
                   selectLocation: this.selectLocation.bind(this),
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
+                }}
+              />
+            );
+          } else if (pages[7].isOpen === true) {
+            return (
+              <Exp
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                  convertToStats: this.convertToStats.bind(this),
                 }}
               />
             );

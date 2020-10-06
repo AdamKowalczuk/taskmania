@@ -17,6 +17,7 @@ export default class Fight extends Component {
       leftPlayerPower: "",
       leftPlayerMoves: 1,
       rightPlayerMoves: 1,
+      hopliteAttack: 1,
     };
     this.DiceRoll1 = this.DiceRoll1.bind(this);
     this.HandleDiceThrow1 = this.HandleDiceThrow1.bind(this);
@@ -58,9 +59,19 @@ export default class Fight extends Component {
       setTimeout(this.DiceRoll1, 150 * i);
     }
     if (message === "normalny") {
-      this.setState({
-        leftPlayerMoves: this.state.leftPlayerMoves - 1,
-      });
+      if (
+        this.state.hopliteAttack > 0 &&
+        this.props.data.players[this.props.data.activePlayer].character.name ===
+          "Hoplita"
+      ) {
+        this.setState({
+          hopliteAttack: this.state.hopliteAttack - 1,
+        });
+      } else {
+        this.setState({
+          leftPlayerMoves: this.state.leftPlayerMoves - 1,
+        });
+      }
     } else {
       this.props.data.players[this.props.data.activePlayer].character.fate =
         this.props.data.players[this.props.data.activePlayer].character.fate -
@@ -96,14 +107,30 @@ export default class Fight extends Component {
       rightPlayerPower,
       secondDice,
     } = this.state;
-    const { players, activePlayer, selectedEnemy } = this.props.data;
+
+    let { players, activePlayer, selectedEnemy } = this.props.data;
+
     if (leftPlayerPower + firstDice + 1 > rightPlayerPower + secondDice + 1) {
       players[activePlayer].character.exp =
         players[activePlayer].character.exp + rightPlayerPower + secondDice + 1;
-      players[activePlayer].character.bossKilled =
-        players[activePlayer].character.bossKilled + 1;
+      if (selectedEnemy.type === "bosses") {
+        players[activePlayer].character.bossKilled =
+          players[activePlayer].character.bossKilled + 1;
+      }
+
+      if (players[activePlayer].character.name === "Wiking") {
+        players[activePlayer].character.gold =
+          players[activePlayer].character.gold + 2;
+      }
+      if (
+        players[activePlayer].character.name === "Żniwiarz" &&
+        this.props.data.selectedLocation === "Cmentarz"
+      ) {
+        players[activePlayer].character.strength =
+          players[activePlayer].character.strength + 1;
+      }
     } else if (
-      leftPlayerPower + firstDice + 1 >
+      leftPlayerPower + firstDice + 1 ===
       rightPlayerPower + secondDice + 1
     ) {
     } else if (
@@ -207,7 +234,8 @@ export default class Fight extends Component {
                       className="mission-button"
                       onClick={() => {
                         this.fightResult();
-                        this.props.data.changePage(3);
+                        this.props.data.changePlayer(activePlayer + 1);
+                        this.props.data.changePage(2);
                       }}
                     >
                       Kontynuuj
@@ -218,7 +246,8 @@ export default class Fight extends Component {
                     className="mission-button"
                     onClick={() => {
                       this.fightResult();
-                      this.props.data.changePage(3);
+                      this.props.data.changePlayer(activePlayer + 1);
+                      this.props.data.changePage(2);
                     }}
                   >
                     Kontynuuj

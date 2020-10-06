@@ -1,0 +1,40 @@
+$dark: #363237;
+$blue: #2d4362;
+$brown: #73605b;
+$light-brown: #d09683;
+
+.exp-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $dark;
+  color: $dark;
+}
+.exp-container h2 {
+  color: $light-brown;
+}
+.exp-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  color: $light-brown;
+}
+.exp-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+.exp-row img {
+  width: 50px;
+  margin-left: 2vw;
+}
+.exp-container {
+  color: $brown;
+}

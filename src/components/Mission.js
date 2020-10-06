@@ -483,6 +483,7 @@ export default class Mission extends Component {
   }
   render() {
     const { actualMission } = this.state;
+    const { activePlayer } = this.props.data;
     return (
       <>
         <Navigation
@@ -518,10 +519,12 @@ export default class Mission extends Component {
               </div>
               {actualMission.type === "items" ? (
                 <button
+                  key={1}
                   className="mission-button"
                   onClick={() => {
                     this.addToCharacter();
-                    this.props.data.changePage(3);
+                    this.props.data.changePlayer(activePlayer + 1);
+                    this.props.data.changePage(2);
                   }}
                 >
                   Napotkaj
@@ -530,16 +533,19 @@ export default class Mission extends Component {
                 [
                   actualMission.type === "pets" ? (
                     <button
+                      key={2}
                       className="mission-button"
                       onClick={() => {
                         this.addToCharacter();
-                        this.props.data.changePage(6);
+                        this.props.data.changePlayer(activePlayer + 1);
+                        this.props.data.changePage(2);
                       }}
                     >
                       Napotkaj
                     </button>
                   ) : (
                     <button
+                      key={3}
                       className="mission-button"
                       onClick={() => {
                         this.props.data.selectEnemy(actualMission);
@@ -551,15 +557,6 @@ export default class Mission extends Component {
                   ),
                 ]
               )}
-              {/* <button
-                className="mission-button"
-                onClick={() => {
-                  this.props.data.selectEnemy(actualMission);
-                  this.props.data.changePage(5);
-                }}
-              >
-                Napotkaj
-              </button> */}
             </div>
           </div>
         </div>
