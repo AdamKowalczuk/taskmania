@@ -30,36 +30,7 @@ export default class Menu extends Component {
     // players: [{ nick: "", character: {} }],
     players: [
       {
-        nick: "Adam1",
-        character: {
-          name: "Wiking",
-          image: require("../heroes/003-viking.svg"),
-          hp: 3,
-          strength: 4,
-          magic: 1,
-          fate: 1,
-          gold: 3,
-          exp: 0,
-          description: "Po każdej wygranej walce otrzymuje 2 sztukę złota.",
-          items: [
-            {
-              name: "Hełm wikinga",
-              description: "Dodaje +2 do życia",
-              strength: 0,
-              magic: 0,
-              hp: 2,
-              fate: 0,
-              gold: 2,
-              image: require("../items/039-viking.svg"),
-              type: "items",
-            },
-          ],
-          pets: [],
-          bossKilled: 0,
-        },
-      },
-      {
-        nick: "Adam2",
+        nick: "Gracz 1",
         character: {
           name: "Żniwiarz",
           image: require("../heroes/006-reaper.svg"),
@@ -89,41 +60,72 @@ export default class Menu extends Component {
           bossKilled: 0,
         },
       },
-      {
-        nick: "Adam3",
-        character: {
-          name: "Czarodziej",
-          image: require("../heroes/004-wizard.svg"),
-          hp: 3,
-          strength: 2,
-          magic: 5,
-          fate: 2,
-          gold: 1,
-          exp: 0,
-          description:
-            "Podczas walki fizycznej twoje punkty magii są dodawane do twojej siły.",
-          items: [],
-          pets: [],
-          bossKilled: 0,
-        },
-      },
-      {
-        nick: "Adam4",
-        character: {
-          name: "Hoplita",
-          image: require("../heroes/002-hoplite.svg"),
-          hp: 4,
-          strength: 4,
-          magic: 2,
-          fate: 1,
-          gold: 2,
-          exp: 0,
-          description: "Może za darmo rzucić kostką jeszcze raz.",
-          items: [],
-          pets: [],
-          bossKilled: 0,
-        },
-      },
+      // {
+      //   nick: "Adam2",
+      //   character: {
+      //     name: "Żniwiarz",
+      //     image: require("../heroes/006-reaper.svg"),
+      //     hp: 3,
+      //     strength: 4,
+      //     magic: 3,
+      //     fate: 2,
+      //     gold: 1,
+      //     exp: 0,
+      //     description:
+      //       "Za każdym razem, gdy pokonasz przeciwnika na cmentarzu dostajesz +1 do siły.",
+      //     items: [
+      //       {
+      //         name: "Kosa",
+      //         description:
+      //           "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+      //         strength: 1,
+      //         magic: 0,
+      //         hp: 0,
+      //         fate: 0,
+      //         gold: 1,
+      //         image: require("../items/scythe.svg"),
+      //         type: "items",
+      //       },
+      //     ],
+      //     pets: [],
+      //     bossKilled: 0,
+      //   },
+      // },
+      // {
+      //   nick: "Adam3",
+      //   character: {
+      //     name: "Czarodziej",
+      //     image: require("../heroes/004-wizard.svg"),
+      //     hp: 3,
+      //     strength: 2,
+      //     magic: 5,
+      //     fate: 2,
+      //     gold: 1,
+      //     exp: 0,
+      //     description:
+      //       "Podczas walki fizycznej twoje punkty magii są dodawane do twojej siły.",
+      //     items: [],
+      //     pets: [],
+      //     bossKilled: 0,
+      //   },
+      // },
+      // {
+      //   nick: "Adam4",
+      //   character: {
+      //     name: "Hoplita",
+      //     image: require("../heroes/002-hoplite.svg"),
+      //     hp: 4,
+      //     strength: 4,
+      //     magic: 2,
+      //     fate: 1,
+      //     gold: 2,
+      //     exp: 0,
+      //     description: "Może za darmo rzucić kostką jeszcze raz.",
+      //     items: [],
+      //     pets: [],
+      //     bossKilled: 0,
+      //   },
+      // },
     ],
     activePlayer: 0,
     playersNumber: 1,
@@ -161,7 +163,37 @@ export default class Menu extends Component {
   addPlayer() {
     let players = [...this.state.players];
     if (players.length <= 3) {
-      let player = { nick: "", character: {} };
+      let player = {
+        nick: `Gracz ${this.state.playersNumber + 1}`,
+        character: {
+          name: "Żniwiarz",
+          image: require("../heroes/006-reaper.svg"),
+          hp: 3,
+          strength: 4,
+          magic: 3,
+          fate: 2,
+          gold: 1,
+          exp: 0,
+          description:
+            "Za każdym razem, gdy pokonasz przeciwnika na cmentarzu dostajesz +1 do siły.",
+          items: [
+            {
+              name: "Kosa",
+              description:
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+              strength: 1,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 1,
+              image: require("../items/scythe.svg"),
+              type: "items",
+            },
+          ],
+          pets: [],
+          bossKilled: 0,
+        },
+      };
       players[this.state.playersNumber] = player;
       this.setState({
         players: players,

@@ -10,6 +10,7 @@ $light-brown: #d09683;
   // flex-flow: row wrap;
   background-color: $dark;
   color: $light-brown;
+  min-height: 50vh;
 }
 .character-details-box {
   top: 0;
@@ -41,8 +42,6 @@ $light-brown: #d09683;
   margin-top: 50vh;
 }
 
-.character_box {
-}
 .character-details-box h2 {
   height: 5vh;
   margin: 0;
