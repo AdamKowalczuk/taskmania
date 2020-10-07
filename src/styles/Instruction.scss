@@ -30,3 +30,15 @@ $light-brown: #d09683;
   margin-left: 2vw;
   margin-right: 2vw;
 }
+@media screen and (max-width: 759px) {
+  .instruction-box {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .instruction-container h3 {
+    margin-top: 3vh;
+  }
+  .instruction-container button {
+    margin-top: 2vh;
+  }
+}
