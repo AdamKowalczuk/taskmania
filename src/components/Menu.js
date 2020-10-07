@@ -6,6 +6,7 @@ import Hero from "./Hero";
 import Fight from "./Fight";
 import Pets from "./Pets";
 import Exp from "./Exp";
+import Instruction from "./Instruction";
 // import Boss from "./Boss";
 import Location from "./Location";
 // import Login from "./components/Login";
@@ -15,16 +16,17 @@ import "../styles/App.scss";
 export default class Menu extends Component {
   state = {
     pages: [
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
       { isOpen: true },
-      { isOpen: false },
-      { isOpen: false },
-      { isOpen: false },
-      { isOpen: false },
-      { isOpen: false },
-      { isOpen: false },
-      { isOpen: false },
     ],
-    prevPage: 0,
+    prevPage: 8,
     // players: [{ nick: "", character: {} }],
     players: [
       {
@@ -37,7 +39,7 @@ export default class Menu extends Component {
           magic: 1,
           fate: 1,
           gold: 3,
-          exp: 12,
+          exp: 0,
           description: "Po każdej wygranej walce otrzymuje 2 sztukę złota.",
           items: [
             {
@@ -318,6 +320,22 @@ export default class Menu extends Component {
           } else if (pages[7].isOpen === true) {
             return (
               <Exp
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                  convertToStats: this.convertToStats.bind(this),
+                }}
+              />
+            );
+          } else if (pages[8].isOpen === true) {
+            return (
+              <Instruction
                 data={{
                   pages: pages,
                   changePage: this.changePage.bind(this),
