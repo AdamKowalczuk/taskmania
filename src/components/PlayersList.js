@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import "../styles/PlayersList.scss";
 import Input from "muicss/lib/react/input";
 export default class PlayersList extends Component {
-  state = {};
-
   changeName(e, id) {
     let players = [...this.props.data.players];
     players[id].nick = e.target.value;
@@ -25,6 +23,7 @@ export default class PlayersList extends Component {
       players.fate = players.fate + players.pets[i].fate;
     }
   }
+
   render() {
     const { players } = this.props.data;
     return (
@@ -36,6 +35,7 @@ export default class PlayersList extends Component {
             <button
               onClick={() => {
                 this.setItemsValue();
+                this.props.data.setFirstPlayer();
                 this.props.data.changePage(2);
               }}
             >

@@ -15,11 +15,11 @@ export default class Location extends Component {
       //   elements: ["Wrogich graczy"],
       //   image: require("../locations/colosseum.svg"),
       // },
-      // {
-      //   name: "Targowisko",
-      //   elements: ["Przedmioty", "Pupile"],
-      //   image: require("../locations/produce-market.svg"),
-      // },
+      {
+        name: "Targowisko",
+        elements: ["Handlarz ekwipunku", "Handlarz pupili"],
+        image: require("../locations/produce-market.svg"),
+      },
       // {
       //   name: "Miasto",
       //   elements: ["Przeciwników", "Zdarzenia losowe"],
@@ -73,7 +73,7 @@ export default class Location extends Component {
 
   render() {
     const { locationActive } = this.state;
-    const { activePlayer } = this.props.data;
+    const { activePlayer, players } = this.props.data;
     return (
       <>
         <Navigation
@@ -86,7 +86,7 @@ export default class Location extends Component {
           }}
         />
         <div className="location-container">
-          <h2>Wybierz opcję, gracz {activePlayer}</h2>
+          <h2>Tura gracza {players[activePlayer].nick}</h2>
           <div className="location-box1">
             <div className="location-box2">
               <h3>{locationActive[0].name}</h3>

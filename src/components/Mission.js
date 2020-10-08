@@ -98,6 +98,22 @@ export default class Mission extends Component {
           type: "enemies",
         },
       ],
+      market: [
+        // {
+        //   name: "Handlarz ekwipunku",
+        //   description:
+        //     "Handlarz ekwipunku oferuje losowe przedmioty na sprzedaż oraz skupuje twój niepotrzebny ekwipunek. ",
+        //   image: require("../locations/shield.svg"),
+        //   type: "items-market",
+        // },
+        {
+          name: "Handlarz pupili",
+          description:
+            "Handlarz pupili oferuje losowe pupile na sprzedaż oraz skupuje twoje niepotrzebne pupile. ",
+          image: require("../locations/pet-shop.svg"),
+          type: "pets-market",
+        },
+      ],
 
       items: [
         {
@@ -184,7 +200,7 @@ export default class Mission extends Component {
         },
         {
           name: "Topór kata",
-          description: "Piękne i krawawe ostrze. Dodaje +1 do ataku.",
+          description: "Piękne i krwawe ostrze. Dodaje +1 do ataku.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -384,12 +400,12 @@ export default class Mission extends Component {
     //     actualMission: this.state.enemiesForrest[random],
     //   });
     // }
-    // if (this.props.data.selectedLocation === "Targowisko") {
-    //   let random = Math.floor(Math.random() * this.state.enemiesForrest.length);
-    //   this.setState({
-    //     actualMission: this.state.enemiesForrest[random],
-    //   });
-    // }
+    if (this.props.data.selectedLocation === "Targowisko") {
+      let random = Math.floor(Math.random() * this.state.market.length);
+      this.setState({
+        actualMission: this.state.market[random],
+      });
+    }
     if (this.props.data.selectedLocation === "Miasto") {
       let random = Math.floor(Math.random() * this.state.enemiesCity.length);
       this.setState({
@@ -507,7 +523,7 @@ export default class Mission extends Component {
                   {actualMission.type === "enemies" ||
                   actualMission.type === "bosses" ? (
                     <h5>
-                      Siła :
+                      Siła{" "}
                       {actualMission.magic === undefined
                         ? actualMission.strength
                         : actualMission.magic}
@@ -544,16 +560,44 @@ export default class Mission extends Component {
                       Napotkaj
                     </button>
                   ) : (
-                    <button
-                      key={3}
-                      className="mission-button"
-                      onClick={() => {
-                        this.props.data.selectEnemy(actualMission);
-                        this.props.data.changePage(5);
-                      }}
-                    >
-                      Napotkaj
-                    </button>
+                    [
+                      actualMission.type === "items-market" ? (
+                        <button
+                          key={3}
+                          className="mission-button"
+                          onClick={() => {
+                            this.props.data.changePage(9);
+                          }}
+                        >
+                          Napotkaj
+                        </button>
+                      ) : (
+                        [
+                          actualMission.type === "pets-market" ? (
+                            <button
+                              key={4}
+                              className="mission-button"
+                              onClick={() => {
+                                this.props.data.changePage(10);
+                              }}
+                            >
+                              Napotkaj
+                            </button>
+                          ) : (
+                            <button
+                              key={5}
+                              className="mission-button"
+                              onClick={() => {
+                                this.props.data.selectEnemy(actualMission);
+                                this.props.data.changePage(5);
+                              }}
+                            >
+                              Napotkaj
+                            </button>
+                          ),
+                        ]
+                      ),
+                    ]
                   ),
                 ]
               )}

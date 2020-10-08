@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Navigation.scss";
-export default class Navigation extends Component {
+export default class HalfNavigation extends Component {
   render() {
     const { activePlayer } = this.props.data;
     const players = this.props.data.players[activePlayer].character;
@@ -34,33 +34,6 @@ export default class Navigation extends Component {
         <div className="hero-gold">
           <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
           <p>Złoto {players.gold}</p>
-        </div>
-        <div
-          className="mission"
-          onClick={() => {
-            this.props.data.changePage(2);
-          }}
-        >
-          <img src={require("../items/5-drakkar.svg")} alt="mission" />
-          <p>Misje</p>
-        </div>
-        <div
-          className="hero"
-          onClick={() => {
-            this.props.data.changePage(3);
-          }}
-        >
-          <img src={require("../enemies/2-odin.svg")} alt="hero" />
-          <p>Bohater</p>
-        </div>
-        <div
-          className="boss"
-          onClick={() => {
-            this.props.data.changePage(6);
-          }}
-        >
-          <img src={require("../pets/001-panda.svg")} alt="pets" />
-          <p>Pupile</p>
         </div>
       </>
     );

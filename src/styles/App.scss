@@ -2,6 +2,20 @@ $dark: #363237;
 $blue: #2d4362;
 $brown: #73605b;
 $light-brown: #d09683;
+.App {
+  font-size: 20px;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  // font-family: "Open Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
+}
 
 button {
   margin-top: 5px;

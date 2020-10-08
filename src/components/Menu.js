@@ -7,6 +7,8 @@ import Fight from "./Fight";
 import Pets from "./Pets";
 import Exp from "./Exp";
 import Instruction from "./Instruction";
+import ItemShop from "./ItemShop";
+import PetShop from "./PetShop";
 // import Boss from "./Boss";
 import Location from "./Location";
 // import Login from "./components/Login";
@@ -25,6 +27,8 @@ export default class Menu extends Component {
       { isOpen: false },
       { isOpen: false },
       { isOpen: true },
+      { isOpen: false },
+      { isOpen: false },
     ],
     prevPage: 8,
     // players: [{ nick: "", character: {} }],
@@ -55,8 +59,91 @@ export default class Menu extends Component {
               image: require("../items/scythe.svg"),
               type: "items",
             },
+            {
+              name: "Słaby łuk",
+              description:
+                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
+              strength: 0.5,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 1,
+              image: require("../items/034-bow.svg"),
+              type: "items",
+            },
+            {
+              name: "Pancerz hoplity",
+              description:
+                "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity. Dodaje +2 do zdrowia.",
+              strength: 0,
+              magic: 0,
+              hp: 2,
+              fate: 0,
+              gold: 1,
+              image: require("../items/035-armor.svg"),
+              type: "items",
+            },
+            {
+              name: "Miecz i tarcza",
+              description:
+                "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+              strength: 1,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 1,
+              image: require("../items/039-weapon.svg"),
+              type: "items",
+            },
+            {
+              name: "Skórzane buty",
+              description:
+                "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
+              strength: 0,
+              magic: 0,
+              hp: 0,
+              fate: 2,
+              gold: 1,
+              image: require("../items/48-shoes.svg"),
+              type: "items",
+            },
           ],
-          pets: [],
+          pets: [
+            {
+              name: "Kura",
+              description: "Durna, ale przydatna. Dodaje +1 do siły.",
+              strength: 1,
+              magic: 0,
+              hp: 0,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/048-rooster.svg"),
+              type: "pets",
+            },
+            {
+              name: "Małpa",
+              description:
+                "Posiada 50 IQ. Można wykorzystać jako mięso armatnie. Dodaje +1 do życia.",
+              strength: 0,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/027-monkey.svg"),
+              type: "pets",
+            },
+            {
+              name: "Kameleon",
+              description: "Ekspert od kamuflażu. Dodaje +1 do zdrowia.",
+              strength: 0,
+              magic: 0,
+              hp: 1,
+              fate: 0,
+              gold: 0,
+              image: require("../pets/007-chameleon.svg"),
+              type: "pets",
+            },
+          ],
           bossKilled: 0,
         },
       },
@@ -239,7 +326,60 @@ export default class Menu extends Component {
       );
     }
   }
-
+  buyInMarket(number, randomItems, message) {
+    const players = this.state.players[this.state.activePlayer];
+    if (message === "pet") {
+      if (
+        players.character.gold >= randomItems[number].gold &&
+        players.character.pets.length < 4
+      ) {
+        players.character.pets[players.character.pets.length] =
+          randomItems[number];
+        players.character.gold =
+          players.character.gold - randomItems[number].gold;
+      } else {
+        alert("Masz za mało złota lub masz za dużo pupili");
+      }
+    } else {
+      if (
+        players.character.gold >= randomItems[number].gold &&
+        players.character.items.length < 6
+      ) {
+        players.character.items[players.character.items.length] =
+          randomItems[number];
+        players.character.gold =
+          players.character.gold - randomItems[number].gold;
+      } else {
+        alert("Masz za mało złota lub masz za dużo przedmiotów");
+      }
+    }
+  }
+  sellInMarket(number, item, message) {
+    let players = [...this.state.players];
+    let player = players[this.state.activePlayer];
+    console.log("players przed", players);
+    console.log("player przed", player);
+    if (message === "item") {
+      player.character.gold += item.gold;
+      players[this.state.activePlayer] = player;
+      players[this.state.activePlayer].character.items.splice(number, 1);
+      this.setState({
+        players: players,
+      });
+    } else {
+      player.character.gold += item.gold;
+      players[this.state.activePlayer] = player;
+      players[this.state.activePlayer].character.pets.splice(number, 1);
+      this.setState({
+        players: players,
+      });
+    }
+  }
+  setFirstPlayer() {
+    this.setState({
+      activePlayer: 0,
+    });
+  }
   render() {
     const {
       pages,
@@ -264,6 +404,7 @@ export default class Menu extends Component {
                   players: players,
                   activePlayer: activePlayer,
                   playersNumber: playersNumber,
+                  setFirstPlayer: this.setFirstPlayer.bind(this),
                 }}
               />
             );
@@ -378,6 +519,44 @@ export default class Menu extends Component {
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
                   convertToStats: this.convertToStats.bind(this),
+                }}
+              />
+            );
+          } else if (pages[9].isOpen === true) {
+            return (
+              <ItemShop
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                  convertToStats: this.convertToStats.bind(this),
+                  buyInMarket: this.buyInMarket.bind(this),
+                  changePlayer: this.changePlayer.bind(this),
+                  sellInMarket: this.sellInMarket.bind(this),
+                }}
+              />
+            );
+          } else if (pages[10].isOpen === true) {
+            return (
+              <PetShop
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  changePlayer: this.changePlayer.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                  convertToStats: this.convertToStats.bind(this),
+                  buyInMarket: this.buyInMarket.bind(this),
+                  sellInMarket: this.sellInMarket.bind(this),
                 }}
               />
             );

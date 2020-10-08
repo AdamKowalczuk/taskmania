@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Fight.scss";
 import "react-dice-complete/dist/react-dice-complete.css";
+import HalfNavigation from "./HalfNavigation";
 export default class Fight extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +60,10 @@ export default class Fight extends Component {
       setTimeout(this.DiceRoll1, 150 * i);
     }
     if (message === "normalny") {
+      this.setState({
+        leftPlayerMoves: this.state.leftPlayerMoves - 1,
+      });
+    } else {
       if (
         this.state.hopliteAttack > 0 &&
         this.props.data.players[this.props.data.activePlayer].character.name ===
@@ -68,14 +73,10 @@ export default class Fight extends Component {
           hopliteAttack: this.state.hopliteAttack - 1,
         });
       } else {
-        this.setState({
-          leftPlayerMoves: this.state.leftPlayerMoves - 1,
-        });
+        this.props.data.players[this.props.data.activePlayer].character.fate =
+          this.props.data.players[this.props.data.activePlayer].character.fate -
+          1;
       }
-    } else {
-      this.props.data.players[this.props.data.activePlayer].character.fate =
-        this.props.data.players[this.props.data.activePlayer].character.fate -
-        1;
     }
   }
   HandleDiceThrow2(message) {
@@ -112,7 +113,7 @@ export default class Fight extends Component {
 
     if (leftPlayerPower + firstDice + 1 > rightPlayerPower + secondDice + 1) {
       players[activePlayer].character.exp =
-        players[activePlayer].character.exp + rightPlayerPower + secondDice + 1;
+        players[activePlayer].character.exp + rightPlayerPower;
       if (selectedEnemy.type === "bosses") {
         players[activePlayer].character.bossKilled =
           players[activePlayer].character.bossKilled + 1;
@@ -150,9 +151,19 @@ export default class Fight extends Component {
       firstDice,
       secondDice,
       leftPlayerMoves,
+      hopliteAttack,
     } = this.state;
     return (
       <>
+        <HalfNavigation
+          data={{
+            pages: this.props.data.pages,
+            changePage: this.props.data.changePage.bind(this),
+            players: this.props.data.players,
+            activePlayer: this.props.data.activePlayer,
+            playersNumber: this.props.data.playersNumber,
+          }}
+        />
         <div className="fight-container">
           <h2>Walka</h2>
           <div className="fight-box">
@@ -162,7 +173,7 @@ export default class Fight extends Component {
               <img src={players[activePlayer].character.image} alt="location" />
               <div className="fight-description">
                 <h5>
-                  Siła :{" "}
+                  Siła{" "}
                   {firstDice + 1 === 0
                     ? leftPlayerPower
                     : leftPlayerPower + firstDice + 1}
@@ -175,6 +186,7 @@ export default class Fight extends Component {
               {leftPlayerMoves > 0 &&
               players[activePlayer].character.fate > 0 ? (
                 <div
+                  key={this.state.face1 + this.state.rollCount1}
                   style={{ fontSize: "100px" }}
                   onClick={() => {
                     this.HandleDiceThrow1("normalny");
@@ -188,6 +200,7 @@ export default class Fight extends Component {
                   players[activePlayer].character.fate > 0 ? (
                     <>
                       <div
+                        key={this.state.face1 + this.state.rollCount1}
                         onClick={() => {
                           this.HandleDiceThrow1("szczęście");
                         }}
@@ -199,6 +212,7 @@ export default class Fight extends Component {
                     </>
                   ) : (
                     <div
+                      key={this.state.face1 + this.state.rollCount1}
                       id="diceFace"
                       dangerouslySetInnerHTML={{
                         __html: `${this.state.face1}`,
@@ -228,7 +242,10 @@ export default class Fight extends Component {
                         this.HandleDiceThrow1("szczęście");
                       }}
                     >
-                      Rzuć za punkty szczęścia
+                      {hopliteAttack > 0 &&
+                      players[activePlayer].character.name === "Hoplita"
+                        ? "Rzuć jeszcze raz"
+                        : "Rzuć za punkty szczęścia"}
                     </button>
                     <button
                       className="mission-button"
@@ -266,7 +283,7 @@ export default class Fight extends Component {
                   {selectedEnemy.magic === undefined
                     ? selectedEnemy.strength
                     : selectedEnemy.magic} */}
-                  Siła :{" "}
+                  Siła{" "}
                   {secondDice + 1 === 0
                     ? rightPlayerPower
                     : rightPlayerPower + secondDice + 1}
@@ -274,6 +291,7 @@ export default class Fight extends Component {
                 <p>{selectedEnemy.description}</p>
               </div>
               <div
+                key={this.state.face2 + this.state.rollCount2}
                 id="diceFace"
                 dangerouslySetInnerHTML={{ __html: `${this.state.face2}` }}
               ></div>
