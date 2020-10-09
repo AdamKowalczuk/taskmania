@@ -79,6 +79,7 @@ export default class Instruction extends Component {
         <div className="instruction-container">
           <div className="instruction-box">
             <h1>{instructions[actualInstruction].h1}</h1>
+            {this.state.actualInstruction===0 ? <img src={require("../Taskmania.png")} alt="location" />: null}
             <h3>{instructions[actualInstruction].h3}</h3>
             {actualInstruction === instructions.length - 1 ? (
               <button

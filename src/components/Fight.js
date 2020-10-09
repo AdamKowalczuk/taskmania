@@ -117,6 +117,9 @@ export default class Fight extends Component {
       if (selectedEnemy.type === "bosses") {
         players[activePlayer].character.bossKilled =
           players[activePlayer].character.bossKilled + 1;
+          if(players[activePlayer].character.bossKilled===3){
+            alert(`Gracz ${players[activePlayer].nick} zwyciężył!`)
+          }
       }
 
       if (players[activePlayer].character.name === "Wiking") {

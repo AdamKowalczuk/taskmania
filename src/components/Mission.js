@@ -16,62 +16,114 @@ export default class Mission extends Component {
       enemiesForrest: [
         {
           name: "Wilk",
-          strength: 2,
-          image: require("../enemies/wolf.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          strength: 3,
+          image: require("../enemies/044-werewolf.svg"),
+          description:
+            "Inteligentne i groźne stworzenie. Można je spotkać w lesie.",
           type: "enemies",
         },
         {
           name: "Goblin",
-          strength: 3,
+          strength: 4,
           image: require("../enemies/goblin.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Ohydne i głupi stwór, o zielonej skórze. Charakteryzuje się brutalnością i porywczością.",
           type: "enemies",
         },
         {
-          name: "Pająk",
-          strength: 4,
+          name: "Wielki pająk",
+          strength: 5,
           image: require("../enemies/spider.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Zmutowana odmiana pająka. Bardzo inteligentny. Potrafi współpracować z innymi pająkami",
+          type: "enemies",
+        },
+        {
+          name: "Wąż",
+          strength: 2,
+          image: require("../enemies/009-snake.svg"),
+          description: "Często spotykany w lesie. Potrafi zatruć swoją ofiarę.",
+          type: "enemies",
+        },
+        {
+          name: "Jednorożec",
+          strength: 5,
+          image: require("../enemies/031-unicorn.svg"),
+          description: "Zwierzę mieszkające w lasach, przypominające konia z rogiem.",
           type: "enemies",
         },
       ],
       enemiesCity: [
         {
-          name: "Gryf",
+          name: "Dziki gryf",
           strength: 4,
           image: require("../enemies/008-griffin.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Stwór o cielsku, ogonie i tylnych łapach lwa, a o przednich łapach, skrzydłach i łbie orła.",
           type: "enemies",
         },
+        {
+          name: "Ninja",
+          strength: 6,
+          image: require("../enemies/ninja.svg"),
+          description: "Zamaskowany wojownik. Specjalizuje się w skrytobójstwach.",
+          type: "enemies",
+        },
+        {
+          name: "Demon",
+          strength: 5,
+          image: require("../enemies/devil.svg"),
+          description: "Istota z piekieł. Wykorzystuje ludzi do swoich niecnych planów.",
+          type:
+            "enemies",
+        },
+        {
+          name: "Czarny rycerz",
+          strength: 4,
+          image: require("../enemies/knight.svg"),
+          description: "Żołnierz armii imperium. Czarny kolor ma wzbudzić strach u wrogów.",
+          type:
+            "enemies",
+        },
+        
       ],
       enemiesRiver: [
         {
           name: "Ryba",
           strength: 1,
           image: require("../enemies/fish.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description: "Smaczna i zdrowa.",
           type: "enemies",
         },
         {
           name: "Rogacz",
           strength: 5,
           image: require("../enemies/046-evil.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
-          type: "enemies",
+          description: "Posiada do czterech metrów wysokości, masywną budowę ciała, ostre pazury, kły oraz rogi.",
+          type:
+            "enemies",
         },
         {
           name: "Centaur",
           strength: 4,
           image: require("../enemies/013-centaur-1.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
-          type: "enemies",
+          description: "Stworzenie będące połączeniem ciała konia i człowieka. Świetnie posługuje się łukiem i włócznią.",
+          type:
+            "enemies",
         },
         {
           name: "Hydra",
           strength: 7,
           image: require("../enemies/042-hydra.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description: "Olbrzymi jadowity wąż wodny. Posiada od 5 do 10 głów.",
+          type: "enemies",
+        },
+        {
+          name: "Cyklop",
+          strength: 8,
+          image: require("../enemies/041-cyclops.svg"),
+          description:
+            "Stworzenie o jednym oku pośrodku czoła. Wyróżnia się ogromną siłą i kolosalnym rozmiarem.",
           type: "enemies",
         },
       ],
@@ -80,32 +132,51 @@ export default class Mission extends Component {
           name: "Szkielet",
           strength: 2,
           image: require("../enemies/skeleton.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Nieumarła istota. Bezmyślne stworzenie, którego jedynym celem jest zniszczenie każdej żywej istoty.",
           type: "enemies",
         },
         {
           name: "Zombie",
           strength: 3,
           image: require("../enemies/zombie.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Stworzenie wskrzeszone przez nekromantę. Są powolne, lecz wytrzymałe.",
           type: "enemies",
         },
         {
           name: "Duch",
           magic: 3,
           image: require("../enemies/ghost.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Niematerialne stworzenie. Potrafi przenikać przez ściany.",
+          type: "enemies",
+        },
+        {
+          name: "Wampir",
+          strength: 5,
+          image: require("../enemies/dracula.svg"),
+          description:
+            "Pół człowiek, pół nietoperz. Jego głównym źródłem pożywienia jest ludzka krew.",
+          type: "enemies",
+        },
+        {
+          name: "Mumia",
+          strength: 4,
+          image: require("../enemies/mummy.svg"),
+          description:
+            "Wskrzeszone ciało. Mumia potrafi rzucić klątwę na swojego przeciwnika.",
           type: "enemies",
         },
       ],
       market: [
-        // {
-        //   name: "Handlarz ekwipunku",
-        //   description:
-        //     "Handlarz ekwipunku oferuje losowe przedmioty na sprzedaż oraz skupuje twój niepotrzebny ekwipunek. ",
-        //   image: require("../locations/shield.svg"),
-        //   type: "items-market",
-        // },
+        {
+          name: "Handlarz ekwipunku",
+          description:
+            "Handlarz ekwipunku oferuje losowe przedmioty na sprzedaż oraz skupuje twój niepotrzebny ekwipunek. ",
+          image: require("../locations/shield.svg"),
+          type: "items-market",
+        },
         {
           name: "Handlarz pupili",
           description:
@@ -335,16 +406,48 @@ export default class Mission extends Component {
           name: "Minotaur",
           strength: 5,
           image: require("../enemies/043-minotaur.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Istota przypominająca człowieka z głową byka. Charakteryzuje się wielką siłą.",
           type: "bosses",
         },
         {
+          name: "Pegaz",
+          strength: 4,
+          image: require("../enemies/033-pegasus.svg"),
+          description: "Skrzydlaty koń. Trudny w oswojeniu, ale bardzo dobry wierzchowiec.",
+          type:
+            "bosses",
+        },
+        
+      ],
+      secondBosses: [
+        {
           name: "Fenix",
-          strength: 6,
+          strength: 10,
           image: require("../enemies/003-phoenix.svg"),
-          description: "fasfsafsafsafasdfasfassasaas",
+          description:
+            "Ognisty ptak, będący symbolem wiecznego odradzania się.",
           type: "bosses",
         },
+        {
+          name: "Różowy smok",
+          strength: 11,
+          image: require("../enemies/047-dragon.png"),
+          description:
+            "Olbrzymi, latający gad. Rzadko spotykany kolor smoka.",
+          type: "bosses",
+        },
+      ],
+      thirdBosses: [
+        {
+          name: "Czerwony smok",
+          strength: 15,
+          image: require("../enemies/004-dragon.svg"),
+          description:
+            "Najgroźniejsza odmiana smoka. Jest strażnikiem dawnego skarbu imperium.",
+          type: "bosses",
+        },
+        
       ],
       actualMission: {},
       // diceResult: 1,
@@ -374,20 +477,20 @@ export default class Mission extends Component {
   // }
   getMission() {
     if (this.props.data.selectedLocation === "Las") {
-      let randomOption = Math.floor(Math.random() * 3);
-      if (randomOption === 0) {
+      let randomOption = Math.floor(Math.random() * 5);
+      if (randomOption === 0 && randomOption === 1 &&randomOption === 2 ) {
         let random = Math.floor(
           Math.random() * this.state.enemiesForrest.length
         );
         this.setState({
           actualMission: this.state.enemiesForrest[random],
         });
-      } else if (randomOption === 1) {
+      } else if (randomOption === 3) {
         let random = Math.floor(Math.random() * this.state.items.length);
         this.setState({
           actualMission: this.state.items[random],
         });
-      } else if (randomOption === 2) {
+      } else if (randomOption === 4) {
         let random = Math.floor(Math.random() * this.state.pets.length);
         this.setState({
           actualMission: this.state.pets[random],
@@ -413,14 +516,14 @@ export default class Mission extends Component {
       });
     }
     if (this.props.data.selectedLocation === "Rzeka") {
-      let randomOption = Math.floor(Math.random() * 2);
+      let randomOption = Math.floor(Math.random() *4);
 
-      if (randomOption === 0) {
+      if (randomOption === 0 && randomOption === 1 && randomOption === 2) {
         let random = Math.floor(Math.random() * this.state.enemiesRiver.length);
         this.setState({
           actualMission: this.state.enemiesRiver[random],
         });
-      } else if (randomOption === 1) {
+      } else if (randomOption === 3) {
         let random = Math.floor(Math.random() * this.state.pets.length);
         this.setState({
           actualMission: this.state.pets[random],
@@ -428,16 +531,16 @@ export default class Mission extends Component {
       }
     }
     if (this.props.data.selectedLocation === "Cmentarz") {
-      let randomOption = Math.floor(Math.random() * 2);
+      let randomOption = Math.floor(Math.random() * 4);
 
-      if (randomOption === 0) {
+      if (randomOption === 0 && randomOption === 1 && randomOption === 2) {
         let random = Math.floor(
           Math.random() * this.state.enemiesGraveyard.length
         );
         this.setState({
           actualMission: this.state.enemiesGraveyard[random],
         });
-      } else if (randomOption === 1) {
+      } else if (randomOption === 3) {
         let random = Math.floor(Math.random() * this.state.items.length);
         this.setState({
           actualMission: this.state.items[random],
@@ -445,12 +548,30 @@ export default class Mission extends Component {
       }
     }
     if (this.props.data.selectedLocation === "Jaskinia") {
-      let random = Math.floor(Math.random() * this.state.firstBosses.length);
-      this.setState({
-        actualMission: this.state.firstBosses[random],
-      });
-    }
+      const bossKilled=this.props.data.players[this.props.data.activePlayer].character.bossKilled;
+      if(bossKilled===0)
+      {
+        let random = Math.floor(Math.random() * this.state.firstBosses.length);
+        this.setState({
+          actualMission: this.state.firstBosses[random],
+        });
+      }
+      else if(bossKilled===1)
+      {
+        let random = Math.floor(Math.random() * this.state.secondBosses.length);
+        this.setState({
+          actualMission: this.state.secondBosses[random],
+        });
+      }
+      else if(bossKilled===2)
+      {
+        let random = Math.floor(Math.random() * this.state.thirdBosses.length);
+        this.setState({
+          actualMission: this.state.thirdBosses[random],
+        });
+      }
   }
+}
   // setDice(number) {
   //   console.log(number);
   //   this.setState({

@@ -221,7 +221,10 @@ export default class Menu extends Component {
   };
 
   changePage(number) {
-    if (number === this.state.prevPage) {
+    if(this.state.players[this.state.activePlayer].character.bossKilled===3){
+      window.location.reload()
+    }
+    else if (number === this.state.prevPage) {
     } else {
       let pages = [...this.state.pages];
       let page = { ...pages[number] };

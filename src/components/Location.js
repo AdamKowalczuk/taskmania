@@ -57,6 +57,7 @@ export default class Location extends Component {
   componentDidMount() {
     this.drawLocation();
   }
+  
   drawLocation() {
     let random1 = Math.floor(Math.random() * this.state.locations.length);
     let random2 = Math.floor(Math.random() * this.state.locations.length);
