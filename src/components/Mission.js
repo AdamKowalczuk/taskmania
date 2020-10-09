@@ -478,7 +478,7 @@ export default class Mission extends Component {
   getMission() {
     if (this.props.data.selectedLocation === "Las") {
       let randomOption = Math.floor(Math.random() * 5);
-      if (randomOption === 0 && randomOption === 1 &&randomOption === 2 ) {
+      if (randomOption === 0 || randomOption === 1 || randomOption === 2 ) {
         let random = Math.floor(
           Math.random() * this.state.enemiesForrest.length
         );
@@ -518,7 +518,7 @@ export default class Mission extends Component {
     if (this.props.data.selectedLocation === "Rzeka") {
       let randomOption = Math.floor(Math.random() *4);
 
-      if (randomOption === 0 && randomOption === 1 && randomOption === 2) {
+      if (randomOption === 0 || randomOption === 1 || randomOption === 2) {
         let random = Math.floor(Math.random() * this.state.enemiesRiver.length);
         this.setState({
           actualMission: this.state.enemiesRiver[random],
@@ -533,7 +533,7 @@ export default class Mission extends Component {
     if (this.props.data.selectedLocation === "Cmentarz") {
       let randomOption = Math.floor(Math.random() * 4);
 
-      if (randomOption === 0 && randomOption === 1 && randomOption === 2) {
+      if (randomOption === 0 || randomOption === 1 || randomOption === 2) {
         let random = Math.floor(
           Math.random() * this.state.enemiesGraveyard.length
         );
