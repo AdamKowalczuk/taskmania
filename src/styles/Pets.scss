@@ -1,7 +1,8 @@
-$dark: #363237;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$brown: #3d1472;
+$light-brown: #ff574c;
+$white: #d3d3d5;
 $green: #69af54;
 
 .pets-container {
@@ -15,24 +16,21 @@ $green: #69af54;
   color: $dark;
 }
 .pets-container h2 {
-  color: $green;
+  color: $light-brown;
 }
 .pets-container h4 {
-  color: white;
+  color: $light-brown;
   font-family: "Permanent Marker", cursive;
 }
 .pets-top,
 .pets-bottom {
-  //   height: 30vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  //   width: 60vw;
-  //   background-color: $green;
 }
 .pet {
-  background-color: $green;
+  background-color: $brown;
   border-radius: 5%;
   padding: 10px;
   height: 40vh;
@@ -42,6 +40,7 @@ $green: #69af54;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: $white;
 }
 .pet img {
   width: 40%;

@@ -1,8 +1,10 @@
-$dark: #363237;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$brown: #3d1472;
+$light-brown: #ff574c;
+$white: #d3d3d5;
 $yellow: rgb(100%, 80.784314%, 0%);
+
 .location-container {
   height: 100vh;
   width: 100vw;
@@ -12,6 +14,7 @@ $yellow: rgb(100%, 80.784314%, 0%);
   align-items: center;
   background-color: $dark;
   color: $light-brown;
+  // background: linear-gradient(120deg, #3d1472 50%, #280a50 50%);
 }
 .location-container h2 {
   margin-bottom: 5vh;
@@ -74,34 +77,40 @@ $yellow: rgb(100%, 80.784314%, 0%);
 }
 .mission-description h5,
 .fight-description h5 {
-  border: 4px solid $brown;
+  border: 4px solid $light-brown;
   border-radius: 50%;
   display: inline-block;
   padding: 10px;
-  background-color: $blue;
+  background-color: $light-brown;
+  color: $white;
+}
+.location-container p:nth-child(odd) {
+  color: $white;
+}
+
+.location-container p:nth-child(even) {
   color: $light-brown;
-}
-.location-container li:nth-child(odd) {
-  color: #c9394a;
-}
-.location-container li:nth-child(even) {
-  color: $blue;
 }
 .location-container .mission-description {
   height: 25vh;
 }
 .location-container button {
   margin-top: 1vh;
+  color: black;
+  background-color: #d3d3d5;
 }
 
 @media screen and (max-width: 759px) {
   .location-container h2 {
-    margin-top: 0vh;
+    margin-top: 8vh;
     margin-bottom: 0vh;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-left: 30vw;
     margin-right: 30vw;
     margin-bottom: 4vh;
+  }
+  .location-container h4 {
+    font-size: 1rem;
   }
   .location-box1 {
     margin-right: 2vw;
@@ -109,13 +118,13 @@ $yellow: rgb(100%, 80.784314%, 0%);
   }
   .location-box2 {
     width: 47%;
-    margin-top: 5vh;
-    height: 70vh;
+    margin-top: 12vh;
+    height: 63vh;
   }
   .location-box3 {
     width: 47%;
-    margin-top: 5vh;
-    height: 70vh;
+    margin-top: 12vh;
+    height: 63vh;
   }
   .location-container h3 {
     padding: 5px;
@@ -134,5 +143,8 @@ $yellow: rgb(100%, 80.784314%, 0%);
   }
   .mission-description {
     height: 25vh;
+  }
+  .location-container button {
+    padding: 9px 12px;
   }
 }

@@ -1,7 +1,8 @@
-$dark: #363237;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$white: #d3d3d5;
+$brown: #3d1472;
+$light-brown: #ff574c;
 
 .fight-container {
   height: 100vh;
@@ -56,8 +57,8 @@ $light-brown: #d09683;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 2vh;
-  background-color: $light-brown;
-  color: $blue;
+  background-color: $dark;
+  color: $light-brown;
   border-radius: 10px;
   padding: 5px;
   height: 30%;
@@ -70,7 +71,7 @@ $light-brown: #d09683;
   display: block;
   position: relative;
   bottom: 35px;
-  color: white;
+  color: $white;
   font-size: 100px;
 }
 .fight-container .button-container {
@@ -85,4 +86,8 @@ $light-brown: #d09683;
 }
 .fight-container .button-container button:nth-child(1) {
   background-color: #5c24a6;
+}
+.fight-container .button-container button:nth-child(2) {
+  background-color: $white;
+  color: black;
 }

@@ -1,8 +1,8 @@
-$dark: #363237;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
-
+$brown: #3d1472;
+$light-brown: #ff574c;
+$white: #d3d3d5;
 .shop-container {
   height: 100vh;
   width: 100vw;
@@ -29,7 +29,7 @@ $light-brown: #d09683;
   font-family: "Permanent Marker", cursive;
 }
 .shop-container p {
-  color: $dark;
+  color: $white;
 }
 .shop-container .hero-items-box h5 {
   position: absolute;

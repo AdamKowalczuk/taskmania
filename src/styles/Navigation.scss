@@ -169,16 +169,16 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
   }
 
   .hero-magic {
-    top: 28px;
+    top: 38px;
   }
   .hero-life {
-    top: 48px;
-  }
-  .hero-lucky {
     top: 68px;
   }
+  .hero-lucky {
+    top: 98px;
+  }
   .hero-gold {
-    top: 88px;
+    top: 128px;
   }
 
   .hero-exp img,
@@ -191,17 +191,17 @@ $brown: rgb(67.058824%, 35.294118%, 11.372549%);
   .hero-lucky img,
   .boss img {
     z-index: 2;
-    width: 20px;
+    width: 30px;
   }
 
   .mission {
     top: 48px;
   }
   .hero {
-    top: 68px;
+    top: 78px;
   }
   .boss {
-    top: 88px;
+    top: 108px;
   }
   .mission p {
     padding: 0px 2px 0px 8px;

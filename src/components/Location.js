@@ -19,7 +19,7 @@ export default class Location extends Component {
       // },
       {
         name: "Targowisko",
-        elements: ["Handlarz ekwipunku", "Handlarz pupili"],
+        elements: ["Handlarza ekwipunku", "Handlarza pupili"],
         image: require("../locations/produce-market.svg"),
       },
       {
@@ -103,12 +103,10 @@ export default class Location extends Component {
               <img src={locationActive[0].image} alt="location" />
               <div className="mission-box3">
                 <div className="mission-description">
-                  <p>Możesz napotkać:</p>
-                  <ul>
+                <h4>Możesz napotkać</h4>
                     {locationActive[0].elements.map((location, id) => {
-                      return <li key={id}>{location}</li>;
+                      return <p key={id}>{location}</p>;
                     })}
-                  </ul>
                 </div>
               </div>
 
@@ -128,12 +126,10 @@ export default class Location extends Component {
               <img src={locationActive[1].image} alt="location" />
               <div className="mission-box3">
                 <div className="mission-description">
-                  <p>Możesz napotkać:</p>
-                  <ul>
+                <h4>Możesz napotkać</h4>
                     {locationActive[1].elements.map((location, id) => {
-                      return <li key={id}>{location}</li>;
+                      return <p key={id}>{location}</p>;
                     })}
-                  </ul>
                 </div>
               </div>
 

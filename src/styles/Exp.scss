@@ -1,7 +1,8 @@
-$dark: #363237;
-$blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$dark: #280a50;
+$blue: #ffb20a;
+$brown: #3d1472;
+$light-brown: #ff574c;
+$white: #d3d3d5;
 
 .exp-container {
   height: 100vh;
@@ -10,8 +11,9 @@ $light-brown: #d09683;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $dark;
+  // background-color: $dark;
   color: $dark;
+  background: linear-gradient(120deg, #3d1472 50%, #280a50 50%);
 }
 .exp-container h2 {
   color: $light-brown;
@@ -36,5 +38,5 @@ $light-brown: #d09683;
   margin-left: 2vw;
 }
 .exp-container {
-  color: $brown;
+  color: $white;
 }

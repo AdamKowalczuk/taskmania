@@ -1,7 +1,8 @@
-$dark: #363237;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$white: #d3d3d5;
+$brown: #3d1472;
+$light-brown: #ff574c;
 .App {
   font-size: 18px;
 }
@@ -25,10 +26,12 @@ button {
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
-  background: rgba(19, 226, 202, 0);
+  background: $white;
+  color: black;
   transition: border 0.5s ease-out, color 0.5s ease-out,
     background-color 0.5s ease-out;
   text-transform: uppercase;
   border-radius: 8px;
   outline: none;
+  border: 0px;
 }

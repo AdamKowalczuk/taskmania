@@ -1,8 +1,13 @@
-$dark: #363237;
+// $dark: #363237;
+// $blue: #2d4362;
+// $brown: #73605b;
+// $light-brown: #d09683;
+$dark: #280a50;
 $blue: #2d4362;
-$brown: #73605b;
-$light-brown: #d09683;
+$brown: #3d1472;
 
+$white: #d3d3d5;
+$light-brown: #ff574c;
 .characters-container {
   // display: flex;
   // justify-content: center;
@@ -76,7 +81,7 @@ $light-brown: #d09683;
 .characters-container button {
   position: absolute;
   margin-left: 5vw;
-  background-color: $blue;
+  background-color: $white;
 }
 @media screen and (max-width: 759px) {
   .character-details .stats-image {
