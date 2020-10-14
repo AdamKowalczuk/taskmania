@@ -9,10 +9,8 @@ import Exp from "./Exp";
 import Instruction from "./Instruction";
 import ItemShop from "./ItemShop";
 import PetShop from "./PetShop";
-// import Boss from "./Boss";
 import Location from "./Location";
-// import Login from "./components/Login";
-// import Registration from "./components/Registration";
+import Home from './Home'
 
 import "../styles/App.scss";
 export default class Menu extends Component {
@@ -26,12 +24,12 @@ export default class Menu extends Component {
       { isOpen: false },
       { isOpen: false },
       { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
+      { isOpen: false },
       { isOpen: true },
-      { isOpen: false },
-      { isOpen: false },
     ],
-    prevPage: 8,
-    // players: [{ nick: "", character: {} }],
+    prevPage: 11,
     players: [
       {
         nick: "Gracz 1",
@@ -42,7 +40,7 @@ export default class Menu extends Component {
           strength: 4,
           magic: 3,
           fate: 2,
-          gold: 1,
+          gold: 10,
           exp: 0,
           description:
             "Za każdym razem, gdy pokonasz przeciwnika na cmentarzu dostajesz +1 do siły.",
@@ -50,7 +48,7 @@ export default class Menu extends Component {
             {
               name: "Kosa",
               description:
-                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
               strength: 1,
               magic: 0,
               hp: 0,
@@ -96,15 +94,15 @@ export default class Menu extends Component {
               type: "items",
             },
             {
-              name: "Skórzane buty",
+              name: "Kusza",
               description:
-                "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
-              strength: 0,
+                "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+              strength: 2,
               magic: 0,
               hp: 0,
-              fate: 2,
+              fate: 0,
               gold: 1,
-              image: require("../items/48-shoes.svg"),
+              image: require("../items/044-crossbow.svg"),
               type: "items",
             },
           ],
@@ -270,7 +268,7 @@ export default class Menu extends Component {
             {
               name: "Kosa",
               description:
-                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
               strength: 1,
               magic: 0,
               hp: 0,
@@ -547,6 +545,26 @@ export default class Menu extends Component {
           } else if (pages[10].isOpen === true) {
             return (
               <PetShop
+                data={{
+                  pages: pages,
+                  changePage: this.changePage.bind(this),
+                  changePlayer: this.changePlayer.bind(this),
+                  players: players,
+                  activePlayer: activePlayer,
+                  selectedLocation: selectedLocation,
+                  selectLocation: this.selectLocation.bind(this),
+                  selectedEnemy: selectedEnemy,
+                  selectEnemy: this.selectEnemy.bind(this),
+                  convertToStats: this.convertToStats.bind(this),
+                  buyInMarket: this.buyInMarket.bind(this),
+                  sellInMarket: this.sellInMarket.bind(this),
+                }}
+              />
+            );
+          }
+          else if (pages[11].isOpen === true) {
+            return (
+              <Home
                 data={{
                   pages: pages,
                   changePage: this.changePage.bind(this),

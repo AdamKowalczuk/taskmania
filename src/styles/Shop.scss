@@ -38,6 +38,7 @@ $light-brown: #d09683;
   border-right: 4px solid $brown;
   border-bottom: 4px solid $brown;
   border-bottom-right-radius: 50%;
+  border-top-left-radius: 20%;
   display: inline-block;
   padding: 5px;
   background-color: $blue;
@@ -67,5 +68,24 @@ $light-brown: #d09683;
   position: absolute;
   top: 0;
   right: 0;
+  opacity: 0.2;
   width: 50px !important;
+  animation-name: changeOpacity;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  fill: red;
+}
+@keyframes changeOpacity {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.shop-container h3 {
+  margin-bottom: 5vh;
+}
+.h3-sell {
+  margin-bottom: 0px !important;
 }

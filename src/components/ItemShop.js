@@ -7,12 +7,12 @@ export default class ItemShop extends Component {
       {
         name: "Kusza",
         description:
-          "Broń długodystansowa. Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+          "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
         strength: 2,
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 1,
+        gold: 4,
         image: require("../items/044-crossbow.svg"),
         type: "items",
       },
@@ -23,19 +23,19 @@ export default class ItemShop extends Component {
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/023-dagger.svg"),
         type: "items",
       },
       {
         name: "Młot",
         description:
-          "Podstawowe urządzenie każdego kowala. Może służyć do walki. Dodaje +1 do siły.",
+          "Podstawowe urządzenie każdego kowala. Dodaje +1 do siły.",
         strength: 1,
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/3-hammer.svg"),
         type: "items",
       },
@@ -47,7 +47,7 @@ export default class ItemShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/4-ham.svg"),
         type: "items",
       },
@@ -58,7 +58,7 @@ export default class ItemShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/006-helmet.svg"),
         type: "items",
       },
@@ -70,19 +70,19 @@ export default class ItemShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/13-helmet.svg"),
         type: "items",
       },
       {
         name: "Dwa miecze",
         description:
-          "Świetnie wywarzone miecze od najlepszych krasnoludzkich rzemieślników. Dodaje +2 do ataku.",
+          "Świetnie wywarzone miecze od najlepszych rzemieślników. Dodają +2 do ataku.",
         strength: 2,
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 1,
+        gold: 4,
         image: require("../items/014-swords.svg"),
         type: "items",
       },
@@ -93,7 +93,7 @@ export default class ItemShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 1,
+        gold: 2,
         image: require("../items/016-axe.svg"),
         type: "items",
       },
@@ -112,35 +112,36 @@ export default class ItemShop extends Component {
       {
         name: "Pancerz hoplity",
         description:
-          "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity. Dodaje +2 do zdrowia.",
+          "Bardzo lekki i wytrzymały pancerz hoplity. Dodaje +2 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 2,
         fate: 0,
-        gold: 1,
+        gold: 3,
         image: require("../items/035-armor.svg"),
         type: "items",
       },
       {
         name: "Miecz i tarcza",
         description:
-          "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+          "Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
         strength: 1,
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 1,
+        gold: 3,
         image: require("../items/039-weapon.svg"),
         type: "items",
       },
       {
         name: "Skórzane buty",
-        description: "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
+        description:
+          "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
         strength: 0,
         magic: 0,
         hp: 0,
         fate: 2,
-        gold: 1,
+        gold: 3,
         image: require("../items/48-shoes.svg"),
         type: "items",
       },
@@ -196,6 +197,32 @@ export default class ItemShop extends Component {
       isSellClosed: true,
     });
   }
+  sellItem(number){
+    const players = this.props.data.players[this.props.data.activePlayer]
+      .character;
+      players.strength = players.strength - players.items[number].strength;
+      players.magic = players.magic - players.items[number].magic;
+      players.hp = players.hp - players.items[number].hp;
+      players.fate = players.fate - players.items[number].fate;
+  }
+  buyItem(number){
+    if(this.props.data.players[this.props.data.activePlayer].character.items.length <= 6){
+      const players = this.props.data.players[this.props.data.activePlayer]
+      .character;
+      let randomItems=[...this.state.randomItems]
+      players.strength = players.strength + randomItems[number].strength;
+      players.magic = players.magic + randomItems[number].magic;
+      players.hp = players.hp + randomItems[number].hp;
+      players.fate = players.fate + randomItems[number].fate;
+
+    
+    randomItems.splice(number,1);
+    this.setState({
+      randomItems:randomItems
+    })
+    }
+    
+  }
   render() {
     const { randomItems } = this.state;
     const { activePlayer, players } = this.props.data;
@@ -212,9 +239,12 @@ export default class ItemShop extends Component {
         />
         {this.state.isSellClosed ? (
           <div className="shop-container">
-            <h2>Witaj u handlarza</h2>
-            <h3>Dostępne towary:</h3>
+            <h3>Wybierz przedmioty, które chcesz kupić</h3>
+            {this.state.randomItems.length === 0 ? (
+              <h4>Handlarz nie ma więcej przedmiotów</h4>
+            ) : null}
             <div className="location-box1">
+            {this.state.randomItems[0]===undefined ? null :
               <div className="location-box2">
                 <h3>{randomItems[0].name}</h3>
                 <div className="block"></div>
@@ -229,18 +259,19 @@ export default class ItemShop extends Component {
                 <button
                   className="mission-button"
                   onClick={() => {
-                    this.props.data.changePage(2);
                     this.props.data.buyInMarket(
                       0,
                       this.state.randomItems,
                       "item"
                     );
-                    this.props.data.changePlayer(activePlayer + 1);
+                    this.buyItem(0);
                   }}
                 >
                   Kup
                 </button>
               </div>
+            }
+            {this.state.randomItems[1]===undefined ? null :
               <div className="location-box3">
                 <h3>{randomItems[1].name}</h3>
                 <div className="block"></div>
@@ -251,27 +282,31 @@ export default class ItemShop extends Component {
                     <p>{randomItems[1].description}</p>
                   </div>
                 </div>
-
                 <button
                   className="mission-button"
                   onClick={() => {
-                    this.props.data.changePage(2);
                     this.props.data.buyInMarket(
                       1,
                       this.state.randomItems,
                       "item"
                     );
-                    this.props.data.changePlayer(activePlayer + 1);
+                    this.buyItem(1);
                   }}
                 >
                   Kup
                 </button>
               </div>
+            }
             </div>
+            <button className="mission-button" onClick={() => {
+                    this.props.data.changePage(2);
+                    
+                    this.props.data.changePlayer(activePlayer + 1);
+                  }}>Przejdź dalej</button>
           </div>
         ) : (
           <div className="shop-container">
-            <h3>Twoje przedmioty:</h3>
+            <h3 className="h3-sell">Wybierz przedmioty, które chcesz sprzedać</h3>
             {players[activePlayer].character.items.length === 0 ? (
               <h4>Brak przedmiotów</h4>
             ) : null}
@@ -291,6 +326,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(0);
                       this.props.data.sellInMarket(
                         0,
                         players[activePlayer].character.items[0],
@@ -316,6 +352,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(1);
                       this.props.data.sellInMarket(
                         1,
                         players[activePlayer].character.items[1],
@@ -341,6 +378,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(2);
                       this.props.data.sellInMarket(
                         2,
                         players[activePlayer].character.items[2],
@@ -366,6 +404,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(3);
                       this.props.data.sellInMarket(
                         3,
                         players[activePlayer].character.items[3],
@@ -391,6 +430,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(4);
                       this.props.data.sellInMarket(
                         4,
                         players[activePlayer].character.items[4],
@@ -417,6 +457,7 @@ export default class ItemShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(5);
                       this.props.data.sellInMarket(
                         5,
                         players[activePlayer].character.items[5],

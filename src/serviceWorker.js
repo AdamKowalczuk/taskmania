@@ -10,7 +10,90 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
+// this.addEventListener("fetch", function(event) {
+//   event.respondWith(
+//     fetch(event.request).catch(function(error) {
+//       console.log(
+//         "[Service Worker] Network request Failed. Serving content from cache: " +
+//           error
+//       );
+//       //Check to see if you have it in the cache
+//       //Return response
+//       //If not in the cache, then return error page
+//       return caches
+//         .open(
+//           "sw-precache-v3-sw-precache-webpack-plugin-https://silent-things.surge.sh"
+//         )
+//         .then(function(cache) {
+//           return cache.match(event.request).then(function(matching) {
+//             var report =
+//               !matching || matching.status === 404
+//                 ? Promise.reject("no-match")
+//                 : matching;
+//             return report;
+//           });
+//         });
+//     })
+//   );
+// });
+
+
+// var doCache = false;
+
+// var CACHE_NAME = "Taskmania";
+
+// self.addEventListener("activate", event => {
+//   const cacheWhitelist = [CACHE_NAME];
+//   event.waitUntil(
+//     caches.keys().then(keyList =>
+//       Promise.all(
+//         keyList.map(key => {
+//           if (!cacheWhitelist.includes(key)) {
+//             console.log("Deleting cache: " + key);
+//             return caches.delete(key);
+//           }
+//         })
+//       )
+//     )
+//   );
+// });
+
+// self.addEventListener("install", function(event) {
+//   if (doCache) {
+//     event.waitUntil(
+//       caches.open(CACHE_NAME).then(function(cache) {
+//         fetch("manifest.json")
+//           .then(response => {
+//             response.json();
+//           })
+//           .then(assets => {
+//             const urlsToCache = ["/", assets["main.js"]];
+//             cache.addAll(urlsToCache);
+//             console.log("cached");
+//           });
+//       })
+//     );
+//   }
+// });
+
+// self.addEventListener("fetch", function(event) {
+//   if (doCache) {
+//     event.respondWith(
+//       caches.match(event.request).then(function(response) {
+//         return response || fetch(event.request);
+//       })
+//     );
+//   }
+// });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+
+
+
+
 const isLocalhost = Boolean(
+  
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
@@ -21,6 +104,7 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
+  
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);

@@ -9,10 +9,6 @@ export default class Mission extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // faceValue: 0,
-      // face: "&#x2680;",
-      // rollCount: 1,
-      // isRolling: false,
       enemiesForrest: [
         {
           name: "Wilk",
@@ -190,12 +186,12 @@ export default class Mission extends Component {
         {
           name: "Kusza",
           description:
-            "Broń długodystansowa. Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+            "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
           strength: 2,
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 1,
+          gold: 4,
           image: require("../items/044-crossbow.svg"),
           type: "items",
         },
@@ -206,19 +202,19 @@ export default class Mission extends Component {
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/023-dagger.svg"),
           type: "items",
         },
         {
           name: "Młot",
           description:
-            "Podstawowe urządzenie każdego kowala. Może służyć do walki. Dodaje +1 do siły.",
+            "Podstawowe urządzenie każdego kowala. Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/3-hammer.svg"),
           type: "items",
         },
@@ -230,7 +226,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/4-ham.svg"),
           type: "items",
         },
@@ -241,7 +237,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/006-helmet.svg"),
           type: "items",
         },
@@ -253,19 +249,19 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/13-helmet.svg"),
           type: "items",
         },
         {
           name: "Dwa miecze",
           description:
-            "Świetnie wywarzone miecze od najlepszych krasnoludzkich rzemieślników. Dodaje +2 do ataku.",
+            "Świetnie wywarzone miecze od najlepszych rzemieślników. Dodają +2 do ataku.",
           strength: 2,
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 1,
+          gold: 4,
           image: require("../items/014-swords.svg"),
           type: "items",
         },
@@ -276,7 +272,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 1,
+          gold: 2,
           image: require("../items/016-axe.svg"),
           type: "items",
         },
@@ -295,24 +291,24 @@ export default class Mission extends Component {
         {
           name: "Pancerz hoplity",
           description:
-            "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity. Dodaje +2 do zdrowia.",
+            "Bardzo lekki i wytrzymały pancerz hoplity. Dodaje +2 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 2,
           fate: 0,
-          gold: 1,
+          gold: 3,
           image: require("../items/035-armor.svg"),
           type: "items",
         },
         {
           name: "Miecz i tarcza",
           description:
-            "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+            "Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
           strength: 1,
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 1,
+          gold: 3,
           image: require("../items/039-weapon.svg"),
           type: "items",
         },
@@ -324,7 +320,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 0,
           fate: 2,
-          gold: 1,
+          gold: 3,
           image: require("../items/48-shoes.svg"),
           type: "items",
         },
@@ -338,7 +334,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 0,
+          gold: 1,
           image: require("../pets/048-rooster.svg"),
           type: "pets",
         },
@@ -350,7 +346,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 0,
+          gold: 1,
           image: require("../pets/027-monkey.svg"),
           type: "pets",
         },
@@ -361,7 +357,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 0,
+          gold: 1,
           image: require("../pets/007-chameleon.svg"),
           type: "pets",
         },
@@ -384,7 +380,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: -1,
           fate: 0,
-          gold: 0,
+          gold: 1,
           image: require("../pets/010-llama.svg"),
           type: "pets",
         },
@@ -395,7 +391,7 @@ export default class Mission extends Component {
           magic: 0,
           hp: 0,
           fate: 1,
-          gold: 0,
+          gold: 1,
           image: require("../pets/022-lemur.svg"),
           type: "pets",
         },
@@ -450,31 +446,9 @@ export default class Mission extends Component {
         
       ],
       actualMission: {},
-      // diceResult: 1,
     };
-    // this.DiceRoll = this.DiceRoll.bind(this);
-    // this.HandleDiceThrow = this.HandleDiceThrow.bind(this);
   }
-  // GenerateRandomInt(min, max) {
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // }
-  // DiceRoll() {
-  //   let faceValue = this.GenerateRandomInt(0, 5);
-  //   this.setState({
-  //     rollCount: this.state.rollCount - 1,
-  //     isRolling: this.state.rollCount > 0,
-  //     faceValue: faceValue,
-  //     face: "&#x" + String(2680 + faceValue) + ";",
-  //   });
-  // }
-  // HandleDiceThrow() {
-  //   if (this.state.isRolling) return;
-  //   let val = this.GenerateRandomInt(5, 15);
-  //   this.setState({ rollCount: val });
-  //   for (let i = 0; i <= val; i++) {
-  //     setTimeout(this.DiceRoll, 150 * i);
-  //   }
-  // }
+  
   getMission() {
     if (this.props.data.selectedLocation === "Las") {
       let randomOption = Math.floor(Math.random() * 5);
@@ -572,15 +546,6 @@ export default class Mission extends Component {
       }
   }
 }
-  // setDice(number) {
-  //   console.log(number);
-  //   this.setState({
-  //     diceResult: number,
-  //   });
-  // }
-  // diceChange(e) {
-  //   this.setState({ diceResult: e.target.value });
-  // }
   addToCharacter() {
     const { actualMission } = this.state;
     const { players, activePlayer } = this.props.data;

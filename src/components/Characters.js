@@ -218,7 +218,7 @@ export default class Characters extends Component {
         {
           name: "Kosa",
           description:
-            "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+            "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
           hp: 0,

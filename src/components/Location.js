@@ -7,7 +7,9 @@ export default class Location extends Component {
     locations: [
       {
         name: "Las",
-        elements: ["Przeciwników", "Zdarzenia losowe", "Przedmioty", "Pupile"],
+        elements: ["Przeciwników"
+        //  "Zdarzenia losowe",
+         , "Przedmioty", "Pupile"],
         image: require("../locations/trees.svg"),
       },
       // {
@@ -20,19 +22,25 @@ export default class Location extends Component {
         elements: ["Handlarz ekwipunku", "Handlarz pupili"],
         image: require("../locations/produce-market.svg"),
       },
-      // {
-      //   name: "Miasto",
-      //   elements: ["Przeciwników", "Zdarzenia losowe"],
-      //   image: require("../locations/city.svg"),
-      // },
+      {
+        name: "Miasto",
+        elements: ["Przeciwników"
+        // ,"Zdarzenia losowe"
+      ],
+        image: require("../locations/city.svg"),
+      },
       {
         name: "Rzeka",
-        elements: ["Przeciwników", "Zdarzenia losowe", "Pupile"],
+        elements: ["Przeciwników", 
+        // "Zdarzenia losowe",
+         "Pupile"],
         image: require("../locations/river.svg"),
       },
       {
         name: "Cmentarz",
-        elements: ["Przeciwników", "Zdarzenia losowe", "Przedmioty"],
+        elements: ["Przeciwników", 
+        // "Zdarzenia losowe",
+         "Przedmioty"],
         image: require("../locations/graveyard.svg"),
       },
       {
@@ -44,7 +52,7 @@ export default class Location extends Component {
     locationActive: [
       {
         name: "Las",
-        elements: ["Przeciwników", "Zdarzenia losowe", "Przedmioty", "Pupile"],
+        elements: ["Przeciwników","Przedmioty", "Pupile"],
         image: require("../locations/trees.svg"),
       },
       {

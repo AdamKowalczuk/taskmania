@@ -11,7 +11,7 @@ export default class PetShop extends Component {
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 0,
+        gold: 1,
         image: require("../pets/048-rooster.svg"),
         type: "pets",
       },
@@ -23,7 +23,7 @@ export default class PetShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 0,
+        gold: 1,
         image: require("../pets/027-monkey.svg"),
         type: "pets",
       },
@@ -34,7 +34,7 @@ export default class PetShop extends Component {
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 0,
+        gold: 1,
         image: require("../pets/007-chameleon.svg"),
         type: "pets",
       },
@@ -57,7 +57,7 @@ export default class PetShop extends Component {
         magic: 0,
         hp: -1,
         fate: 0,
-        gold: 0,
+        gold: 1,
         image: require("../pets/010-llama.svg"),
         type: "pets",
       },
@@ -68,7 +68,7 @@ export default class PetShop extends Component {
         magic: 0,
         hp: 0,
         fate: 1,
-        gold: 0,
+        gold: 1,
         image: require("../pets/022-lemur.svg"),
         type: "pets",
       },
@@ -123,6 +123,33 @@ export default class PetShop extends Component {
       isSellClosed: true,
     });
   }
+  sellItem(number){
+      const players = this.props.data.players[this.props.data.activePlayer].character;
+      players.strength = players.strength - players.pets[number].strength;
+      players.magic = players.magic - players.pets[number].magic;
+      players.hp = players.hp - players.pets[number].hp;
+      players.fate = players.fate - players.pets[number].fate;
+    
+  }
+  buyPet(number){
+    if(this.props.data.players[this.props.data.activePlayer].character.pets.length <= 4)
+    {
+      const players = this.props.data.players[this.props.data.activePlayer].character;
+        const randomPets=this.state.randomPets;
+        players.strength = players.strength + randomPets[number].strength;
+        players.magic = players.magic + randomPets[number].magic;
+        players.hp = players.hp + randomPets[number].hp;
+        players.fate = players.fate + randomPets[number].fate;
+  
+  
+      randomPets.splice(number,1);
+      this.setState({
+        randomPets:randomPets
+      })
+    }
+    
+  }
+  
   render() {
     const { randomPets } = this.state;
     const { activePlayer, players } = this.props.data;
@@ -139,9 +166,12 @@ export default class PetShop extends Component {
         />
         {this.state.isSellClosed ? (
           <div className="shop-container">
-            <h2>Witaj u handlarza pupili</h2>
-            <h3>Dostępne towary:</h3>
+            <h3>Wybierz pupile, które chcesz kupić</h3>
+            {this.state.randomPets.length === 0 ? (
+              <h4>Handlarz nie ma więcej pupili</h4>
+            ) : null}
             <div className="location-box1">
+            {this.state.randomPets[0]===undefined ? null :
               <div className="location-box2">
                 <h3>{randomPets[0].name}</h3>
                 <div className="block"></div>
@@ -156,18 +186,20 @@ export default class PetShop extends Component {
                 <button
                   className="mission-button"
                   onClick={() => {
-                    this.props.data.changePage(2);
+                    
                     this.props.data.buyInMarket(
                       0,
                       this.state.randomPets,
                       "pet"
                     );
-                    this.props.data.changePlayer(activePlayer + 1);
+                    this.buyPet(0);
                   }}
                 >
                   Kup
                 </button>
               </div>
+  }
+              {this.state.randomPets[1]===undefined ? null :
               <div className="location-box3">
                 <h3>{randomPets[1].name}</h3>
                 <div className="block"></div>
@@ -182,25 +214,33 @@ export default class PetShop extends Component {
                 <button
                   className="mission-button"
                   onClick={() => {
-                    this.props.data.changePage(2);
                     this.props.data.buyInMarket(
                       1,
                       this.state.randomPets,
                       "pet"
                     );
-                    this.props.data.changePlayer(activePlayer + 1);
+                    this.buyPet(1);
                   }}
                 >
                   Kup
                 </button>
               </div>
+  
+                }
             </div>
+                
+        
+            <button className="mission-button" onClick={() => {
+                    this.props.data.changePage(2);
+                    
+                    this.props.data.changePlayer(activePlayer + 1);
+                  }}>Przejdź dalej</button>
           </div>
         ) : (
           <div className="shop-container">
-            <h3>Twoje przedmioty:</h3>
+            <h3 className="h3-sell">Wybierz pupile, które chcesz sprzedać</h3>
             {players[activePlayer].character.pets.length === 0 ? (
-              <h4>Brak przedmiotów</h4>
+              <h4>Brak pupili na sprzedaż</h4>
             ) : null}
             <div className="shop-item-container">
               {players[activePlayer].character.pets[0] === undefined ? null : (
@@ -216,6 +256,7 @@ export default class PetShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(0);
                       this.props.data.sellInMarket(
                         0,
                         players[activePlayer].character.pets[0],
@@ -239,6 +280,7 @@ export default class PetShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(1);
                       this.props.data.sellInMarket(
                         1,
                         players[activePlayer].character.pets[1],
@@ -262,6 +304,7 @@ export default class PetShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(2);
                       this.props.data.sellInMarket(
                         2,
                         players[activePlayer].character.pets[2],
@@ -285,6 +328,7 @@ export default class PetShop extends Component {
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
                     onClick={() => {
+                      this.sellItem(3);
                       this.props.data.sellInMarket(
                         3,
                         players[activePlayer].character.pets[3],
