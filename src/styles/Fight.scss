@@ -91,3 +91,70 @@ $light-brown: #ff574c;
   background-color: $white;
   color: black;
 }
+@media screen and (max-width: 759px) {
+  .fight-container h2 {
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+  }
+  .left-character {
+    width: 43vw;
+    height: 65vh;
+    margin-left: 0vw;
+    margin-right: 6vw;
+  }
+  .fight-container img {
+    width: 50%;
+  }
+  .right-character {
+    width: 43vw;
+    height: 65vh;
+    margin-left: 6vw;
+    margin-right: 0vw;
+  }
+  .fight-container h3 {
+    border: 4px solid $light-brown;
+    padding: 5px;
+    font-size: 1rem;
+  }
+  .fight-description {
+    width: auto;
+    min-width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1vh;
+    padding: 3px;
+    height: 55%;
+    font-size: 0.8rem;
+  }
+  .fight-container #diceFace {
+    bottom: 0px;
+    font-size: 50px !important;
+    margin-top: -1vh;
+  }
+  .fight-container .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 0vw;
+  }
+  .fight-container button {
+    position: absolute;
+    // bottom: 0;
+
+    width: 22vw;
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 4px;
+    z-index: 2;
+    margin-top: 3vh;
+  }
+  .fight-container button:nth-child(1) {
+    background-color: $light-brown !important;
+    color: black;
+    top: 39vh;
+  }
+  .fight-container button:nth-child(2) {
+    top: 55vh;
+  }
+}

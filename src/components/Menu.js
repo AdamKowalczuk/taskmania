@@ -47,8 +47,10 @@ export default class Menu extends Component {
           items: [
             {
               name: "Kosa",
-              description:
-                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
+              description1:
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+                description2:
+                "Dodaje +1 do siły.",
               strength: 1,
               magic: 0,
               hp: 0,
@@ -59,8 +61,10 @@ export default class Menu extends Component {
             },
             {
               name: "Słaby łuk",
-              description:
-                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
+              description1:
+                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
+                description2:
+                "Dodaje 0.5 do ataku.",
               strength: 0.5,
               magic: 0,
               hp: 0,
@@ -71,8 +75,10 @@ export default class Menu extends Component {
             },
             {
               name: "Pancerz hoplity",
-              description:
-                "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity. Dodaje +2 do zdrowia.",
+              description1:
+                "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
+                description2:
+                "Dodaje +2 do zdrowia.",
               strength: 0,
               magic: 0,
               hp: 2,
@@ -83,8 +89,10 @@ export default class Menu extends Component {
             },
             {
               name: "Miecz i tarcza",
-              description:
-                "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+              description1:
+                "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
+                description2:
+                "Dodaje +1 do ataku i zdrowia.",
               strength: 1,
               magic: 0,
               hp: 1,
@@ -95,8 +103,10 @@ export default class Menu extends Component {
             },
             {
               name: "Kusza",
-              description:
-                "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+              description1:
+                "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach.",
+                description2:
+                "Dodaje +2 do siły.",
               strength: 2,
               magic: 0,
               hp: 0,
@@ -267,8 +277,10 @@ export default class Menu extends Component {
           items: [
             {
               name: "Kosa",
-              description:
-                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
+              description1:
+                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+                description2:
+                "Dodaje +1 do siły.",
               strength: 1,
               magic: 0,
               hp: 0,

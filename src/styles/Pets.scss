@@ -45,3 +45,26 @@ $green: #69af54;
 .pet img {
   width: 40%;
 }
+@media screen and (max-width: 759px) {
+  .pets-container h2 {
+    margin-top: 15vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    font-size: 1.5rem;
+  }
+  .pets-container h4 {
+    font-size: 1.2rem;
+  }
+
+  .pet {
+    padding: 2px;
+    height: 33vh;
+    width: 42vw;
+  }
+  .pet img {
+    width: 40%;
+  }
+  .pet p {
+    font-size: 0.8rem;
+  }
+}

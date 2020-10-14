@@ -185,19 +185,23 @@ export default class Mission extends Component {
       items: [
         {
           name: "Kusza",
-          description:
-            "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+          description1:
+            "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach.",
+            description2:
+            "Dodaje +2 do siły.",
           strength: 2,
           magic: 0,
           hp: 0,
           fate: 0,
-          gold: 4,
+          gold: 1,
           image: require("../items/044-crossbow.svg"),
           type: "items",
         },
         {
           name: "Miecz",
-          description: "Podstawowa broń każdego szermierza. Dodaje +1 do siły.",
+          description1: "Podstawowa broń każdego szermierza.",
+          description2:
+            "Dodaje +1 do siły",
           strength: 1,
           magic: 0,
           hp: 0,
@@ -208,8 +212,10 @@ export default class Mission extends Component {
         },
         {
           name: "Młot",
-          description:
-            "Podstawowe urządzenie każdego kowala. Dodaje +1 do siły.",
+          description1:
+            "Podstawowe urządzenie każdego kowala.",
+            description2:
+            "Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
           hp: 0,
@@ -220,8 +226,10 @@ export default class Mission extends Component {
         },
         {
           name: "Szynka",
-          description:
-            "Porządny kawał szynki. Do jedzenia i do bitki. Dodaje +1 do zdrowia.",
+          description1:
+            "Porządny kawał szynki. Do jedzenia i do bitki.",
+            description2:
+            "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -232,7 +240,8 @@ export default class Mission extends Component {
         },
         {
           name: "Hełm hoplity",
-          description: "Wytrzymały i dostojny. Dodaje +1 do zdrowia.",
+          description1: "Wytrzymały i dostojny.",
+          description2: "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -243,8 +252,10 @@ export default class Mission extends Component {
         },
         {
           name: "Hełm wikinga",
-          description:
-            "Na sam jego widok ludzie uciekają w popłochu. Dodaje +1 do zdrowia.",
+          description1:
+            "Na sam jego widok ludzie uciekają w popłochu.",
+            description2:
+            "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -255,8 +266,10 @@ export default class Mission extends Component {
         },
         {
           name: "Dwa miecze",
-          description:
-            "Świetnie wywarzone miecze od najlepszych rzemieślników. Dodają +2 do ataku.",
+          description1:
+            "Świetnie wywarzone miecze od najlepszych rzemieślników.",
+            description2:
+            "Dodają +2 do ataku.",
           strength: 2,
           magic: 0,
           hp: 0,
@@ -267,7 +280,8 @@ export default class Mission extends Component {
         },
         {
           name: "Topór kata",
-          description: "Piękne i krwawe ostrze. Dodaje +1 do ataku.",
+          description1: "Piękne i krwawe ostrze.",
+          description2: "Dodaje +1 do ataku.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -278,8 +292,10 @@ export default class Mission extends Component {
         },
         {
           name: "Słaby łuk",
-          description:
-            "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
+          description1:
+            "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
+            description2:
+            "Dodaje 0.5 do ataku.",
           strength: 0.5,
           magic: 0,
           hp: 0,
@@ -290,32 +306,38 @@ export default class Mission extends Component {
         },
         {
           name: "Pancerz hoplity",
-          description:
-            "Bardzo lekki i wytrzymały pancerz hoplity. Dodaje +2 do zdrowia.",
+          description1:
+            "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
+            description2:
+            "Dodaje +2 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 2,
           fate: 0,
-          gold: 3,
+          gold: 1,
           image: require("../items/035-armor.svg"),
           type: "items",
         },
         {
           name: "Miecz i tarcza",
-          description:
-            "Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+          description1:
+            "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
+            description2:
+            "Dodaje +1 do ataku i zdrowia.",
           strength: 1,
           magic: 0,
           hp: 1,
           fate: 0,
-          gold: 3,
+          gold: 1,
           image: require("../items/039-weapon.svg"),
           type: "items",
         },
         {
           name: "Skórzane buty",
-          description:
-            "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
+          description1:
+            "Podstawowy ekwipunek zwiadowców.",
+            description2:
+            "Dodaje +2 do szczęścia.",
           strength: 0,
           magic: 0,
           hp: 0,
@@ -617,6 +639,8 @@ export default class Mission extends Component {
                   ) : null}
 
                   <p>{actualMission.description}</p>
+                  <p>{actualMission.description1}</p>
+                  <p>{actualMission.description2}</p>
                 </div>
               </div>
               {actualMission.type === "items" ? (

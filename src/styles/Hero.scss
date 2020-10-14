@@ -74,3 +74,60 @@ $light-brown: #ff574c;
 .hero-items-box p {
   width: 20vw;
 }
+@media screen and (max-width: 759px) {
+  .left-items,
+  .right-items {
+    margin: 0px 1vw;
+  }
+  .left-items img,
+  .right-items img {
+    margin-top: 1vh;
+    height: 6vh;
+  }
+  .hero-image {
+    margin-top: 35vh;
+    border: 2px solid white;
+    padding: 2px;
+    border-radius: 0%;
+  }
+  .hero-image h3 {
+    font-size: 1.2rem;
+  }
+  .hero-image h4 {
+    font-size: 1rem;
+  }
+  .hero-image h5 {
+    margin-top: 1vh;
+    font-size: 0.9rem;
+  }
+  .hero-image p {
+    font-size: 0.8rem;
+  }
+  .hero-items-box:nth-child(1) {
+    margin-top: 30vh;
+  }
+  .hero-items-box {
+    background-color: $brown;
+    border-radius: 5%;
+    padding: 0px 10px 0px 10px;
+    margin-top: 0vh;
+    margin-bottom: 1vh;
+    height: auto;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-items-box h4 {
+    font-size: 0.9rem;
+  }
+  .hero-items-box p {
+    font-size: 0rem;
+    margin-bottom: 0;
+  }
+  .description2 {
+    width: 26vw;
+    font-size: 0.8rem !important;
+  }
+}

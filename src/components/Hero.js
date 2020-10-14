@@ -26,7 +26,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[0].name}</h4>
-                  <p>{players[activePlayer].character.items[0].description}</p>
+                  <p>{players[activePlayer].character.items[0].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[0].description2}</p>
                 </div>
               )}
               {players[activePlayer].character.items[2] === undefined ? null : (
@@ -36,7 +37,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[2].name}</h4>
-                  <p>{players[activePlayer].character.items[2].description}</p>
+                  <p>{players[activePlayer].character.items[2].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[2].description2}</p>
                 </div>
               )}
               {players[activePlayer].character.items[4] === undefined ? null : (
@@ -46,7 +48,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[4].name}</h4>
-                  <p>{players[activePlayer].character.items[4].description}</p>
+                  <p>{players[activePlayer].character.items[4].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[4].description2}</p>
                 </div>
               )}
             </div>
@@ -71,7 +74,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[1].name}</h4>
-                  <p>{players[activePlayer].character.items[1].description}</p>
+                  <p>{players[activePlayer].character.items[1].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[1].description2}</p>
                 </div>
               )}
               {players[activePlayer].character.items[3] === undefined ? null : (
@@ -81,7 +85,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[3].name}</h4>
-                  <p>{players[activePlayer].character.items[3].description}</p>
+                  <p>{players[activePlayer].character.items[3].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[3].description2}</p>
                 </div>
               )}
               {players[activePlayer].character.items[5] === undefined ? null : (
@@ -91,7 +96,8 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[5].name}</h4>
-                  <p>{players[activePlayer].character.items[5].description}</p>
+                  <p>{players[activePlayer].character.items[5].description1}</p>
+                  <p className="description2">{players[activePlayer].character.items[5].description2}</p>
                 </div>
               )}
             </div>

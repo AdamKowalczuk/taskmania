@@ -40,3 +40,24 @@ $white: #d3d3d5;
 .exp-container {
   color: $white;
 }
+@media screen and (max-width: 759px) {
+  .exp-container h2 {
+    margin-top: 30vh;
+    color: $light-brown;
+    font-size: 1.5rem;
+  }
+  .exp-container h3 {
+    font-size: 1.4rem;
+  }
+  .exp-container h4 {
+    font-size: 1.2rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .exp-box {
+    margin-top: 0vh;
+  }
+  .exp-row img {
+    width: 40px;
+  }
+}
