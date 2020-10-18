@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Shop.scss";
-import HalfNavigation from "./HalfNavigation";
+// import HalfNavigation from "./HalfNavigation";
 export default class ItemShop extends Component {
   state = {
     items: [
