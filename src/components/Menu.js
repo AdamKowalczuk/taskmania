@@ -34,7 +34,7 @@ export default class Menu extends Component {
       {
         nick: "Gracz 1",
         character: {
-          name: "Kosiarz",
+          name: "Żniwiarz",
           image: require("../heroes/006-reaper.svg"),
           hp: 3,
           strength: 4,
@@ -199,7 +199,7 @@ export default class Menu extends Component {
       let player = {
         nick: `Gracz ${this.state.playersNumber + 1}`,
         character: {
-          name: "Kosiarz",
+          name: "Żniwiarz",
           image: require("../heroes/006-reaper.svg"),
           hp: 3,
           strength: 4,

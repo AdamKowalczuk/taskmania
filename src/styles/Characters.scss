@@ -50,7 +50,7 @@ $light-brown: #ff574c;
 .character-details-box h2 {
   height: 5vh;
   margin: 0;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker", cursive, "Sansita Swashed", "900", cursive;
 }
 .character-details-box img {
   height: 45vh;
@@ -84,11 +84,6 @@ $light-brown: #ff574c;
   background-color: $white;
 }
 @media screen and (max-width: 759px) {
-  .character-details-box h2 {
-    height: 5vh;
-    margin: 0;
-    font-family: "Permanent Marker", cursive, "Sansita Swashed", "900", cursive;
-  }
   .character-details .stats-image {
     width: 9vw;
     height: auto;
