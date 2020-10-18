@@ -44,7 +44,7 @@ export default class PetShop extends Component {
       },
       {
         name: "Leniwiec",
-        description1: "Niewiele robi. Brak pożytku.",
+        description2: "Niewiele robi. Brak pożytku.",
         strength: 0,
         magic: 0,
         hp: 0,
@@ -190,7 +190,7 @@ export default class PetShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomPets[0].gold}</h5>
-                    <p>{randomPets[0].description1}</p>
+                    <p className="shop-hidden">{randomPets[0].description1}</p>
                     <p>{randomPets[0].description2}</p>
                   </div>
                 </div>
@@ -219,7 +219,7 @@ export default class PetShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomPets[1].gold}</h5>
-                    <p>{randomPets[1].description1}</p>
+                    <p className="shop-hidden">{randomPets[1].description1}</p>
                     <p>{randomPets[1].description2}</p>
                   </div>
                 </div>
