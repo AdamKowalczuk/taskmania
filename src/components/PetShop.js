@@ -6,7 +6,8 @@ export default class PetShop extends Component {
     pets: [
       {
         name: "Kura",
-        description: "Durna, ale przydatna. Dodaje +1 do siły.",
+        description1: "Durna, ale przydatna.",
+        description2: "Dodaje +1 do siły.",
         strength: 1,
         magic: 0,
         hp: 0,
@@ -17,8 +18,10 @@ export default class PetShop extends Component {
       },
       {
         name: "Małpa",
-        description:
-          "Posiada 50 IQ. Można wykorzystać jako mięso armatnie. Dodaje +1 do życia.",
+        description1:
+          "Posiada 50 IQ. Można wykorzystać jako mięso armatnie.",
+          description2:
+          "Dodaje +1 do życia.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -29,7 +32,8 @@ export default class PetShop extends Component {
       },
       {
         name: "Kameleon",
-        description: "Ekspert od kamuflażu. Dodaje +1 do zdrowia.",
+        description1: "Ekspert od kamuflażu.",
+        description2: "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -40,7 +44,7 @@ export default class PetShop extends Component {
       },
       {
         name: "Leniwiec",
-        description: "Niewiele robi. Brak pożytku.",
+        description1: "Niewiele robi. Brak pożytku.",
         strength: 0,
         magic: 0,
         hp: 0,
@@ -51,8 +55,10 @@ export default class PetShop extends Component {
       },
       {
         name: "Lama",
-        description:
-          "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie. Dodaje +1 do ataku i -1 do zdrowia",
+        description1:
+          "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie.",
+          description2:
+          "Dodaje +1 do ataku i -1 do zdrowia",
         strength: 1,
         magic: 0,
         hp: -1,
@@ -63,7 +69,8 @@ export default class PetShop extends Component {
       },
       {
         name: "Mort",
-        description: "Uwielbia królewskie stopy. Dodaje +1 do szczęścia.",
+        description1: "Uwielbia królewskie stopy.",
+        description2: "Dodaje +1 do szczęścia.",
         strength: 0,
         magic: 0,
         hp: 0,
@@ -155,7 +162,7 @@ export default class PetShop extends Component {
     const { activePlayer, players } = this.props.data;
     return (
       <>
-        <HalfNavigation
+        {/* <HalfNavigation
           data={{
             pages: this.props.data.pages,
             changePage: this.props.data.changePage.bind(this),
@@ -163,10 +170,14 @@ export default class PetShop extends Component {
             activePlayer: this.props.data.activePlayer,
             playersNumber: this.props.data.playersNumber,
           }}
-        />
+        /> */}
+        <div className="hero-gold shop-gold">
+          <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
+          <p>Złoto {players[activePlayer].character.gold}</p>
+        </div>
         {this.state.isSellClosed ? (
           <div className="shop-container">
-            <h3>Wybierz pupile, które chcesz kupić</h3>
+            <h3 className="h3-sell">Wybierz pupile, które chcesz kupić</h3>
             {this.state.randomPets.length === 0 ? (
               <h4>Handlarz nie ma więcej pupili</h4>
             ) : null}
@@ -179,7 +190,8 @@ export default class PetShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomPets[0].gold}</h5>
-                    <p>{randomPets[0].description}</p>
+                    <p>{randomPets[0].description1}</p>
+                    <p>{randomPets[0].description2}</p>
                   </div>
                 </div>
 
@@ -207,7 +219,8 @@ export default class PetShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomPets[1].gold}</h5>
-                    <p>{randomPets[1].description}</p>
+                    <p>{randomPets[1].description1}</p>
+                    <p>{randomPets[1].description2}</p>
                   </div>
                 </div>
 
@@ -251,7 +264,8 @@ export default class PetShop extends Component {
                   />
                   <h4>{players[activePlayer].character.pets[0].name}</h4>
                   <h5>Cena : {players[activePlayer].character.pets[0].gold}</h5>
-                  <p>{players[activePlayer].character.pets[0].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.pets[0].description1}</p>
+                  <p>{players[activePlayer].character.pets[0].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -275,7 +289,8 @@ export default class PetShop extends Component {
                   />
                   <h4>{players[activePlayer].character.pets[1].name}</h4>
                   <h5>Cena : {players[activePlayer].character.pets[1].gold}</h5>
-                  <p>{players[activePlayer].character.pets[1].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.pets[1].description1}</p>
+                  <p>{players[activePlayer].character.pets[1].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -299,7 +314,8 @@ export default class PetShop extends Component {
                   />
                   <h4>{players[activePlayer].character.pets[2].name}</h4>
                   <h5>Cena : {players[activePlayer].character.pets[2].gold}</h5>
-                  <p>{players[activePlayer].character.pets[2].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.pets[2].description1}</p>
+                  <p>{players[activePlayer].character.pets[2].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -323,7 +339,8 @@ export default class PetShop extends Component {
                   />
                   <h4>{players[activePlayer].character.pets[3].name}</h4>
                   <h5>Cena : {players[activePlayer].character.pets[3].gold}</h5>
-                  <p>{players[activePlayer].character.pets[3].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.pets[3].description1}</p>
+                  <p>{players[activePlayer].character.pets[3].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}

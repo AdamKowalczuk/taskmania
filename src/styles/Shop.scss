@@ -89,3 +89,80 @@ $white: #d3d3d5;
 .h3-sell {
   margin-bottom: 0px !important;
 }
+.shop-gold {
+  top: 0px !important;
+  right: 0;
+}
+
+@media screen and (max-width: 759px) {
+  .shop-container .location-box1 h3 {
+    border: 2px solid $light-brown;
+    display: inline-block;
+    padding: 10px;
+    margin-top: -20px;
+    background-color: $blue;
+    color: $light-brown;
+    font-size: 1.2rem;
+  }
+  .shop-container .location-box1 {
+    margin-top: 0;
+  }
+  .h3-sell {
+    margin-top: 8vh;
+    font-size: 1.5rem;
+  }
+  .shop-container img {
+    width: 60%;
+  }
+  .shop-container h4 {
+    color: white;
+    font-family: "Permanent Marker", cursive, "Sansita Swashed", "900", cursive;
+  }
+  .shop-container p {
+    color: $white;
+  }
+  .shop-container .hero-items-box h5 {
+    border-right: 2px solid $brown;
+    border-bottom: 2px solid $brown;
+    padding: 2px;
+    font-size: 0.8rem;
+  }
+  .shop-item-container {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 2vh;
+  }
+  .shop-item-container .hero-items-box {
+    width: 48vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    height: 22vh;
+    position: relative;
+  }
+
+  .shop-item-container .hero-items-box img {
+    width: 40%;
+  }
+  .sell-image {
+    width: 25px !important;
+  }
+  .shop-container .hero-items-box p {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .shop-container .hero-items-box {
+    margin-top: 0vh !important;
+    padding: 1px;
+  }
+
+  .shop-hidden {
+    font-size: 0rem !important;
+  }
+  .location-box2 {
+    margin-top: 5vh !important;
+  }
+  .location-box3 {
+    margin-top: 5vh !important;
+  }
+}

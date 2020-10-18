@@ -351,7 +351,8 @@ export default class Mission extends Component {
       pets: [
         {
           name: "Kura",
-          description: "Durna, ale przydatna. Dodaje +1 do siły.",
+          description1: "Durna, ale przydatna.",
+          description2: "Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
           hp: 0,
@@ -362,8 +363,10 @@ export default class Mission extends Component {
         },
         {
           name: "Małpa",
-          description:
-            "Posiada 50 IQ. Można wykorzystać jako mięso armatnie. Dodaje +1 do życia.",
+          description1:
+            "Posiada 50 IQ. Można wykorzystać jako mięso armatnie.",
+            description2:
+            "Dodaje +1 do życia.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -374,7 +377,8 @@ export default class Mission extends Component {
         },
         {
           name: "Kameleon",
-          description: "Ekspert od kamuflażu. Dodaje +1 do zdrowia.",
+          description1: "Ekspert od kamuflażu.",
+          description2: "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
           hp: 1,
@@ -385,7 +389,7 @@ export default class Mission extends Component {
         },
         {
           name: "Leniwiec",
-          description: "Niewiele robi. Brak pożytku.",
+          description1: "Niewiele robi. Brak pożytku.",
           strength: 0,
           magic: 0,
           hp: 0,
@@ -396,8 +400,10 @@ export default class Mission extends Component {
         },
         {
           name: "Lama",
-          description:
-            "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie. Dodaje +1 do ataku i -1 do zdrowia",
+          description1:
+            "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie.",
+            description2:
+            "Dodaje +1 do ataku i -1 do zdrowia",
           strength: 1,
           magic: 0,
           hp: -1,
@@ -408,7 +414,8 @@ export default class Mission extends Component {
         },
         {
           name: "Mort",
-          description: "Uwielbia królewskie stopy. Dodaje +1 do szczęścia.",
+          description1: "Uwielbia królewskie stopy.",
+          description2: "Dodaje +1 do szczęścia.",
           strength: 0,
           magic: 0,
           hp: 0,

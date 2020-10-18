@@ -6,19 +6,23 @@ export default class ItemShop extends Component {
     items: [
       {
         name: "Kusza",
-        description:
-          "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach. Dodaje +2 do siły.",
+        description1:
+          "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach.",
+          description2:
+          "Dodaje +2 do siły.",
         strength: 2,
         magic: 0,
         hp: 0,
         fate: 0,
-        gold: 4,
+        gold: 1,
         image: require("../items/044-crossbow.svg"),
         type: "items",
       },
       {
         name: "Miecz",
-        description: "Podstawowa broń każdego szermierza. Dodaje +1 do siły.",
+        description1: "Podstawowa broń każdego szermierza.",
+        description2:
+          "Dodaje +1 do siły",
         strength: 1,
         magic: 0,
         hp: 0,
@@ -29,8 +33,10 @@ export default class ItemShop extends Component {
       },
       {
         name: "Młot",
-        description:
-          "Podstawowe urządzenie każdego kowala. Dodaje +1 do siły.",
+        description1:
+          "Podstawowe urządzenie każdego kowala.",
+          description2:
+          "Dodaje +1 do siły.",
         strength: 1,
         magic: 0,
         hp: 0,
@@ -41,8 +47,10 @@ export default class ItemShop extends Component {
       },
       {
         name: "Szynka",
-        description:
-          "Porządny kawał szynki. Do jedzenia i do bitki. Dodaje +1 do zdrowia.",
+        description1:
+          "Porządny kawał szynki. Do jedzenia i do bitki.",
+          description2:
+          "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -53,7 +61,8 @@ export default class ItemShop extends Component {
       },
       {
         name: "Hełm hoplity",
-        description: "Wytrzymały i dostojny. Dodaje +1 do zdrowia.",
+        description1: "Wytrzymały i dostojny.",
+        description2: "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -64,8 +73,10 @@ export default class ItemShop extends Component {
       },
       {
         name: "Hełm wikinga",
-        description:
-          "Na sam jego widok ludzie uciekają w popłochu. Dodaje +1 do zdrowia.",
+        description1:
+          "Na sam jego widok ludzie uciekają w popłochu.",
+          description2:
+          "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -76,8 +87,10 @@ export default class ItemShop extends Component {
       },
       {
         name: "Dwa miecze",
-        description:
-          "Świetnie wywarzone miecze od najlepszych rzemieślników. Dodają +2 do ataku.",
+        description1:
+          "Świetnie wywarzone miecze od najlepszych rzemieślników.",
+          description2:
+          "Dodają +2 do ataku.",
         strength: 2,
         magic: 0,
         hp: 0,
@@ -88,7 +101,8 @@ export default class ItemShop extends Component {
       },
       {
         name: "Topór kata",
-        description: "Piękne i krwawe ostrze. Dodaje +1 do ataku.",
+        description1: "Piękne i krwawe ostrze.",
+        description2: "Dodaje +1 do ataku.",
         strength: 0,
         magic: 0,
         hp: 1,
@@ -99,8 +113,10 @@ export default class ItemShop extends Component {
       },
       {
         name: "Słaby łuk",
-        description:
-          "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi. Dodaje 0.5 do ataku.",
+        description1:
+          "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
+          description2:
+          "Dodaje 0.5 do ataku.",
         strength: 0.5,
         magic: 0,
         hp: 0,
@@ -111,32 +127,38 @@ export default class ItemShop extends Component {
       },
       {
         name: "Pancerz hoplity",
-        description:
-          "Bardzo lekki i wytrzymały pancerz hoplity. Dodaje +2 do zdrowia.",
+        description1:
+          "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
+          description2:
+          "Dodaje +2 do zdrowia.",
         strength: 0,
         magic: 0,
         hp: 2,
         fate: 0,
-        gold: 3,
+        gold: 1,
         image: require("../items/035-armor.svg"),
         type: "items",
       },
       {
         name: "Miecz i tarcza",
-        description:
-          "Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+        description1:
+          "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
+          description2:
+          "Dodaje +1 do ataku i zdrowia.",
         strength: 1,
         magic: 0,
         hp: 1,
         fate: 0,
-        gold: 3,
+        gold: 1,
         image: require("../items/039-weapon.svg"),
         type: "items",
       },
       {
         name: "Skórzane buty",
-        description:
-          "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
+        description1:
+          "Podstawowy ekwipunek zwiadowców.",
+          description2:
+          "Dodaje +2 do szczęścia.",
         strength: 0,
         magic: 0,
         hp: 0,
@@ -228,7 +250,7 @@ export default class ItemShop extends Component {
     const { activePlayer, players } = this.props.data;
     return (
       <>
-        <HalfNavigation
+        {/* <HalfNavigation
           data={{
             pages: this.props.data.pages,
             changePage: this.props.data.changePage.bind(this),
@@ -236,10 +258,14 @@ export default class ItemShop extends Component {
             activePlayer: this.props.data.activePlayer,
             playersNumber: this.props.data.playersNumber,
           }}
-        />
+        /> */}
+        <div className="hero-gold shop-gold">
+          <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
+          <p>Złoto {players[activePlayer].character.gold}</p>
+        </div>
         {this.state.isSellClosed ? (
           <div className="shop-container">
-            <h3>Wybierz przedmioty, które chcesz kupić</h3>
+            <h3 className="h3-sell">Wybierz przedmioty, które chcesz kupić</h3>
             {this.state.randomItems.length === 0 ? (
               <h4>Handlarz nie ma więcej przedmiotów</h4>
             ) : null}
@@ -252,7 +278,8 @@ export default class ItemShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomItems[0].gold}</h5>
-                    <p>{randomItems[0].description}</p>
+                    <p className="shop-hidden">{randomItems[0].description1}</p>
+                    <p >{randomItems[0].description2}</p>
                   </div>
                 </div>
 
@@ -279,7 +306,8 @@ export default class ItemShop extends Component {
                 <div className="mission-box3">
                   <div className="mission-description">
                     <h5>Cena : {randomItems[1].gold}</h5>
-                    <p>{randomItems[1].description}</p>
+                    <p className="shop-hidden">{randomItems[1].description1}</p>
+                    <p>{randomItems[1].description2}</p>
                   </div>
                 </div>
                 <button
@@ -321,7 +349,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[0].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[0].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[0].description1}</p>
+                  <p>{players[activePlayer].character.items[0].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -347,7 +376,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[1].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[1].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[1].description1}</p>
+                  <p>{players[activePlayer].character.items[1].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -373,7 +403,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[2].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[2].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[2].description1}</p>
+                  <p>{players[activePlayer].character.items[2].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -399,7 +430,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[3].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[3].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[3].description1}</p>
+                  <p>{players[activePlayer].character.items[3].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -425,7 +457,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[4].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[4].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[4].description1}</p>
+                  <p>{players[activePlayer].character.items[4].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
@@ -452,7 +485,8 @@ export default class ItemShop extends Component {
                   <h5>
                     Cena : {players[activePlayer].character.items[5].gold}
                   </h5>
-                  <p>{players[activePlayer].character.items[5].description}</p>
+                  <p className="shop-hidden">{players[activePlayer].character.items[5].description1}</p>
+                  <p>{players[activePlayer].character.items[5].description2}</p>
                   <img
                     className="sell-image"
                     src={require("../stats/045-money-bag.svg")}
