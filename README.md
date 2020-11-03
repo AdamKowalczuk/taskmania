@@ -2,6 +2,6 @@
 
 ## Rpg Game
 
-![Screenshot1](/src/other/fight.PNG)
-![Screenshot2](/master/src/other/fight.PNG)
-![Screenshot3](../src/other/players.png)
+![Screenshot1](/src/other/players.PNG)
+![Screenshot2](/src/other/mission.PNG)
+![Screenshot3](/src/other/fight.PNG)
