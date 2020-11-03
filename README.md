@@ -1,6 +1,6 @@
 # Taskmania
 
-## Rpg Game
+## Rpg Multiplayer Game
 
 ![Screenshot1](/src/other/players.PNG)
 ![Screenshot2](/src/other/mission.PNG)
