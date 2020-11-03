@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Taskmania
+## Taskmania
 
 Made just for fun. [Play it here!](https://taskmania-game.netlify.app/)
+
+![Screenshot1]("../other/players.png")
+![Screenshot2]("../other/mission.png")
+![Screenshot3]("../other/fight.png")
