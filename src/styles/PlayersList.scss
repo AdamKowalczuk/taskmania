@@ -3,7 +3,7 @@
 // $brown: #73605b;
 // $light-brown: #d09683;
 $dark: #280a50;
-$blue: #ffb20a;
+$blue: #d3d3d5;
 $brown: #3d1472;
 $light-brown: #ff574c;
 .players-container {
@@ -21,7 +21,6 @@ $light-brown: #ff574c;
   display: inline-block;
   margin-top: 0px;
   padding: 5px;
-
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
 }
@@ -36,7 +35,6 @@ $light-brown: #ff574c;
   justify-content: center;
   align-items: center;
 }
-
 .player-box input {
   width: 20vw;
   margin-right: 5vw;
@@ -64,6 +62,23 @@ $light-brown: #ff574c;
   margin-left: 2vw;
   margin-right: 2vw;
 }
+.mui-textfield>input, .mui-textfield>textarea{
+  border-bottom: 1px solid $light-brown;
+}
+.mui-textfield--float-label>label{
+  color: $light-brown;
+}
+.mui-textfield>input, .mui-textfield>textarea:focus{
+  color: $blue;
+}
+label{
+  color: #280a50;
+}
+// .mui-textfield>input:focus{
+//   border-bottom: 1px solid $light-brown !important;
+// }
+
+
 
 @media screen and (max-width: 759px) {
   .players-container h1 {

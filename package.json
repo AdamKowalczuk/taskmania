@@ -8,6 +8,9 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.23.0",
+    "i18next": "^19.8.4",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-http-backend": "^1.0.21",
     "mdbootstrap": "^4.19.1",
     "mdbreact": "^4.27.0",
     "muicss": "^0.10.2",
@@ -16,6 +19,7 @@
     "react-alice-carousel": "^1.19.3",
     "react-dice-complete": "^1.2.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.8.5",
     "react-scripts": "3.4.3"
   },
   "scripts": {

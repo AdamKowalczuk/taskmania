@@ -5,6 +5,8 @@ $brown: #3d1472;
 $light-brown: #ff574c;
 .App {
   font-size: 18px;
+  // cursor: url("../spear.png") 10 0, auto !important ;
+  cursor: url("../items/beer.png") 10 0, auto !important ;
 }
 p,
 h1,
@@ -25,7 +27,8 @@ button {
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1px;
-  cursor: pointer;
+  // cursor: pointer;
+  cursor: url("../items/rotate-beer.png") 10 0, auto !important ;
   background: $white;
   color: black;
   transition: border 0.5s ease-out, color 0.5s ease-out,
@@ -40,3 +43,4 @@ button {
     margin-top: 3vh;
   }
 }
+
