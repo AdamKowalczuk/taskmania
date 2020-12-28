@@ -1,5 +1,6 @@
 {
   "name": "rpg-game",
+  "homepage": "http://taskmania.pl",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
