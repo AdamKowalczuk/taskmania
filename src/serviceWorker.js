@@ -1,10 +1,3 @@
-//Offline page
-import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-const el = document.createElement('pwa-update');
-document.body.appendChild(el);
-//end
-
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
@@ -54,4 +47,21 @@ buttonInstall.addEventListener('click', (e) => {
             console.log('User dismissed the install prompt');
         }
     });
+});
+
+window.addEventListener('appinstalled', (evt) => {
+    // Log install to analytics
+    console.log('INSTALL: Success');
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    let displayMode = 'browser tab';
+    if (navigator.standalone) {
+        displayMode = 'standalone-ios';
+    }
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        displayMode = 'standalone';
+    }
+    // Log launch display mode to analytics
+    console.log('DISPLAY_MODE_LAUNCH:', displayMode);
 });
