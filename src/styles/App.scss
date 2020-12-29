@@ -7,7 +7,7 @@ $light-brown: #ff574c;
   font-size: 18px;
   // cursor: url("../spear.png") 10 0, auto !important ;
   // cursor: url("../items/beer.png") 10 0, auto !important ;
-  cursor: url("../items/sword-original.png") 10 0, auto !important ;
+  cursor: url("../items/pink-sword-original.png") 10 0, auto !important ;
 }
 p,
 h1,
@@ -20,6 +20,10 @@ button {
   // font-family: "Open Sans", sans-serif;
   font-family: "Oswald", sans-serif;
 }
+input{
+  cursor: url("../items/pink-sword-straight.png") 10 0, auto !important ;
+
+}
 
 button {
   margin-top: 5px;
@@ -30,7 +34,7 @@ button {
   letter-spacing: 1px;
   // cursor: pointer;
   // cursor: url("../items/rotate-beer.png") 10 0, auto !important ;
-  cursor: url("../items/sword-rotate.png") 10 0, auto !important ;
+  cursor: url("../items/pink-sword-rotate.png") 10 0, auto !important ;
   background: $white;
   color: black;
   transition: border 0.5s ease-out, color 0.5s ease-out,

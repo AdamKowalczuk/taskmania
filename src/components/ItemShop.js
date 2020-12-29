@@ -8,7 +8,7 @@ export default class ItemShop extends Component {
         name: "Kusza",
         description1:
           "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach.",
-          description2:
+        description2:
           "Dodaje +2 do siły.",
         strength: 2,
         magic: 0,
@@ -35,7 +35,7 @@ export default class ItemShop extends Component {
         name: "Młot",
         description1:
           "Podstawowe urządzenie każdego kowala.",
-          description2:
+        description2:
           "Dodaje +1 do siły.",
         strength: 1,
         magic: 0,
@@ -49,7 +49,7 @@ export default class ItemShop extends Component {
         name: "Szynka",
         description1:
           "Porządny kawał szynki. Do jedzenia i do bitki.",
-          description2:
+        description2:
           "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
@@ -75,7 +75,7 @@ export default class ItemShop extends Component {
         name: "Hełm wikinga",
         description1:
           "Na sam jego widok ludzie uciekają w popłochu.",
-          description2:
+        description2:
           "Dodaje +1 do zdrowia.",
         strength: 0,
         magic: 0,
@@ -89,7 +89,7 @@ export default class ItemShop extends Component {
         name: "Dwa miecze",
         description1:
           "Świetnie wywarzone miecze od najlepszych rzemieślników.",
-          description2:
+        description2:
           "Dodają +2 do ataku.",
         strength: 2,
         magic: 0,
@@ -115,7 +115,7 @@ export default class ItemShop extends Component {
         name: "Słaby łuk",
         description1:
           "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
-          description2:
+        description2:
           "Dodaje 0.5 do ataku.",
         strength: 0.5,
         magic: 0,
@@ -129,7 +129,7 @@ export default class ItemShop extends Component {
         name: "Pancerz hoplity",
         description1:
           "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
-          description2:
+        description2:
           "Dodaje +2 do zdrowia.",
         strength: 0,
         magic: 0,
@@ -143,7 +143,7 @@ export default class ItemShop extends Component {
         name: "Miecz i tarcza",
         description1:
           "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
-          description2:
+        description2:
           "Dodaje +1 do ataku i zdrowia.",
         strength: 1,
         magic: 0,
@@ -157,7 +157,7 @@ export default class ItemShop extends Component {
         name: "Skórzane buty",
         description1:
           "Podstawowy ekwipunek zwiadowców.",
-          description2:
+        description2:
           "Dodaje +2 do szczęścia.",
         strength: 0,
         magic: 0,
@@ -172,8 +172,10 @@ export default class ItemShop extends Component {
     randomItems: [
       {
         name: "Miecz i tarcza",
-        description:
-          "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku. Dodaje +1 do ataku i +1 do zdrowia.",
+        description1:
+          "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
+        description2:
+          "Dodaje +1 do ataku i zdrowia.",
         strength: 1,
         magic: 0,
         hp: 1,
@@ -184,12 +186,15 @@ export default class ItemShop extends Component {
       },
       {
         name: "Skórzane buty",
-        description: "Podstawowy ekwipunek zwiadowców. Dodaje +2 do szczęścia.",
+        description1:
+          "Podstawowy ekwipunek zwiadowców.",
+        description2:
+          "Dodaje +2 do szczęścia.",
         strength: 0,
         magic: 0,
         hp: 0,
         fate: 2,
-        gold: 1,
+        gold: 3,
         image: require("../items/48-shoes.svg"),
         type: "items",
       },
@@ -219,31 +224,31 @@ export default class ItemShop extends Component {
       isSellClosed: true,
     });
   }
-  sellItem(number){
+  sellItem(number) {
     const players = this.props.data.players[this.props.data.activePlayer]
       .character;
-      players.strength = players.strength - players.items[number].strength;
-      players.magic = players.magic - players.items[number].magic;
-      players.hp = players.hp - players.items[number].hp;
-      players.fate = players.fate - players.items[number].fate;
+    players.strength = players.strength - players.items[number].strength;
+    players.magic = players.magic - players.items[number].magic;
+    players.hp = players.hp - players.items[number].hp;
+    players.fate = players.fate - players.items[number].fate;
   }
-  buyItem(number){
-    if(this.props.data.players[this.props.data.activePlayer].character.items.length <= 6){
+  buyItem(number) {
+    if (this.props.data.players[this.props.data.activePlayer].character.items.length <= 6) {
       const players = this.props.data.players[this.props.data.activePlayer]
-      .character;
-      let randomItems=[...this.state.randomItems]
+        .character;
+      let randomItems = [...this.state.randomItems]
       players.strength = players.strength + randomItems[number].strength;
       players.magic = players.magic + randomItems[number].magic;
       players.hp = players.hp + randomItems[number].hp;
       players.fate = players.fate + randomItems[number].fate;
 
-    
-    randomItems.splice(number,1);
-    this.setState({
-      randomItems:randomItems
-    })
+
+      randomItems.splice(number, 1);
+      this.setState({
+        randomItems: randomItems
+      })
     }
-    
+
   }
   render() {
     const { randomItems } = this.state;
@@ -270,249 +275,249 @@ export default class ItemShop extends Component {
               <h4>Handlarz nie ma więcej przedmiotów</h4>
             ) : null}
             <div className="location-box1">
-            {this.state.randomItems[0]===undefined ? null :
-              <div className="location-box2">
-                <h3>{randomItems[0].name}</h3>
-                <div className="block"></div>
-                <img src={randomItems[0].image} alt="location" />
-                <div className="mission-box3">
-                  <div className="mission-description">
-                    <h5>Cena : {randomItems[0].gold}</h5>
-                    <p className="shop-hidden">{randomItems[0].description1}</p>
-                    <p >{randomItems[0].description2}</p>
+              {this.state.randomItems[0] === undefined ? null :
+                <div className="location-box2">
+                  <h3>{randomItems[0].name}</h3>
+                  <div className="block"></div>
+                  <img src={randomItems[0].image} alt="location" />
+                  <div className="mission-box3">
+                    <div className="mission-description">
+                      <h5>Cena : {randomItems[0].gold}</h5>
+                      <p className="shop-hidden">{randomItems[0].description1}</p>
+                      <p >{randomItems[0].description2}</p>
+                    </div>
                   </div>
-                </div>
 
-                <button
-                  className="mission-button"
-                  onClick={() => {
-                    this.props.data.buyInMarket(
-                      0,
-                      this.state.randomItems,
-                      "item"
-                    );
-                    this.buyItem(0);
-                  }}
-                >
-                  Kup
+                  <button
+                    className="mission-button"
+                    onClick={() => {
+                      this.props.data.buyInMarket(
+                        0,
+                        this.state.randomItems,
+                        "item"
+                      );
+                      this.buyItem(0);
+                    }}
+                  >
+                    Kup
                 </button>
-              </div>
-            }
-            {this.state.randomItems[1]===undefined ? null :
-              <div className="location-box3">
-                <h3>{randomItems[1].name}</h3>
-                <div className="block"></div>
-                <img src={randomItems[1].image} alt="location" />
-                <div className="mission-box3">
-                  <div className="mission-description">
-                    <h5>Cena : {randomItems[1].gold}</h5>
-                    <p className="shop-hidden">{randomItems[1].description1}</p>
-                    <p>{randomItems[1].description2}</p>
-                  </div>
                 </div>
-                <button
-                  className="mission-button"
-                  onClick={() => {
-                    this.props.data.buyInMarket(
-                      1,
-                      this.state.randomItems,
-                      "item"
-                    );
-                    this.buyItem(1);
-                  }}
-                >
-                  Kup
+              }
+              {this.state.randomItems[1] === undefined ? null :
+                <div className="location-box3">
+                  <h3>{randomItems[1].name}</h3>
+                  <div className="block"></div>
+                  <img src={randomItems[1].image} alt="location" />
+                  <div className="mission-box3">
+                    <div className="mission-description">
+                      <h5>Cena : {randomItems[1].gold}</h5>
+                      <p className="shop-hidden">{randomItems[1].description1}</p>
+                      <p>{randomItems[1].description2}</p>
+                    </div>
+                  </div>
+                  <button
+                    className="mission-button"
+                    onClick={() => {
+                      this.props.data.buyInMarket(
+                        1,
+                        this.state.randomItems,
+                        "item"
+                      );
+                      this.buyItem(1);
+                    }}
+                  >
+                    Kup
                 </button>
-              </div>
-            }
+                </div>
+              }
             </div>
             <button className="mission-button" onClick={() => {
-                    this.props.data.changePage(2);
-                    
-                    this.props.data.changePlayer(activePlayer + 1);
-                  }}>Przejdź dalej</button>
+              this.props.data.changePage(2);
+
+              this.props.data.changePlayer(activePlayer + 1);
+            }}>Przejdź dalej</button>
           </div>
         ) : (
-          <div className="shop-container">
-            <h3 className="h3-sell">Wybierz przedmioty, które chcesz sprzedać</h3>
-            {players[activePlayer].character.items.length === 0 ? (
-              <h4>Brak przedmiotów</h4>
-            ) : null}
-            <div className="shop-item-container">
-              {players[activePlayer].character.items[0] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[0].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[0].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[0].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[0].description1}</p>
-                  <p>{players[activePlayer].character.items[0].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(0);
-                      this.props.data.sellInMarket(
-                        0,
-                        players[activePlayer].character.items[0],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
-              {players[activePlayer].character.items[1] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[1].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[1].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[1].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[1].description1}</p>
-                  <p>{players[activePlayer].character.items[1].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(1);
-                      this.props.data.sellInMarket(
-                        1,
-                        players[activePlayer].character.items[1],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
-              {players[activePlayer].character.items[2] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[2].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[2].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[2].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[2].description1}</p>
-                  <p>{players[activePlayer].character.items[2].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(2);
-                      this.props.data.sellInMarket(
-                        2,
-                        players[activePlayer].character.items[2],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
-              {players[activePlayer].character.items[3] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[3].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[3].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[3].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[3].description1}</p>
-                  <p>{players[activePlayer].character.items[3].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(3);
-                      this.props.data.sellInMarket(
-                        3,
-                        players[activePlayer].character.items[3],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
-              {players[activePlayer].character.items[4] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[4].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[4].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[4].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[4].description1}</p>
-                  <p>{players[activePlayer].character.items[4].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(4);
-                      this.props.data.sellInMarket(
-                        4,
-                        players[activePlayer].character.items[4],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
+            <div className="shop-container">
+              <h3 className="h3-sell">Wybierz przedmioty, które chcesz sprzedać</h3>
+              {players[activePlayer].character.items.length === 0 ? (
+                <h4>Brak przedmiotów</h4>
+              ) : null}
+              <div className="shop-item-container">
+                {players[activePlayer].character.items[0] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[0].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[0].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[0].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[0].description1}</p>
+                    <p>{players[activePlayer].character.items[0].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(0);
+                        this.props.data.sellInMarket(
+                          0,
+                          players[activePlayer].character.items[0],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
+                {players[activePlayer].character.items[1] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[1].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[1].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[1].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[1].description1}</p>
+                    <p>{players[activePlayer].character.items[1].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(1);
+                        this.props.data.sellInMarket(
+                          1,
+                          players[activePlayer].character.items[1],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
+                {players[activePlayer].character.items[2] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[2].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[2].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[2].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[2].description1}</p>
+                    <p>{players[activePlayer].character.items[2].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(2);
+                        this.props.data.sellInMarket(
+                          2,
+                          players[activePlayer].character.items[2],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
+                {players[activePlayer].character.items[3] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[3].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[3].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[3].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[3].description1}</p>
+                    <p>{players[activePlayer].character.items[3].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(3);
+                        this.props.data.sellInMarket(
+                          3,
+                          players[activePlayer].character.items[3],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
+                {players[activePlayer].character.items[4] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[4].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[4].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[4].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[4].description1}</p>
+                    <p>{players[activePlayer].character.items[4].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(4);
+                        this.props.data.sellInMarket(
+                          4,
+                          players[activePlayer].character.items[4],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
 
-              {players[activePlayer].character.items[5] === undefined ? null : (
-                <div className="hero-items-box">
-                  <img
-                    src={players[activePlayer].character.items[5].image}
-                    alt="hero item"
-                  />
-                  <h4>{players[activePlayer].character.items[5].name}</h4>
-                  <h5>
-                    Cena : {players[activePlayer].character.items[5].gold}
-                  </h5>
-                  <p className="shop-hidden">{players[activePlayer].character.items[5].description1}</p>
-                  <p>{players[activePlayer].character.items[5].description2}</p>
-                  <img
-                    className="sell-image"
-                    src={require("../stats/045-money-bag.svg")}
-                    onClick={() => {
-                      this.sellItem(5);
-                      this.props.data.sellInMarket(
-                        5,
-                        players[activePlayer].character.items[5],
-                        "item"
-                      );
-                    }}
-                    alt="hero item"
-                  />
-                </div>
-              )}
-            </div>
-            <button
-              className="mission-button"
-              onClick={() => {
-                this.changeToBuy();
-              }}
-            >
-              Przejdź dalej
+                {players[activePlayer].character.items[5] === undefined ? null : (
+                  <div className="hero-items-box">
+                    <img
+                      src={players[activePlayer].character.items[5].image}
+                      alt="hero item"
+                    />
+                    <h4>{players[activePlayer].character.items[5].name}</h4>
+                    <h5>
+                      Cena : {players[activePlayer].character.items[5].gold}
+                    </h5>
+                    <p className="shop-hidden">{players[activePlayer].character.items[5].description1}</p>
+                    <p>{players[activePlayer].character.items[5].description2}</p>
+                    <img
+                      className="sell-image"
+                      src={require("../stats/045-money-bag.svg")}
+                      onClick={() => {
+                        this.sellItem(5);
+                        this.props.data.sellInMarket(
+                          5,
+                          players[activePlayer].character.items[5],
+                          "item"
+                        );
+                      }}
+                      alt="hero item"
+                    />
+                  </div>
+                )}
+              </div>
+              <button
+                className="mission-button"
+                onClick={() => {
+                  this.changeToBuy();
+                }}
+              >
+                Przejdź dalej
             </button>
-          </div>
-        )}
+            </div>
+          )}
       </>
     );
   }

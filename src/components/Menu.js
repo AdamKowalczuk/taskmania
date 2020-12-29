@@ -40,7 +40,7 @@ export default class Menu extends Component {
           strength: 4,
           magic: 3,
           fate: 2,
-          gold: 10,
+          gold: 1,
           exp: 0,
           description:
             "Za każdym razem, gdy pokonasz przeciwnika na cmentarzu dostajesz +1 do siły.",
@@ -59,115 +59,23 @@ export default class Menu extends Component {
               image: require("../items/scythe.svg"),
               type: "items",
             },
-            {
-              name: "Słaby łuk",
-              description1:
-                "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
-                description2:
-                "Dodaje 0.5 do ataku.",
-              strength: 0.5,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 1,
-              image: require("../items/034-bow.svg"),
-              type: "items",
-            },
-            {
-              name: "Pancerz hoplity",
-              description1:
-                "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
-                description2:
-                "Dodaje +2 do zdrowia.",
-              strength: 0,
-              magic: 0,
-              hp: 2,
-              fate: 0,
-              gold: 1,
-              image: require("../items/035-armor.svg"),
-              type: "items",
-            },
-            {
-              name: "Miecz i tarcza",
-              description1:
-                "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
-                description2:
-                "Dodaje +1 do ataku i zdrowia.",
-              strength: 1,
-              magic: 0,
-              hp: 1,
-              fate: 0,
-              gold: 1,
-              image: require("../items/039-weapon.svg"),
-              type: "items",
-            },
-            {
-              name: "Skórzane buty",
-              description1:
-                "Podstawowy ekwipunek zwiadowców.",
-                description2:
-                "Dodaje +2 do szczęścia.",
-              strength: 0,
-              magic: 0,
-              hp: 0,
-              fate: 2,
-              gold: 3,
-              image: require("../items/48-shoes.svg"),
-              type: "items",
-            },
           ],
-          pets: [
-            {
-              name: "Leniwiec",
-              description1: "Niewiele robi. Brak pożytku.",
-              strength: 0,
-              magic: 0,
-              hp: 0,
-              fate: 0,
-              gold: 0,
-              image: require("../pets/008-sloth.svg"),
-              type: "pets",
-            },
-            {
-              name: "Lama",
-              description1:
-                "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie.",
-                description2:
-                "Dodaje +1 do ataku i -1 do zdrowia",
-              strength: 1,
-              magic: 0,
-              hp: -1,
-              fate: 0,
-              gold: 1,
-              image: require("../pets/010-llama.svg"),
-              type: "pets",
-            },
-            {
-              name: "Mort",
-              description1: "Uwielbia królewskie stopy.",
-              description2: "Dodaje +1 do szczęścia.",
-              strength: 0,
-              magic: 0,
-              hp: 0,
-              fate: 1,
-              gold: 1,
-              image: require("../pets/022-lemur.svg"),
-              type: "pets",
-            },
-          ],
+          pets: [],
           bossKilled: 0,
         },
       },
-      
+
     ],
     activePlayer: 0,
     playersNumber: 1,
     selectedLocation: "nic",
     selectedEnemy: {},
+    kindOfFight: '',
+    enemyId: '',
   };
 
   changePage(number) {
-    if(this.state.players[this.state.activePlayer].character.bossKilled===3){
+    if (this.state.players[this.state.activePlayer].character.bossKilled === 3) {
       window.location.reload()
     }
     else if (number === this.state.prevPage) {
@@ -217,7 +125,7 @@ export default class Menu extends Component {
               name: "Kosa",
               description1:
                 "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
-                description2:
+              description2:
                 "Dodaje +1 do siły.",
               strength: 1,
               magic: 0,
@@ -331,6 +239,20 @@ export default class Menu extends Component {
       activePlayer: 0,
     });
   }
+  changeKindOfFight(fight) {
+    this.setState({
+      kindOfFight: fight
+    })
+  }
+  changeEnemyId(id) {
+    this.setState({
+      enemyId: id
+    })
+  }
+  chooseReward() {
+
+  }
+
   render() {
     const {
       pages,
@@ -338,7 +260,7 @@ export default class Menu extends Component {
       activePlayer,
       playersNumber,
       selectedLocation,
-      selectedEnemy,
+      selectedEnemy, kindOfFight, enemyId
     } = this.state;
     return (
       <>
@@ -408,6 +330,10 @@ export default class Menu extends Component {
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
                   changePlayer: this.changePlayer.bind(this),
+                  changeKindOfFight: this.changeKindOfFight.bind(this),
+                  changeEnemyId: this.changeEnemyId.bind(this),
+                  enemyId: enemyId,
+
                 }}
               />
             );
@@ -423,6 +349,10 @@ export default class Menu extends Component {
                   selectedEnemy: selectedEnemy,
                   selectEnemy: this.selectEnemy.bind(this),
                   changePlayer: this.changePlayer.bind(this),
+                  changeKindOfFight: this.changeKindOfFight.bind(this),
+                  kindOfFight: kindOfFight,
+                  chooseReward: this.chooseReward.bind(this),
+                  enemyId: enemyId,
                 }}
               />
             );
@@ -532,6 +462,7 @@ export default class Menu extends Component {
               />
             );
           }
+
         })()}
       </>
     );

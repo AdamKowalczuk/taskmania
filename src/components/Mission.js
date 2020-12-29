@@ -17,6 +17,7 @@ export default class Mission extends Component {
           description:
             "Inteligentne i groźne stworzenie. Można je spotkać w lesie.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Goblin",
@@ -25,6 +26,7 @@ export default class Mission extends Component {
           description:
             "Ohydne i głupi stwór, o zielonej skórze. Charakteryzuje się brutalnością i porywczością.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Wielki pająk",
@@ -33,6 +35,7 @@ export default class Mission extends Component {
           description:
             "Zmutowana odmiana pająka. Bardzo inteligentny. Potrafi współpracować z innymi pająkami",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Wąż",
@@ -40,6 +43,7 @@ export default class Mission extends Component {
           image: require("../enemies/009-snake.svg"),
           description: "Często spotykany w lesie. Potrafi zatruć swoją ofiarę.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Jednorożec",
@@ -47,6 +51,7 @@ export default class Mission extends Component {
           image: require("../enemies/031-unicorn.svg"),
           description: "Zwierzę mieszkające w lasach, przypominające konia z rogiem.",
           type: "enemies",
+          attackType: 'magic'
         },
       ],
       enemiesCity: [
@@ -57,6 +62,7 @@ export default class Mission extends Component {
           description:
             "Stwór o cielsku, ogonie i tylnych łapach lwa, a o przednich łapach, skrzydłach i łbie orła.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Ninja",
@@ -64,14 +70,15 @@ export default class Mission extends Component {
           image: require("../enemies/ninja.svg"),
           description: "Zamaskowany wojownik. Specjalizuje się w skrytobójstwach.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Demon",
           strength: 5,
           image: require("../enemies/devil.svg"),
           description: "Istota z piekieł. Wykorzystuje ludzi do swoich niecnych planów.",
-          type:
-            "enemies",
+          type: "enemies",
+          attackType: 'magic'
         },
         {
           name: "Czarny rycerz",
@@ -80,8 +87,9 @@ export default class Mission extends Component {
           description: "Żołnierz armii imperium. Czarny kolor ma wzbudzić strach u wrogów.",
           type:
             "enemies",
+          attackType: 'strength'
         },
-        
+
       ],
       enemiesRiver: [
         {
@@ -90,6 +98,7 @@ export default class Mission extends Component {
           image: require("../enemies/fish.svg"),
           description: "Smaczna i zdrowa.",
           type: "enemies",
+          attackType: 'magic'
         },
         {
           name: "Rogacz",
@@ -98,6 +107,7 @@ export default class Mission extends Component {
           description: "Posiada do czterech metrów wysokości, masywną budowę ciała, ostre pazury, kły oraz rogi.",
           type:
             "enemies",
+          attackType: 'strength'
         },
         {
           name: "Centaur",
@@ -106,6 +116,7 @@ export default class Mission extends Component {
           description: "Stworzenie będące połączeniem ciała konia i człowieka. Świetnie posługuje się łukiem i włócznią.",
           type:
             "enemies",
+          attackType: 'strength'
         },
         {
           name: "Hydra",
@@ -113,6 +124,7 @@ export default class Mission extends Component {
           image: require("../enemies/042-hydra.svg"),
           description: "Olbrzymi jadowity wąż wodny. Posiada od 5 do 10 głów.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Cyklop",
@@ -121,6 +133,7 @@ export default class Mission extends Component {
           description:
             "Stworzenie o jednym oku pośrodku czoła. Wyróżnia się ogromną siłą i kolosalnym rozmiarem.",
           type: "enemies",
+          attackType: 'strength'
         },
       ],
       enemiesGraveyard: [
@@ -131,6 +144,7 @@ export default class Mission extends Component {
           description:
             "Nieumarła istota. Bezmyślne stworzenie, którego jedynym celem jest zniszczenie każdej żywej istoty.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Zombie",
@@ -139,14 +153,16 @@ export default class Mission extends Component {
           description:
             "Stworzenie wskrzeszone przez nekromantę. Są powolne, lecz wytrzymałe.",
           type: "enemies",
+          attackType: 'strength'
         },
         {
           name: "Duch",
-          magic: 3,
+          strength: 3,
           image: require("../enemies/ghost.svg"),
           description:
             "Niematerialne stworzenie. Potrafi przenikać przez ściany.",
           type: "enemies",
+          attackType: 'magic'
         },
         {
           name: "Wampir",
@@ -155,6 +171,7 @@ export default class Mission extends Component {
           description:
             "Pół człowiek, pół nietoperz. Jego głównym źródłem pożywienia jest ludzka krew.",
           type: "enemies",
+          attackType: 'magic'
         },
         {
           name: "Mumia",
@@ -163,6 +180,7 @@ export default class Mission extends Component {
           description:
             "Wskrzeszone ciało. Mumia potrafi rzucić klątwę na swojego przeciwnika.",
           type: "enemies",
+          attackType: 'magic'
         },
       ],
       market: [
@@ -187,7 +205,7 @@ export default class Mission extends Component {
           name: "Kusza",
           description1:
             "Wolna w użyciu, ale potrafi być zabójcza w wyszkolonych rękach.",
-            description2:
+          description2:
             "Dodaje +2 do siły.",
           strength: 2,
           magic: 0,
@@ -214,7 +232,7 @@ export default class Mission extends Component {
           name: "Młot",
           description1:
             "Podstawowe urządzenie każdego kowala.",
-            description2:
+          description2:
             "Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
@@ -228,7 +246,7 @@ export default class Mission extends Component {
           name: "Szynka",
           description1:
             "Porządny kawał szynki. Do jedzenia i do bitki.",
-            description2:
+          description2:
             "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
@@ -254,7 +272,7 @@ export default class Mission extends Component {
           name: "Hełm wikinga",
           description1:
             "Na sam jego widok ludzie uciekają w popłochu.",
-            description2:
+          description2:
             "Dodaje +1 do zdrowia.",
           strength: 0,
           magic: 0,
@@ -268,7 +286,7 @@ export default class Mission extends Component {
           name: "Dwa miecze",
           description1:
             "Świetnie wywarzone miecze od najlepszych rzemieślników.",
-            description2:
+          description2:
             "Dodają +2 do ataku.",
           strength: 2,
           magic: 0,
@@ -294,7 +312,7 @@ export default class Mission extends Component {
           name: "Słaby łuk",
           description1:
             "Słaby, stary, kiepskiej jakości łuk. Nic wartego uwagi.",
-            description2:
+          description2:
             "Dodaje 0.5 do ataku.",
           strength: 0.5,
           magic: 0,
@@ -308,7 +326,7 @@ export default class Mission extends Component {
           name: "Pancerz hoplity",
           description1:
             "Bardzo lekki i wytrzymały pancerz idealny dla szybkiego hoplity.",
-            description2:
+          description2:
             "Dodaje +2 do zdrowia.",
           strength: 0,
           magic: 0,
@@ -322,7 +340,7 @@ export default class Mission extends Component {
           name: "Miecz i tarcza",
           description1:
             "Najbardziej uniwersalny zestaw. Dobry zarówno w obronie jak i ataku.",
-            description2:
+          description2:
             "Dodaje +1 do ataku i zdrowia.",
           strength: 1,
           magic: 0,
@@ -336,7 +354,7 @@ export default class Mission extends Component {
           name: "Skórzane buty",
           description1:
             "Podstawowy ekwipunek zwiadowców.",
-            description2:
+          description2:
             "Dodaje +2 do szczęścia.",
           strength: 0,
           magic: 0,
@@ -365,7 +383,7 @@ export default class Mission extends Component {
           name: "Małpa",
           description1:
             "Posiada 50 IQ. Można wykorzystać jako mięso armatnie.",
-            description2:
+          description2:
             "Dodaje +1 do życia.",
           strength: 0,
           magic: 0,
@@ -402,7 +420,7 @@ export default class Mission extends Component {
           name: "Lama",
           description1:
             "Może opluć twoich wrogów. Niestety może działać także przeciwko tobie.",
-            description2:
+          description2:
             "Dodaje +1 do ataku i -1 do zdrowia",
           strength: 1,
           magic: 0,
@@ -434,6 +452,7 @@ export default class Mission extends Component {
           description:
             "Istota przypominająca człowieka z głową byka. Charakteryzuje się wielką siłą.",
           type: "bosses",
+          attackType: 'strength'
         },
         {
           name: "Pegaz",
@@ -442,8 +461,9 @@ export default class Mission extends Component {
           description: "Skrzydlaty koń. Trudny w oswojeniu, ale bardzo dobry wierzchowiec.",
           type:
             "bosses",
+          attackType: 'magic'
         },
-        
+
       ],
       secondBosses: [
         {
@@ -453,6 +473,7 @@ export default class Mission extends Component {
           description:
             "Ognisty ptak, będący symbolem wiecznego odradzania się.",
           type: "bosses",
+          attackType: 'strength'
         },
         {
           name: "Różowy smok",
@@ -461,6 +482,7 @@ export default class Mission extends Component {
           description:
             "Olbrzymi, latający gad. Rzadko spotykany kolor smoka.",
           type: "bosses",
+          attackType: 'magic'
         },
       ],
       thirdBosses: [
@@ -471,17 +493,19 @@ export default class Mission extends Component {
           description:
             "Najgroźniejsza odmiana smoka. Jest strażnikiem dawnego skarbu imperium.",
           type: "bosses",
+          attackType: 'magic'
         },
-        
+
       ],
       actualMission: {},
+      enemyId: ''
     };
   }
-  
+
   getMission() {
     if (this.props.data.selectedLocation === "Las") {
       let randomOption = Math.floor(Math.random() * 5);
-      if (randomOption === 0 || randomOption === 1 || randomOption === 2 ) {
+      if (randomOption === 0 || randomOption === 1 || randomOption === 2) {
         let random = Math.floor(
           Math.random() * this.state.enemiesForrest.length
         );
@@ -500,12 +524,17 @@ export default class Mission extends Component {
         });
       }
     }
-    // if (this.props.data.selectedLocation === "Arena") {
-    //   let random = Math.floor(Math.random() * this.state.enemiesForrest.length);
-    //   this.setState({
-    //     actualMission: this.state.enemiesForrest[random],
-    //   });
-    // }
+    if (this.props.data.selectedLocation === "Arena") {
+      let random = Math.floor(Math.random() * this.props.data.players.length);
+      while (random === this.props.data.activePlayer) {
+        random = Math.floor(Math.random() * this.props.data.players.length);
+      }
+
+      this.setState({
+        actualMission: this.props.data.players[random].character,
+      });
+      this.props.data.changeEnemyId(random)
+    }
     if (this.props.data.selectedLocation === "Targowisko") {
       let random = Math.floor(Math.random() * this.state.market.length);
       this.setState({
@@ -519,7 +548,7 @@ export default class Mission extends Component {
       });
     }
     if (this.props.data.selectedLocation === "Rzeka") {
-      let randomOption = Math.floor(Math.random() *4);
+      let randomOption = Math.floor(Math.random() * 4);
 
       if (randomOption === 0 || randomOption === 1 || randomOption === 2) {
         let random = Math.floor(Math.random() * this.state.enemiesRiver.length);
@@ -551,30 +580,27 @@ export default class Mission extends Component {
       }
     }
     if (this.props.data.selectedLocation === "Jaskinia") {
-      const bossKilled=this.props.data.players[this.props.data.activePlayer].character.bossKilled;
-      if(bossKilled===0)
-      {
+      const bossKilled = this.props.data.players[this.props.data.activePlayer].character.bossKilled;
+      if (bossKilled === 0) {
         let random = Math.floor(Math.random() * this.state.firstBosses.length);
         this.setState({
           actualMission: this.state.firstBosses[random],
         });
       }
-      else if(bossKilled===1)
-      {
+      else if (bossKilled === 1) {
         let random = Math.floor(Math.random() * this.state.secondBosses.length);
         this.setState({
           actualMission: this.state.secondBosses[random],
         });
       }
-      else if(bossKilled===2)
-      {
+      else if (bossKilled === 2) {
         let random = Math.floor(Math.random() * this.state.thirdBosses.length);
         this.setState({
           actualMission: this.state.thirdBosses[random],
         });
       }
+    }
   }
-}
   addToCharacter() {
     const { actualMission } = this.state;
     const { players, activePlayer } = this.props.data;
@@ -636,14 +662,17 @@ export default class Mission extends Component {
               <div className="mission-box3">
                 <div className="mission-description">
                   {actualMission.type === "enemies" ||
-                  actualMission.type === "bosses" ? (
-                    <h5>
-                      Siła{" "}
-                      {actualMission.magic === undefined
-                        ? actualMission.strength
-                        : actualMission.magic}
-                    </h5>
-                  ) : null}
+                    actualMission.type === "bosses" ? (
+                      <h5>
+                        {actualMission.attackType === "strength" ? "Siła " : "Magia "}
+                        {actualMission.strength}
+                      </h5>
+                    ) : null}
+
+                  {actualMission.bossKilled !== undefined ? <div className="strength-magic">
+                    <h5>Siła {actualMission.strength}</h5>
+                    <h5 className="h5-magic">Magia {actualMission.magic}</h5>
+                  </div> : null}
 
                   <p>{actualMission.description}</p>
                   <p>{actualMission.description1}</p>
@@ -663,61 +692,91 @@ export default class Mission extends Component {
                   Napotkaj
                 </button>
               ) : (
-                [
-                  actualMission.type === "pets" ? (
-                    <button
-                      key={2}
-                      className="mission-button"
-                      onClick={() => {
-                        this.addToCharacter();
-                        this.props.data.changePlayer(activePlayer + 1);
-                        this.props.data.changePage(2);
-                      }}
-                    >
-                      Napotkaj
-                    </button>
-                  ) : (
-                    [
-                      actualMission.type === "items-market" ? (
-                        <button
-                          key={3}
-                          className="mission-button"
-                          onClick={() => {
-                            this.props.data.changePage(9);
-                          }}
-                        >
-                          Napotkaj
-                        </button>
-                      ) : (
+                  [
+                    actualMission.type === "pets" ? (
+                      <button
+                        key={2}
+                        className="mission-button"
+                        onClick={() => {
+                          this.addToCharacter();
+                          this.props.data.changePlayer(activePlayer + 1);
+                          this.props.data.changePage(2);
+                        }}
+                      >
+                        Napotkaj
+                      </button>
+                    ) : (
                         [
-                          actualMission.type === "pets-market" ? (
+                          actualMission.type === "items-market" ? (
                             <button
-                              key={4}
+                              key={3}
                               className="mission-button"
                               onClick={() => {
-                                this.props.data.changePage(10);
+                                this.props.data.changePage(9);
                               }}
                             >
                               Napotkaj
                             </button>
                           ) : (
-                            <button
-                              key={5}
-                              className="mission-button"
-                              onClick={() => {
-                                this.props.data.selectEnemy(actualMission);
-                                this.props.data.changePage(5);
-                              }}
-                            >
-                              Napotkaj
-                            </button>
-                          ),
+                              [
+                                actualMission.type === "pets-market" ? (
+                                  <button
+                                    key={4}
+                                    className="mission-button"
+                                    onClick={() => {
+                                      this.props.data.changePage(10);
+                                    }}
+                                  >
+                                    Napotkaj
+                                  </button>
+                                ) : (
+                                    [
+                                      actualMission.bossKilled !== undefined ? (
+                                        <>
+                                          <button style={{ marginRight: "5px" }}
+                                            key={5}
+                                            className="mission-button"
+                                            onClick={() => {
+                                              this.props.data.selectEnemy(actualMission);
+                                              this.props.data.changeKindOfFight("physical");
+                                              this.props.data.changePage(5);
+                                            }}
+                                          >
+                                            Walka fizyczna
+                                      </button>
+                                          <button
+                                            style={{ marginLeft: "5px" }}
+                                            key={6}
+                                            className="mission-button"
+                                            onClick={() => {
+                                              this.props.data.selectEnemy(actualMission);
+                                              this.props.data.changeKindOfFight("psychical");
+                                              this.props.data.changePage(5);
+                                            }}
+                                          >
+                                            Walka psychiczna
+                                    </button>
+                                        </>
+                                      ) : (
+                                          <button
+                                            key={7}
+                                            className="mission-button"
+                                            onClick={() => {
+                                              this.props.data.selectEnemy(actualMission);
+                                              this.props.data.changePage(5);
+                                            }}
+                                          >
+                                            Napotkaj
+                                          </button>
+                                        ),
+                                    ]
+                                  ),
+                              ]
+                            ),
                         ]
                       ),
-                    ]
-                  ),
-                ]
-              )}
+                  ]
+                )}
             </div>
           </div>
         </div>

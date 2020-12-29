@@ -16,23 +16,23 @@ export default class Navigation extends Component {
           <p>Doświadczenie {players.exp}</p>
         </div>
         <div className="hero-attack">
-          <img src={require("../stats/020-thor.svg")} alt="hero item" />
+          <img src={require("../stats/21-mace.svg")} alt="hero item" />
           <p>Siła {players.strength}</p>
         </div>
         <div className="hero-magic">
-          <img src={require("../stats/050-scroll.svg")} alt="hero item" />
+          <img src={require("../stats/41-runes.svg")} alt="hero item" />
           <p>Magia {players.magic}</p>
         </div>
         <div className="hero-life">
-          <img src={require("../stats/002-shield.svg")} alt="hero item" />
+          <img src={require("../stats/32-shield.svg")} alt="hero item" />
           <p>Życie {players.hp}</p>
         </div>
         <div className="hero-lucky">
-          <img src={require("../stats/011-key.svg")} alt="hero item" />
+          <img src={require("../stats/37-beer.svg")} alt="hero item" />
           <p>Szczęście {players.fate}</p>
         </div>
         <div className="hero-gold">
-          <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
+          <img src={require("../stats/44-chest.svg")} alt="hero item" />
           <p>Złoto {players.gold}</p>
         </div>
         <div

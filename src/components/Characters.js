@@ -19,9 +19,9 @@ export default class Characters extends Component {
           {
             name: "Kosa",
             description1:
-                "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
-                description2:
-                "Dodaje +1 do siły.",
+              "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+            description2:
+              "Dodaje +1 do siły.",
             strength: 1,
             magic: 0,
             hp: 0,
@@ -62,7 +62,7 @@ export default class Characters extends Component {
         items: [
           {
             name: "Hełm wikinga",
-            description: "Dodaje +2 do życia",
+            description1: "Dodaje +2 do życia",
             strength: 0,
             magic: 0,
             hp: 2,
@@ -105,8 +105,8 @@ export default class Characters extends Component {
         pets: [
           {
             name: "Wilk",
-            description:
-              "Silny i inteligentny. Idealny towarzysz podróży. Dodaje +2 do siły i +1 do zdrowia.",
+            description1: "Silny i inteligentny. Idealny towarzysz podróży.",
+            description2: "Dodaje +2 do siły i +1 do zdrowia.",
             strength: 2,
             magic: 0,
             hp: 1,
@@ -116,8 +116,9 @@ export default class Characters extends Component {
           },
           {
             name: "Wilk",
-            description:
-              "Silny i inteligentny. Idealny towarzysz podróży. Dodaje +2 do siły i +1 do zdrowia.",
+            description1:
+              "Silny i inteligentny. Idealny towarzysz podróży. ",
+            description2: "Dodaje +2 do siły i +1 do zdrowia.",
             strength: 2,
             magic: 0,
             hp: 1,
@@ -128,68 +129,69 @@ export default class Characters extends Component {
         ],
         bossKilled: 0,
       },
-      {
-        name: "Janusz",
-        image: require("../heroes/janusz.svg"),
-        hp: 3,
-        strength: 3,
-        magic: 3,
-        fate: 1,
-        gold: 1,
-        exp: 0,
-        description:
-          "Postać legenda. Dobrze wychowany i kulturalny. Zaczyna grę z 2 pupilami i 2 broniami.",
-        items: [
-          {
-            name: "Zabójcze poślady",
-            description: "Nikt nie potrafi im się oprzeć. Dodają +1 do ataku.",
-            strength: 1,
-            magic: 0,
-            hp: 0,
-            fate: 0,
-            gold: 1,
-            image: require("../items/hips.svg"),
-            type: "items",
-          },
-          {
-            name: "Sandały Janusza",
-            description:
-              "Kunszt rzemieślników. Piękne i gustowne. Dodają +2 do szczęścia.",
-            strength: 0,
-            magic: 0,
-            hp: 0,
-            fate: 2,
-            gold: 1,
-            image: require("../items/036-hermes-1.svg"),
-            type: "items",
-          },
-        ],
-        pets: [
-          {
-            name: "Brajanek",
-            description:
-              "Spolszczona forma imienia Brian, bijąca rekordy popularności wśród szesnastoletnich matek ze środowisk wiejsko-patologicznych. Dodaje -2 do zdrowia",
-            strength: 0,
-            magic: 0,
-            hp: -2,
-            fate: 0,
-            gold: 0,
-            image: require("../pets/brajanek.svg"),
-          },
-          {
-            name: "Grażyna",
-            description:
-              "Stereotypowa kobieta w średnim wieku, niegrzesząca inteligencją. Uosobienie wiochy, obciachu, zaściankowości i cebulactwa. Jej mężem jest typowy Janusz. Dodaje +1 do siły.",
-            strength: 1,
-            magic: 0,
-            hp: 0,
-            fate: 0,
-            gold: 0,
-            image: require("../pets/grażyna.svg"),
-          },
-        ],
-        bossKilled: 0,
-      },
+      // {
+      //   name: "Janusz",
+      //   image: require("../heroes/janusz.svg"),
+      //   hp: 3,
+      //   strength: 3,
+      //   magic: 3,
+      //   fate: 1,
+      //   gold: 1,
+      //   exp: 0,
+      //   description:
+      //     "Postać legenda. Dobrze wychowany i kulturalny. Zaczyna grę z 2 pupilami i 2 broniami.",
+      //   items: [
+      //     {
+      //       name: "Zabójcze poślady",
+      //       description: "Nikt nie potrafi im się oprzeć. Dodają +1 do ataku.",
+      //       strength: 1,
+      //       magic: 0,
+      //       hp: 0,
+      //       fate: 0,
+      //       gold: 1,
+      //       image: require("../items/hips.svg"),
+      //       type: "items",
+      //     },
+      //     {
+      //       name: "Sandały Janusza",
+      //       description:
+      //         "Kunszt rzemieślników. Piękne i gustowne. Dodają +2 do szczęścia.",
+      //       strength: 0,
+      //       magic: 0,
+      //       hp: 0,
+      //       fate: 2,
+      //       gold: 1,
+      //       image: require("../items/036-hermes-1.svg"),
+      //       type: "items",
+      //     },
+      //   ],
+      //   pets: [
+      //     {
+      //       name: "Brajanek",
+      //       description:
+      //         "Spolszczona forma imienia Brian, bijąca rekordy popularności wśród szesnastoletnich matek ze środowisk wiejsko-patologicznych. Dodaje -2 do zdrowia",
+      //       strength: 0,
+      //       magic: 0,
+      //       hp: -2,
+      //       fate: 0,
+      //       gold: 0,
+      //       image: require("../pets/brajanek.svg"),
+      //     },
+      //     {
+      //       name: "Grażyna",
+      //       description:
+      //         "Stereotypowa kobieta w średnim wieku, niegrzesząca inteligencją. Uosobienie wiochy, obciachu, zaściankowości i cebulactwa. Jej mężem jest typowy Janusz. Dodaje +1 do siły.",
+      //       strength: 1,
+      //       magic: 0,
+      //       hp: 0,
+      //       fate: 0,
+      //       gold: 0,
+      //       image: require("../pets/grażyna.svg"),
+      //     },
+      //   ],
+      //   bossKilled: 0,
+      // },
+
       // {
       //   name: "Losowa postać",
       //   image: require("../heroes/random.svg"),
@@ -220,7 +222,9 @@ export default class Characters extends Component {
         {
           name: "Kosa",
           description:
-            "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów. Dodaje +1 do siły.",
+            "Do ścinania zbóż lub traw, a w rękach Żniwiarza również głów.",
+          description2:
+            "Dodaje +1 do siły.",
           strength: 1,
           magic: 0,
           hp: 0,

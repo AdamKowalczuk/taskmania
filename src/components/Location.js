@@ -8,15 +8,15 @@ export default class Location extends Component {
       {
         name: "Las",
         elements: ["Przeciwników"
-        //  "Zdarzenia losowe",
-         , "Przedmioty", "Pupile"],
+          //  "Zdarzenia losowe",
+          , "Przedmioty", "Pupile"],
         image: require("../locations/trees.svg"),
       },
-      // {
-      //   name: "Arena",
-      //   elements: ["Wrogich graczy"],
-      //   image: require("../locations/colosseum.svg"),
-      // },
+      {
+        name: "Arena",
+        elements: ["Wrogich graczy"],
+        image: require("../locations/colosseum.svg"),
+      },
       {
         name: "Targowisko",
         elements: ["Handlarza ekwipunku", "Handlarza pupili"],
@@ -25,22 +25,22 @@ export default class Location extends Component {
       {
         name: "Miasto",
         elements: ["Przeciwników"
-        // ,"Zdarzenia losowe"
-      ],
+          // ,"Zdarzenia losowe"
+        ],
         image: require("../locations/city.svg"),
       },
       {
         name: "Rzeka",
-        elements: ["Przeciwników", 
-        // "Zdarzenia losowe",
-         "Pupile"],
+        elements: ["Przeciwników",
+          // "Zdarzenia losowe",
+          "Pupile"],
         image: require("../locations/river.svg"),
       },
       {
         name: "Cmentarz",
-        elements: ["Przeciwników", 
-        // "Zdarzenia losowe",
-         "Przedmioty"],
+        elements: ["Przeciwników",
+          // "Zdarzenia losowe",
+          "Przedmioty"],
         image: require("../locations/graveyard.svg"),
       },
       {
@@ -52,7 +52,7 @@ export default class Location extends Component {
     locationActive: [
       {
         name: "Las",
-        elements: ["Przeciwników","Przedmioty", "Pupile"],
+        elements: ["Przeciwników", "Przedmioty", "Pupile"],
         image: require("../locations/trees.svg"),
       },
       {
@@ -65,7 +65,7 @@ export default class Location extends Component {
   componentDidMount() {
     this.drawLocation();
   }
-  
+
   drawLocation() {
     let random1 = Math.floor(Math.random() * this.state.locations.length);
     let random2 = Math.floor(Math.random() * this.state.locations.length);
@@ -103,10 +103,10 @@ export default class Location extends Component {
               <img src={locationActive[0].image} alt="location" />
               <div className="mission-box3">
                 <div className="mission-description">
-                <h4>Możesz napotkać</h4>
-                    {locationActive[0].elements.map((location, id) => {
-                      return <p key={id}>{location}</p>;
-                    })}
+                  <h4>Możesz napotkać</h4>
+                  {locationActive[0].elements.map((location, id) => {
+                    return <p key={id}>{location}</p>;
+                  })}
                 </div>
               </div>
 
@@ -126,10 +126,10 @@ export default class Location extends Component {
               <img src={locationActive[1].image} alt="location" />
               <div className="mission-box3">
                 <div className="mission-description">
-                <h4>Możesz napotkać</h4>
-                    {locationActive[1].elements.map((location, id) => {
-                      return <p key={id}>{location}</p>;
-                    })}
+                  <h4>Możesz napotkać</h4>
+                  {locationActive[1].elements.map((location, id) => {
+                    return <p key={id}>{location}</p>;
+                  })}
                 </div>
               </div>
 

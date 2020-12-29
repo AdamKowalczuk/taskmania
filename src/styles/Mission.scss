@@ -36,6 +36,19 @@ $light-brown: #ff574c;
   background-color: $light-brown;
   color: $white;
 }
+.strength-magic{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". .";
+}
+.h5-magic{
+  background-color:#2a9df4 !important;
+  border: 4px solid  #2a9df4 !important;
+  color: $dark !important;
+}
 @media screen and (max-width: 759px) {
   .mission-description {
     width: auto;
