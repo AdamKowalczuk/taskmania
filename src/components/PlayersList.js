@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/PlayersList.scss";
 import Input from "muicss/lib/react/input";
-import purple from "@material-ui/core/colors/purple";
 
 export default class PlayersList extends Component {
   changeName(e, id) {
