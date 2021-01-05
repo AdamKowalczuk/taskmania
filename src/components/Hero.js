@@ -48,7 +48,7 @@ export default class Hero extends Component {
                     alt="hero item"
                   />
                   <h4>{players[activePlayer].character.items[4].name}</h4>
-                  <p>{players[activePlayer].character.items[4].description1}</p>
+                  <p className="description1">{players[activePlayer].character.items[4].description1}</p>
                   <p className="description2">{players[activePlayer].character.items[4].description2}</p>
                 </div>
               )}

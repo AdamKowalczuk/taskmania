@@ -73,6 +73,7 @@ $light-brown: #ff574c;
   bottom: 35px;
   color: $white;
   font-size: 100px;
+  margin-top: 10px;
 }
 .fight-container .button-container {
   display: flex;
@@ -85,7 +86,7 @@ $light-brown: #ff574c;
   width: 14vw;
 }
 .fight-container .button-container button:nth-child(1) {
-  background-color: #5c24a6;
+  background-color:$light-brown;
 }
 .fight-container .button-container button:nth-child(2) {
   background-color: $white;
@@ -140,8 +141,6 @@ $light-brown: #ff574c;
   }
   .fight-container button {
     position: absolute;
-    // bottom: 0;
-
     width: 22vw;
     font-size: 0.7rem;
     margin: 0;
@@ -150,8 +149,6 @@ $light-brown: #ff574c;
     margin-top: 3vh;
   }
   .fight-container button:nth-child(1) {
-    background-color: $light-brown !important;
-    color: black;
     top: 39vh;
   }
   .fight-container button:nth-child(2) {

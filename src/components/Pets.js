@@ -24,7 +24,8 @@ export default class Pets extends Component {
                 <>
                   <img src={players.pets[0].image} alt="pet" />
                   <h4>{players.pets[0].name}</h4>
-                  <p>{players.pets[0].description}</p>
+                  <p className="description1">{players.pets[0].description1}</p>
+                  <p className="description2">{players.pets[0].description2}</p>
                 </>
               )}
             </div>
@@ -34,7 +35,8 @@ export default class Pets extends Component {
                 <>
                   <img src={players.pets[1].image} alt="pet" />
                   <h4>{players.pets[1].name}</h4>
-                  <p>{players.pets[1].description}</p>
+                  <p className="description1">{players.pets[1].description1}</p>
+                  <p className="description2">{players.pets[1].description2}</p>
                 </>
               )}
             </div>
@@ -45,7 +47,8 @@ export default class Pets extends Component {
                 <>
                   <img src={players.pets[2].image} alt="pet" />
                   <h4>{players.pets[2].name}</h4>
-                  <p>{players.pets[2].description}</p>
+                  <p className="description1">{players.pets[2].description1}</p>
+                  <p className="description2">{players.pets[2].description2}</p>
                 </>
               )}
             </div>
@@ -54,7 +57,8 @@ export default class Pets extends Component {
                 <>
                   <img src={players.pets[3].image} alt="pet" />
                   <h4>{players.pets[3].name}</h4>
-                  <p>{players.pets[3].description}</p>
+                  <p className="description1">{players.pets[3].description1}</p>
+                  <p className="description2">{players.pets[3].description2}</p>
                 </>
               )}
             </div>

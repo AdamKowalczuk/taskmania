@@ -66,13 +66,17 @@ $light-brown: #ff574c;
   align-items: center;
 }
 .hero-items-box h4 {
-  color: white;
+  color: $light-brown;
 }
 .hero-container h4 {
   font-family: "Permanent Marker", cursive, "Sansita Swashed", "900", cursive;
 }
 .hero-items-box p {
   width: 20vw;
+  color: white;
+}
+.description2{
+  color:$light-brown !important;
 }
 @media screen and (max-width: 759px) {
   .left-items,
@@ -126,8 +130,8 @@ $light-brown: #ff574c;
     font-size: 0rem;
     margin-bottom: 0;
   }
-  .description2 {
-    width: 26vw;
-    font-size: 0.8rem !important;
-  }
+  // .description2 {
+  //   width: 26vw;
+  //   font-size: 0.8rem !important;
+  // }
 }

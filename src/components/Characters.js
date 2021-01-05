@@ -116,8 +116,7 @@ export default class Characters extends Component {
           },
           {
             name: "Wilk",
-            description1:
-              "Silny i inteligentny. Idealny towarzysz podróży. ",
+            description1: "Silny i inteligentny. Idealny towarzysz podróży.",
             description2: "Dodaje +2 do siły i +1 do zdrowia.",
             strength: 2,
             magic: 0,

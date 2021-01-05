@@ -12,11 +12,11 @@ export default class Location extends Component {
           , "Przedmioty", "Pupile"],
         image: require("../locations/trees.svg"),
       },
-      {
-        name: "Arena",
-        elements: ["Wrogich graczy"],
-        image: require("../locations/colosseum.svg"),
-      },
+      // {
+      //   name: "Arena",
+      //   elements: ["Wrogich graczy"],
+      //   image: require("../locations/colosseum.svg"),
+      // },
       {
         name: "Targowisko",
         elements: ["Handlarza ekwipunku", "Handlarza pupili"],
