@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/Fight.scss";
 import "react-dice-complete/dist/react-dice-complete.css";
 import HalfNavigation from "./HalfNavigation";
+import { act } from "react-dom/test-utils";
 export default class Fight extends Component {
   constructor(props) {
     super(props);
@@ -37,11 +38,22 @@ export default class Fight extends Component {
         rightPlayerPower: this.props.data.selectedEnemy.strength,
       })
     else if (selectedEnemy.attackType === "magic") {
-      this.setState({
-        leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
-          .character.magic,
-        rightPlayerPower: this.props.data.selectedEnemy.strength,
-      })
+      if (this.props.data.players[this.props.data.activePlayer].character.name === "Czarodziej") {
+        this.setState({
+          leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
+            .character.magic + this.props.data.players[this.props.data.activePlayer]
+              .character.strength,
+          rightPlayerPower: this.props.data.selectedEnemy.strength,
+        })
+      }
+      else {
+        this.setState({
+          leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
+            .character.magic,
+          rightPlayerPower: this.props.data.selectedEnemy.strength,
+        })
+      }
+
     }
     else if (this.props.data.kindOfFight === "physical") {
       this.setState({
@@ -51,11 +63,22 @@ export default class Fight extends Component {
       })
     }
     else {
-      this.setState({
-        leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
-          .character.magic,
-        rightPlayerPower: this.props.data.selectedEnemy.magic,
-      })
+      if (this.props.data.players[this.props.data.activePlayer].character.name === "Czarodziej") {
+        this.setState({
+          leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
+            .character.magic + this.props.data.players[this.props.data.activePlayer]
+              .character.strength,
+          rightPlayerPower: this.props.data.selectedEnemy.strength,
+        })
+      }
+      else {
+        this.setState({
+          leftPlayerPower: this.props.data.players[this.props.data.activePlayer]
+            .character.magic,
+          rightPlayerPower: this.props.data.selectedEnemy.magic,
+        })
+      }
+
     }
 
     this.setState({
