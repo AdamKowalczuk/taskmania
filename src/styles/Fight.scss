@@ -94,12 +94,16 @@ $light-brown: #ff574c;
 }
 @media screen and (max-width: 759px) {
   .fight-container h2 {
-    margin-top: 15vh;
-    margin-bottom: 10vh;
+    margin-top: 8vh;
+    margin-bottom: 0vh;
+    font-size: 1.4rem;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    margin-bottom: 4vh;
   }
   .left-character {
     width: 43vw;
-    height: 65vh;
+    height: 63vh;
     margin-left: 0vw;
     margin-right: 6vw;
   }

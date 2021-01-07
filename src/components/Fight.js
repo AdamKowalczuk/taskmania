@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../styles/Fight.scss";
 import "react-dice-complete/dist/react-dice-complete.css";
 import HalfNavigation from "./HalfNavigation";
-import { act } from "react-dom/test-utils";
 export default class Fight extends Component {
   constructor(props) {
     super(props);
