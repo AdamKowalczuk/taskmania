@@ -226,14 +226,9 @@ export default class Fight extends Component {
               <div className="fight-description">
                 <h5>
                   {selectedEnemy.attackType === "strength" || kindOfFight === "physical" ? "Siła " : "Magia "}
-
-
                   {firstDice + 1 === 0
                     ? leftPlayerPower
                     : leftPlayerPower + firstDice + 1}
-                  {/* {players[activePlayer].character.magic === undefined
-                    ? players[activePlayer].character.strength
-                    : players[activePlayer].character.magic} */}
                 </h5>
                 <p>{players[activePlayer].character.description}</p>
               </div>
