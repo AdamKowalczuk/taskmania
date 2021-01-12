@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/Shop.scss";
-// import HalfNavigation from "./HalfNavigation";
 export default class ItemShop extends Component {
   state = {
     items: [
@@ -255,15 +254,6 @@ export default class ItemShop extends Component {
     const { activePlayer, players } = this.props.data;
     return (
       <>
-        {/* <HalfNavigation
-          data={{
-            pages: this.props.data.pages,
-            changePage: this.props.data.changePage.bind(this),
-            players: this.props.data.players,
-            activePlayer: this.props.data.activePlayer,
-            playersNumber: this.props.data.playersNumber,
-          }}
-        /> */}
         <div className="hero-gold shop-gold">
           <img src={require("../stats/045-money-bag.svg")} alt="hero item" />
           <p>Złoto {players[activePlayer].character.gold}</p>

@@ -46,11 +46,6 @@ export default class PlayersList extends Component {
             {players.map((player, id) => {
               return (
                 <div className="player-box" key={id}>
-                  {/* <input
-                    type="text"
-                    placeholder="Wpisz swój nick"
-                    onChange={(e) => this.changeName(e, id)}
-                  /> */}
                   <Input
                     label="Podaj swój nick"
                     floatingLabel={true}
