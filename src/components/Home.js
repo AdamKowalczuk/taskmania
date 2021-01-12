@@ -5,7 +5,7 @@ export default class Home extends Component {
         return (
             <>
                 <div className="home-container">
-                    <img className="background" src={require("../taskmania.PNG")} alt="Taskmania" />
+                    <img className="background" src={require("../other/taskmania.PNG")} alt="Taskmania" />
                     <div className="home-box1">
                         <h2>Instrukcja</h2>
                         <img className="photo-button" src={require("../other/instruction.png")} alt="Taskmania tutorial" onClick={() => this.props.data.changePage(8)} />
